@@ -35,9 +35,12 @@ process Collage {
     tuple val(label), path("pics/*")
 
     output:
-    tuple val(label), path("result.png")
+    tuple val(label), path("montage.png")
 
     script:
-    "montage -geometry +0+0 -tile 10x pics/* result.png"
-}
+    """
+    montage -geometry 80 -tile 4x pics/* tmp.png
+    montage -label '$label' tmp.png -geometry +0+0 -background Gold montage.png
+    """
+}   
 
