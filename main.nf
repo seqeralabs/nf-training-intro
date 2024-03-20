@@ -1,7 +1,8 @@
 #!/usr/bin/env nextflow
 
 params.input = "${projectDir}/data/*.png"
-params.prompts = "a photo of a cat,a photo of a dog"
+params.prompts = 'a photo of a cat,a photo of a dog'
+params.outdir = 'results'
 
 workflow {
     pics = Channel.fromPath(params.input)
@@ -30,17 +31,19 @@ process Classify {
 
 process Collage {
     container 'robsyme/imagemagick:latest'
+    publishDir { params.outdir }
 
     input:
     tuple val(label), path("pics/*")
 
     output:
-    tuple val(label), path("montage.png")
+    tuple val(label), path("*.png")
 
     script:
     """
     montage -geometry 80 -tile 4x pics/* tmp.png
-    montage -label '$label' tmp.png -geometry +0+0 -background Gold montage.png
+    montage -label '$label' tmp.png -geometry +0+0 -background Gold ${label.replaceAll(" ", "_").toLowerCase()}.png
+    rm tmp.png
     """
 }   
 
