@@ -59,7 +59,7 @@ process CombineImages {
 
     script:
     """
-    montage -geometry +0+0 inputs/* collage.png
+    montage -geometry +0+0 -tile 1x inputs/* collage.png
     """
 }
 
