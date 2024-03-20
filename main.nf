@@ -25,7 +25,7 @@ process Classify {
     tuple path("out.txt"), path(pic)
 
     script:
-    "classify --image $pic --labels "$prompts" > out.txt"
+    "classify --image $pic --labels '$prompts' > out.txt"
 }
 
 process Collage {
