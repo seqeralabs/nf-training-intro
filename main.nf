@@ -11,7 +11,8 @@ workflow {
     | map { label, pic -> [label.text, pic] }
     | groupTuple
     | Collage
-    | view
+    | collect
+    | CombineImages
 }
 
 process Classify {
@@ -31,13 +32,12 @@ process Classify {
 
 process Collage {
     container 'robsyme/imagemagick:latest'
-    publishDir { params.outdir }
 
     input:
     tuple val(label), path("pics/*")
 
     output:
-    tuple val(label), path("*.png")
+    path("*.png")
 
     script:
     """
@@ -45,5 +45,21 @@ process Collage {
     montage -label '$label' tmp.png -geometry +0+0 -background Gold ${label.replaceAll(" ", "_").toLowerCase()}.png
     rm tmp.png
     """
-}   
+}
+
+process CombineImages {
+    container 'robsyme/imagemagick:latest'
+    publishDir params.outdir
+
+    input:
+    path("inputs/*")
+
+    output:
+    path("collage.png")
+
+    script:
+    """
+    montage -geometry +0+0 inputs/* collage.png
+    """
+}
 
