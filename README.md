@@ -45,7 +45,7 @@ In the different sections of this tutorial, we'll explore how to run an existing
 
 We've provided you with a command called 'classify.py', which is a wrapper around CLIP, and there are a bunch of animal pictures in the 'data' folder. You're going to:
 
- - Use a popular classification tool to assign critters to classes based on a dictionary of labels you provide.
+ - Use CLIP to assign critters to classes based on a dictionary of labels you provide.
  - Make a collage of the critters for each class.
  - Combine the collages to create one glorious critter cornucopia.
 
