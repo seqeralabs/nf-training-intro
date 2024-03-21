@@ -71,9 +71,11 @@ All you need to do now is combine them, which which you can do with the followin
 montage -geometry +0+0 -tile 1x collages/* collage_all.png
 ```
 
+You can download that final image from the GitPod user interface. What do you think? 
+
 ## Conclusions
 
-You can download that from the GitPod user interface. What do you think? Try to answer the following questions for yourself:
+Try to answer the following questions for yourself:
 
  * What if there were 1000 images? Would you be happy doing that for all of them?
  * Even if you did, are you confident you would get the commands right if you had to type them out 100 times again?
