@@ -11,7 +11,7 @@ At its very core, Nextflow is about:
 
 We'll illustrate all of these things on our journey.
 
-## Step 0: environment setup
+## Environment setup
 
 For this workshop we're going to be using a tool called 'GitPod', which provides us with a ready-made software environment to play in. You will need a GitHub account, so if you don't have one, go to [GitHub](https://github.com/) and create on for yourself.
 
@@ -72,8 +72,33 @@ Do the same for all the images under `data`, making sure to use the same set of 
 
 ### Make a collage for each class
 
+Now you should have directories labelled by critter. For example a 'dog' directory with all the images that were labelled as 'dog', a 'cat' directory with all the images labelled as 'cat' etc (or whatever labels you used).
+
+Start by making a 'collages' directory:
+
+```bash
+mkdir collages
+```
+
+You can now make a collage for each collection of critters using commands like the below. For 'dog' you might do:
+
+```
+montage -geometry 80 -tile 4x dogs/* tmp.png
+montage -label '$label' tmp.png -geometry +0+0 -background Gold collages/dog.png
+rm tmp.png
+```
 
 ### Combine the collages
+
+You should now have a set of collages, one for each critter type, in the `collages` directory.
+
+All you need to do now is combine them, which which you can do with the following command:
+
+```bash
+montage -geometry +0+0 -tile 1x collages/* collage_all.png
+```
+
+You can download that from the GitPod user interface. What do you think?
 
 
 ## Step 2: 'typing all those commands is boring': let's write some Bash
