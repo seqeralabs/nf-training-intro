@@ -49,8 +49,10 @@ We've provided you with a command called 'classify.py', which is a wrapper aroun
  - Make a collage of the critters for each class.
  - Combine the collages to create one glorious critter cornucopia.
 
+## Exercises
+
 We're going to do this in 3 different ways of decreasing manual intervention, showing you the power of Nextflow. Please work through the following:
 
  * [Critter classification with bare command line working](docs/cli.md)
  * [Critter classification with Bash scripting](docs/bash.md)
- * [Critter classification with Nextlfow](docs/nextflow.md)
+ * [Critter classification with Nextflow](docs/nextflow.md)
