@@ -114,6 +114,19 @@ Change to the 'bash' activity diretory:
 cd ../bash
 ```
 
-Bash allows you to do some scripting to automate this process, so let's try that. We've provided a script for you [here](activity/bash/make_collage.sh).
+Bash allows you to do some scripting to automate this process, so let's try that. We've provided a script for you [here](activity/bash/make_collage.sh). Have a look at this script and check that you understand the rough picture of what's going on (the fine detail is unimportant here). We're essentially automating what you did above, looping over all the input images, classifiying them, making a collage for each class and combining those collages at the end. 
+
+Run the command and check it works:
+
+```bash
+./make_collage.sh
+```
+
+You should hopefully see that this is an improvement. But answer the following:
+
+ * This is clearly a little more reproducible because we're removing some human involvement. But what if someone in the host environment changes what the 'classify' command does?
+ * If this was a more time-consuming task where each image took 10 minutes to classify and there is a power failure, would we be able to resume the sequence of commands. 
+ * How well will this scale to 1000s of images?
+
 
 ## Approach 3: can't we automate everything? Enter Nextflow
