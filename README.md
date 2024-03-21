@@ -114,6 +114,6 @@ Change to the 'bash' activity diretory:
 cd ../bash
 ```
 
-Bash allows you to do some scripting to automate this process, so let's try that. We've provided a script for you [here](activitiy/bash/make_collage.sh).
+Bash allows you to do some scripting to automate this process, so let's try that. We've provided a script for you [here](activity/bash/make_collage.sh).
 
 ## Approach 3: can't we automate everything? Enter Nextflow
