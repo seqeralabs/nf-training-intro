@@ -29,7 +29,7 @@ ls data
 Try to assign one of thes images to a class, for example: 
 
 ```
-classify --image data/rain-ready.png --labels 'cat,dog,cute dog'
+classify.py --image data/rain-ready.png --labels 'cat,dog,cute dog'
 ```
 
 This should return a text string, telling you which of the input labels was most likely to apply.
@@ -70,6 +70,8 @@ All you need to do now is combine them, which which you can do with the followin
 ```bash
 montage -geometry +0+0 -tile 1x collages/* collage_all.png
 ```
+
+## Conclusions
 
 You can download that from the GitPod user interface. What do you think? Try to answer the following questions for yourself:
 

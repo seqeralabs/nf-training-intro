@@ -24,7 +24,9 @@ Run the command and check it works:
 ./make_collage.sh
 ```
 
-You should see that the classification happens automatically, producing `collage_all.png`, and hopefully see that this is an improvement. But answer the following:
+## Conclusions
+
+You should see that the classification happens automatically using Bash scripting, producing `collage_all.png`, and hopefully see that this is an improvement. But answer the following:
 
  * This is clearly a little more reproducible because we're removing some human involvement. But what if someone in the host environment changes what the 'classify' command does?
  * If this was a more time-consuming task where each image took 10 minutes to classify and there is a power failure, would we be able to resume the sequence of commands. 
