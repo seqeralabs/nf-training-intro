@@ -43,7 +43,7 @@ classify --image PICTURE --labels 'LABELS' > out.txt
 
 Where 'PICTURE' is the image file, and LABELS is the set of classes to which you want to assign the images.
 
-## Step 1: in the beginning there was just the command line
+## Approach 1: in the beginning there was just the command line
 
 ### Label each image
 
@@ -98,11 +98,22 @@ All you need to do now is combine them, which which you can do with the followin
 montage -geometry +0+0 -tile 1x collages/* collage_all.png
 ```
 
-You can download that from the GitPod user interface. What do you think?
+You can download that from the GitPod user interface. What do you think? Try to answer the following questions for yourself:
 
+ * What if there were 1000 images? Would you be happy doing that for all of them?
+ * Even if you did, are you confident you would get the commands right if you had to type them out 100 times again?
+ * How annoyed would you be if you lost your place half way through and had to start again?
 
-## Step 2: 'typing all those commands is boring': let's write some Bash
+## Approach 2: 'typing all those commands is boring': let's write some Bash
 
+Hopefully that first approach wasn't too tricky, but it was a bit boring wasn't it? Let's exercise our [3 virtues](https://thethreevirtues.com/) and try to make life easier for ourselves. 
 
+Change to the 'bash' activity diretory:
 
-## Step 3: can't we automate everything? Enter Nextflow
+```bash
+cd ../bash
+```
+
+Bash allows you to do some scripting to automate this process, so let's try that. We've provided a script for you [here](activitiy/bash/make_collage.sh).
+
+## Approach 3: can't we automate everything? Enter Nextflow
