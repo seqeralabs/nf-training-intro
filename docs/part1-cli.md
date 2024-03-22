@@ -123,4 +123,4 @@ After classifying a few images one by one, you might notice a couple of things. 
 
 ## Next steps
 
-We can instead encapsulate these commands into a script. This will not only simplify the process of classifying multiple images but also set the stage for understanding the power of automation and scalability—key features that Nextflow enhances in more complex workflows. Now proceed to the next part: [Part 2: Critter classification with Bash scripting](bash.md).
+We can instead encapsulate these commands into a script. This will not only simplify the process of classifying multiple images but also set the stage for understanding the power of automation and scalability—key features that Nextflow enhances in more complex workflows. Now proceed to the next part: [Part 2: Critter classification with Bash scripting](part2-bash.md).
