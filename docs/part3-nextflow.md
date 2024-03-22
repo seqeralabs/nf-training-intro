@@ -174,3 +174,18 @@ Once it completes, you'll see the final `collage.png` available in a new directo
 - Containerization: Each process in the Nextflow workflow can be executed within a container, ensuring consistency across different computing environments. Bash scripts, by themselves, do not provide such isolation, making it harder to reproduce results.
 
 - Modularity: Nextflow workflows are composed of modular processes (or scripts) that can be easily reused or modified. Bash scripts can be modular but tend to become more unwieldy as complexity increases.
+
+## Conclusions
+
+By simplifying the complexity involved in task management, parallel processing, and environment consistency, you can now see how Nextflow provides a robust framework for executing data-intensive workflows. This allows not only bioinformaticians, but researchers, developers, and analysts across a variety of domains to focus more on the logic and outcomes of their projects, rather than the intricacies of the computational processes.
+
+However, ask yourself the following questions:
+
+- What if you wanted to share the results of your classification with your colleagues?
+- What if a collaborator of yours wanted to also run classification with this workflow, using the same parameters? How would you share those with them?
+- What if you wanted to run this workflow on data stored in the Cloud, but did not have knowledge of the cloud execution and storage?
+- Machine learning can become costly if you are using large datasets, what if you wanted to better understand how costly running this classification workflow was in the Cloud?
+
+## Next Steps
+
+This is where Seqera Platform can add a layer of convenience, visualization, and management to your projects. To see how quickly we can get setup to run this workflow on Seqera Platform, proceed to [Part 4. Critter classification on Seqera Platform](part4-platform.md).
