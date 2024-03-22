@@ -4,7 +4,10 @@
 
 Nextflow is a workflow tool that enables the orchestration of complex computational pipelines with ease. It provides an abstraction layer over the underlying execution environment, whether it's your local computer, a high-performance computing cluster, or cloud infrastructure. This means you can write your workflow once and run it anywhere, ensuring reproducibility across different environments.
 
-<!-- Talk about more nf things here -->
+Importantly this approach addresses a number of the problems you might have noticed using the Bash scripting:
+
+ * Processes will run in parallel, limited only by available compute resources (it takes some effort to make that happen in Bash). In fact you often use compute resources outside of the machine you execute the workflow on.
+ * Software is automatically made available specific to each process. You might not have appreciated that in the previous examples because we prepared your software environment for you, but it's a very important consideration.
 
 ### Step 1: Setting Up Your Workspace
 
