@@ -5,7 +5,7 @@ params.prompts = 'a photo of a cat,a photo of a dog'
 params.outdir = 'results'
 
 workflow {
-    pics = Channel.fromPath(params.input)
+    pics = Channel.fromPath(params.input) | take(10)
 
     Classify(pics, params.prompts)
     | map { label, pic -> [label.text, pic] }
@@ -31,6 +31,7 @@ process Classify {
 }
 
 process Collage {
+    memory '8G'
     container 'robsyme/imagemagick:latest'
 
     input:
