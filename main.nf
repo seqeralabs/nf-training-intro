@@ -61,7 +61,7 @@ process CombineImages {
 
     script:
     """
-    montage -geometry +0+0 -tile 1x input.*.png collage.png
+    montage -geometry +10+10 montage.*.png -background "#ffbe76" -border 5 -bordercolor "#f0932b" collage.png
     """
 }
 
