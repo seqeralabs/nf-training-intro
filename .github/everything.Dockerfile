@@ -19,10 +19,6 @@ RUN apt-get update --quiet && \
 
 # Install CLIP dependencies
 RUN apt-get update && apt-get -y install python3-venv python3-pip git imagemagick
-RUN pip install torch torchvision ftfy regex tqdm 
-RUN pip install git+https://github.com/openai/CLIP.git
-# RUN python3 -c 'import clip; clip.load("ViT-B/32", device="cpu")'
-
 
 # Taken from: https://github.com/nf-core/tools/blob/master/nf_core/gitpod/gitpod.Dockerfile
 # Install Apptainer (Singularity)
@@ -44,6 +40,10 @@ ADD bin/classify /usr/local/bin/classify
 
 # Change user to gitpod
 USER gitpod
+
+RUN pip install torch torchvision ftfy regex tqdm 
+RUN pip install git+https://github.com/openai/CLIP.git
+# RUN python3 -c 'import clip; clip.load("ViT-B/32", device="cpu")'
 
 # Uncomment if we need to pin the Nextflow version
 ENV NXF_EDGE=1
@@ -71,6 +71,3 @@ RUN sudo rm -r ~/.cache && \
 RUN nextflow self-update && nextflow -version
 
 RUN unset JAVA_TOOL_OPTIONS
-
-
-
