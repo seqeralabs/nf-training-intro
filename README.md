@@ -47,7 +47,7 @@ Here's the scenario. You've been given a set of pictures of your colleagues' ani
 
 In the different sections of this tutorial, we'll explore how to run an existing classification model using OpenAI's CLIP. CLIP (Contrastive Language–Image Pre-training) is a versatile tool that can understand and classify images based on natural language descriptions. 
 
-We've provided you with a command called `classify.py`, which is a wrapper around CLIP, and there are a bunch of animal pictures in the `/data` folder. You're going to:
+We've provided you with a command called `classify.py`, which is a wrapper around CLIP, and there are a bunch of animal pictures in the `data/` folder. You're going to:
 
  - Use CLIP to assign critters to classes based on a dictionary of labels you provide.
  - Make a collage of the critters for each class.
