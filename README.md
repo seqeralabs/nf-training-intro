@@ -61,6 +61,6 @@ We've provided you with a command called `classify.py`, which is a wrapper aroun
 
 We're going to do this in 3 different ways of decreasing manual intervention, showing you the power of Nextflow. Please work through the following:
 
-- [Part 1. Critter classification with bare command line](docs/cli.md)
+- [Part 1. Critter classification with bare command line](docs/part1-cli.md)
 - [Part 2. Critter classification with Bash scripting](docs/bash.md)
 - [Part 3. Critter classification with Nextflow](docs/nextflow.md)
