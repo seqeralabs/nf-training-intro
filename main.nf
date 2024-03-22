@@ -5,7 +5,7 @@ params.prompts = 'a photo of a cat,a photo of a dog'
 params.outdir = 'results'
 
 workflow {
-    pics = Channel.fromPath(params.input) | take(10)
+    pics = Channel.fromPath(params.input)
 
     Classify(pics, params.prompts)
     | map { label, pic -> [label.text, pic] }
@@ -42,7 +42,9 @@ process Collage {
 
     script:
     """
-    montage -geometry 80 -tile 4x pics/* tmp.png
+    mkdir -p resized
+    mogrify -resize 256x256 -quality 100 -path resized/ pics/*
+    montage -geometry 80 -tile 4x resized/* tmp.png
     montage -label '$label' tmp.png -geometry +0+0 -background Gold ${label.replaceAll(" ", "_").toLowerCase()}.png
     rm tmp.png
     """
