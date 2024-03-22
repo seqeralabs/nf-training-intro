@@ -14,13 +14,11 @@
       "properties": {
         "input": {
           "type": "string",
-          "format": "file-path",
+          "format": "path",
           "exists": true,
-          "mimetype": "text/csv",
-          "pattern": "^\\S+\\.csv$",
-          "description": "Path to comma-separated file containing information about the samples in the experiment.",
+          "description": "Glob pattern matching pictures for classification",
           "help_text": "You will need to create a design file with information about the samples in your experiment before running the pipeline. Use this parameter to specify its location. It has to be a comma-separated file with 3 columns, and a header row.",
-          "fa_icon": "fas fa-file-csv"
+          "fa_icon": "fas fa-images"
         },
         "outdir": {
           "type": "string",
@@ -31,7 +29,7 @@
         "prompts": {
           "type": "string",
           "description": "Comma-separated list of prompts",
-          "default": "a photo of a cat,a photo of a dog"
+          "fa_icon": "fas fa-hammer"
         }
       }
     }
