@@ -46,6 +46,28 @@ Now that you understand how the Workflow is structured, you can now start runnin
 
 All of the data you will use as input for the workflow is provided in `activity/nextflow/data`. With Nextflow, initiating the workflow is as simple as running a command in your terminal, specifying your image folder and labels. Nextflow takes care of the rest, efficiently managing resources and ensuring the process is smooth.
 
+We have temporarily disabled some sections of the workflow, so that you can see how things change as we progressively add components. Right now the workflow section looks like:
+
+```
+workflow {
+    pics = Channel.fromPath(params.input)
+
+    Classify(pics, params.prompts)
+    .view()
+//    | map { label, pic -> [label.text, pic] }
+//    .view()
+//    | groupTuple
+//    .view()
+//    | Collage
+//    .view()
+//    | collect
+//    .view()
+//    | CombineImages
+}
+```
+
+The `//` are 'comments', and will disable those lines for now. `.view()` lets us view the output of the Classify process in the meantime.
+
 Run the following command on the command line:
 
 ```bash
