@@ -17,26 +17,30 @@ RUN apt-get update --quiet && \
         graphviz \
         software-properties-common
 
+# Install CLIP dependencies
+RUN apt-get update && apt-get -y install python3-venv python3-pip git imagemagick
+RUN pip install torch torchvision ftfy regex tqdm 
+RUN pip install git+https://github.com/openai/CLIP.git
+# RUN python3 -c 'import clip; clip.load("ViT-B/32", device="cpu")'
+
+
 # Taken from: https://github.com/nf-core/tools/blob/master/nf_core/gitpod/gitpod.Dockerfile
 # Install Apptainer (Singularity)
 RUN add-apt-repository -y ppa:apptainer/ppa && \
     apt-get update --quiet && \
     apt install -y apptainer
 
-# Install Conda
+# Install Conda and fix user permissions
 RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && \
     bash Miniconda3-latest-Linux-x86_64.sh -b -p /opt/conda && \
-    rm Miniconda3-latest-Linux-x86_64.sh
+    rm Miniconda3-latest-Linux-x86_64.sh && \
+    mkdir -p /workspace/data && \
+    chown -R gitpod:gitpod /opt/conda /workspace/data
 
 ENV PATH="/opt/conda/bin:$PATH"
 
-# Install CLIP dependencies
-RUN apt-get update && apt-get -y install python3-venv python3-pip git imagemagick
-RUN pip install torch torchvision ftfy regex tqdm git+https://github.com/openai/CLIP.git
-RUN python3 -c 'import clip; clip.load("ViT-B/32", device="cpu")'
-
-# User permissions
-RUN mkdir -p /workspace/data && chown -R gitpod:gitpod /opt/conda /workspace/data
+# Add classify to path
+ADD bin/classify /usr/local/bin/classify
 
 # Change user to gitpod
 USER gitpod
