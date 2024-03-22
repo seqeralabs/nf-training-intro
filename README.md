@@ -2,7 +2,10 @@
 
 **Welcome to our introductory session on Nextflow - Go with the Next(flow)!**
 
+![metro map](docs/assets/nf-training.svg)
+
 Nextflow is a powerful workflow language designed to streamline complex computational workflows, often used in fields like bioinformatics. Our goal today is not to transform you into overnight coding experts or bioinformatics scientists. Instead, we aim to bridge the understanding between our team and the users who rely on Nextflow.
+
 
 By the end of this session, you'll grasp the essentials: why Nextflow is a game-changer in managing large-scale data analysis and how it empowers our customers to achieve remarkable scientific breakthroughs with efficiency and flexibility. More specifically, this session will highlight key capabilities of Nextflow:
 
@@ -59,6 +62,7 @@ We've provided you with a command called `classify.py`, which is a wrapper aroun
 
 We're going to do this in 3 different ways of decreasing manual intervention, showing you the power of Nextflow. Please work through the following:
 
- * [Part 1. Critter classification with bare command line](docs/cli.md)
- * [Part 2. Critter classification with Bash scripting](docs/bash.md)
- * [Part 3. Critter classification with Nextflow](docs/nextflow.md)
+ * [Part 1. Critter classification with bare command line](docs/part1-cli.md)
+ * [Part 2. Critter classification with Bash scripting](docs/part2-bash.md)
+ * [Part 3. Critter classification with Nextflow](docs/part3-nextflow.md)
+ * [Part 4. Critter classification with Nextflow on the Seqera platform](docs/part5-platform.md)
