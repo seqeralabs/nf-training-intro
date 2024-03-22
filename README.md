@@ -17,7 +17,7 @@ This knowledge will enhance your ability to connect with our customers, addressi
 
 ## Environment setup
 
-For this workshop we're going to be using a tool called 'GitPod', which provides us with a ready-made software environment to play in. You will need a GitHub account, so if you don't have one, go to [GitHub](https://github.com/) and create on for yourself.
+For this workshop we're going to be using a tool called 'GitPod', which provides us with a ready-made software environment to play in. You will need a GitHub account, so if you don't have one, go to [GitHub](https://github.com/) and create one for yourself.
 
 ### Browser plugin
 
