@@ -25,20 +25,91 @@ Navigate to the `activity/nextflow/` directory where you will see a `main.nf` sc
 
 Your workflow has several key components:
 
-a. Channel Creation
+### Processes
+
+These are the building blocks of your workflow. Here is the 'Classify' process:
+
+```
+process Classify {
+    memory '8G'
+    container 'robsyme/clip-cpu:1.0.0'
+
+    input:
+    path(pic)
+    val(prompts)
+
+    output:
+    tuple path("out.txt"), path(pic)
+
+    script:
+    "classify --image $pic --labels '$prompts' > out.txt"
+}
+```
+
+This process will execute the `classify` command we have been running in earlier steps manually, for each image based on the provided labels, and outputs the classification results to a text file (out.txt) alongside the original image. You can see that there are sections for the input, output, and the command.
+
+You should also recognise the other processes:
+
+```
+process Collage {
+    container 'robsyme/imagemagick:latest'
+
+    input:
+    tuple val(label), path("pics/*")
+
+    output:
+    path("*.png")
+
+    script:
+    """
+    montage -geometry 80 -tile 4x pics/* tmp.png
+    montage -label '$label' tmp.png -geometry +0+0 -background Gold ${label.replaceAll(" ", "_").toLowerCase()}.png
+    rm tmp.png
+    """
+}
+```
+
+After classification, this process takes groups of labeled images and creates a collage for each label. It uses the montage command from ImageMagick (a software suite for image manipulation). Recall, we were running two commands to achieve this earlier.
+
+```
+process CombineImages {
+    container 'robsyme/imagemagick:latest'
+    publishDir params.outdir
+
+    input:
+    path("inputs/*")
+
+    output:
+    path("collage.png")
+
+    script:
+    """
+    montage -geometry +0+0 -tile 1x inputs/* collage.png
+    """
+}
+```
+
+This final process gathers all the collages created by the earlier `Collage` process and combines them into one large image (collage.png). This demonstrates Nextflow's ability to aggregate outputs from previous steps and produce a consolidated result, a task that would be cumbersome and error-prone in bash, especially with varying numbers of intermediate files.
+
+### Channel Creation
 
 In Nextflow, channels are used to transport data between processes. Think of them as pipelines through which your data flows. In this workflow, the `pics` channel is created from a file path specified by the parameter named `input`. This channel is responsible for making the images available to the first process (Classify) in the workflow.
 
-b. Parameters
+In the main.nf, an example of a channel creation is:
+
+```
+pics = Channel.fromPath(params.input)
+```
+
+Then we can pass that channel to a process, and get one or more channels in return;
+
+```
+Classify(pics, params.prompts)
+```
+
+### Parameters
 
 Parameters (`params`) allow for flexible, user-defined inputs into the workflow. They enable users to specify input directories (`params.input`), labels for classification (`params.prompts`), and output directories (params.outdir) at runtime. This flexibility is a stark contrast to our earlier Bash scripts, where such values would need to be hardcoded or passed in a less structured way.
-
-c. Processes
-`process Classify`: This process will execute the `classify` command we have been running in earlier steps manually, for each image based on the provided labels, and outputs the classification results to a text file (out.txt) alongside the original image.
-
-`process Collage`: After classification, this process takes groups of labeled images and creates a collage for each label. It uses the montage command from ImageMagick (a software suite for image manipulation). Recall, we were running two commands to achieve this earlier.
-
-`process CombineImages`: This final process gathers all the collages created by the earlier `Collage` process and combines them into one large image (collage.png). This demonstrates Nextflow's ability to aggregate outputs from previous steps and produce a consolidated result, a task that would be cumbersome and error-prone in bash, especially with varying numbers of intermediate files.
 
 ### Step 3: Running the Workflow
 
