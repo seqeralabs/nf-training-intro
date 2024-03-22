@@ -73,7 +73,13 @@ Run the following command on the command line:
 ```bash
 nextflow run main.nf --prompts 'cat,dog,cute dog'
 ```
+TODO: show command output here.
 
+You'll see the log output subsequently displayed to the terminal, and the status of each process in the workflow. You'll also see the content of the input channel, as produced by '.view()'
+
+Now, edit the file, remove the first 'view'(), uncomment the following two lines (remove their //) and re-run. Again, look at the channel content and see if you can follow what's happening.
+
+Progressively uncomment all of the workflow lines, running the command each time to see what the content of the channels is.
 You'll see the log output subsequently displayed to the terminal, and the status of each process in the workflow.
 
 ### Step 4: Analyze workflow log and outputs
