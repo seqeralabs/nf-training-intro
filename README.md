@@ -17,7 +17,7 @@ This knowledge will enhance your ability to connect with our customers, addressi
 
 ## Environment setup
 
-For this workshop we're going to be using a tool called 'GitPod', which provides us with a ready-made software environment to play in. You will need a GitHub account, so if you don't have one, go to [GitHub](https://github.com/) and create on for yourself.
+For this workshop we're going to be using a tool called 'GitPod', which provides us with a ready-made software environment to play in. You will need a GitHub account, so if you don't have one, go to [GitHub](https://github.com/) and create one for yourself.
 
 ### Browser plugin
 
@@ -30,7 +30,7 @@ Now, from this repository, you should see a green button with a funny-shaped 'G'
 If you're not used to a command line environment, don't worry, you'll just be copying commands to follow along. But you can do things like:
 
 ```bash
-cd data # Change directory
+cd data # Change directory to data
 ls      # List all the image files
 cd ..   # Go back up a directory
 ```

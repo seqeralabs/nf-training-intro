@@ -2,7 +2,7 @@
 
 In this section of our Nextflow tutorial, we'll explore how to run an existing classification model using OpenAI's CLIP directly from the command line, to both classify our critters and build a collage of images.
 
-We're assuming that you are successfully in an environment where the files in this repository have been installed and the necessary software made available. Please go back and look at the environment setup in the README if that's not the case. 
+We're assuming that you are successfully in an environment where the files in this repository have been installed and the necessary software made available. Please go back and look at the environment setup in the [README](../README.md) if that's not the case. 
 
 The main command we'll be using looks like:
 
@@ -65,7 +65,7 @@ rm tmp.png
 
 You should now have a set of collages, one for each critter type, in the `collages` directory.
 
-All you need to do now is combine them, which which you can do with the following command:
+All you need to do now is combine them, which you can do with the following command:
 
 ```bash
 montage -geometry +0+0 -tile 1x collages/* collage_all.png

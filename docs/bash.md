@@ -35,7 +35,7 @@ You should see that the classification happens automatically using Bash scriptin
 
 <details>
 <summary>Summary</summary>
-While Bash scripts offer more efficiency and scalability over running individual CLI commands, their is still an important limitation with respect to reproducibility and scalability. For instance, executing the same script across different computers, or environments might yield varying results due to differences in software versions, operating systems, or configurations. Moreover, Bash scripts can become unwieldy as the complexity of the tasks increases, especially when dealing with large datasets or requiring parallel processing.
+While Bash scripts offer more efficiency and scalability over running individual CLI commands, there is still an important limitation with respect to reproducibility and scalability. For instance, executing the same script across different computers, or environments might yield varying results due to differences in software versions, operating systems, or configurations. Moreover, Bash scripts can become unwieldy as the complexity of the tasks increases, especially when dealing with large datasets or requiring parallel processing.
 </details>
 
 ## Next steps
