@@ -27,6 +27,8 @@ It will make things easier for you if you have a browser extension to provide ea
 
 Now, from this repository, you should see a green button with a funny-shaped 'G', to the right of the 'code' button. Click that, follow any prompts, wait, and you should get a GitPod workspace with all the right things installed.
 
+![gitpod button](docs/assets/open-gitpod.png)
+
 If you're not used to a command line environment, don't worry, you'll just be copying commands to follow along. But you can do things like:
 
 ```bash

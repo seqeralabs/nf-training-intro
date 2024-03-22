@@ -25,19 +25,29 @@ Now we can get started!
 
 ## Step 1: Label each image
 
+First, let's take a look at the images available to us.
+
+Run this command to see the directory structure:
+
+```bash
+ls
+```
+
 Change to the `/cli` directory by typing the following into the terminal:
 
-```
+```bash
 cd activity/cli
 ```
 
 You should see that the images are available to you here in the `data` subdirectory:
 
-```
+```bash
 ls data
 ```
 
-Try to assign one of thes images to a class, for example:
+Now that you understand the directories with images, you can now run the classification with the images in `data/`.
+
+Try to assign one of these images to a class, for example:
 
 ```
 classify.py --image data/rain-ready.png --labels 'cat,dog,cute dog'

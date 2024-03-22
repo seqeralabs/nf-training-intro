@@ -6,8 +6,8 @@ Nextflow is a workflow tool that enables the orchestration of complex computatio
 
 Importantly this approach addresses a number of the problems you might have noticed using the Bash scripting:
 
- * Processes will run in parallel, limited only by available compute resources (it takes some effort to make that happen in Bash). In fact you often use compute resources outside of the machine you execute the workflow on.
- * Software is automatically made available specific to each process. You might not have appreciated that in the previous examples because we prepared your software environment for you, but it's a very important consideration.
+- Processes will run in parallel, limited only by available compute resources (it takes some effort to make that happen in Bash). In fact you often use compute resources outside of the machine you execute the workflow on.
+- Software is automatically made available specific to each process. You might not have appreciated that in the previous examples because we prepared your software environment for you, but it's a very important consideration.
 
 ### Step 1: Setting Up Your Workspace
 
@@ -93,9 +93,9 @@ This final process gathers all the collages created by the earlier `Collage` pro
 
 ### Channel Creation
 
-In Nextflow, channels are used to transport data between processes. Think of them as pipelines through which your data flows. In this workflow, the `pics` channel is created from a file path specified by the parameter named `input`. This channel is responsible for making the images available to the first process (Classify) in the workflow.
+In Nextflow, channels are used to transport data and connect processes together. Think of them as pipes through which your data flows. In this workflow, we make a channel of picture files called `pics`. This channel is responsible for making the images available to the first process (`Classify`) in the workflow.
 
-In the main.nf, an example of a channel creation is:
+We can create this channel in Nextflow using some built-in tools which are designed to find a set of files and add them to the channel. This is called a channel factory and in this example, we will specify where to look for the files using the `params.input` variable.
 
 ```
 pics = Channel.fromPath(params.input)
@@ -144,6 +144,7 @@ Run the following command on the command line:
 ```bash
 nextflow run main.nf --prompts 'cat,dog,cute dog'
 ```
+
 TODO: show command output here.
 
 You'll see the log output subsequently displayed to the terminal, and the status of each process in the workflow. You'll also see the content of the input channel, as produced by '.view()'
