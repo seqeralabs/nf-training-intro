@@ -63,4 +63,5 @@ We're going to do this in 3 different ways of decreasing manual intervention, sh
 
 - [Part 1. Critter classification with bare command line](docs/part1-cli.md)
 - [Part 2. Critter classification with Bash scripting](docs/part2-bash.md)
-- [Part 3. Critter classification with Nextflow](docs/nextflow.md)
+- [Part 3. Critter classification with Nextflow](docs/part3-nextflow.md)
+- [Part 4. Critter classification with Seqera Platform](docs/part4-platform.md)
