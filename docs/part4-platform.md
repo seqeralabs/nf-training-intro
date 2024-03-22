@@ -36,7 +36,7 @@ s3://seqera-development-permanent-bucket/scidev/petpics
 
 Similar to what you had done before, specify a list of labels you want to use to classify the images. For example, 'dog,cat,cute dog,beautiful dog'.
 
-## Step 5: Specify where you results will be saved
+## Step 5: Specify where your results will be saved
 
 In our previous examples, we were saving our results of the classification into a local folder called `results/`. On the Cloud however, we want to save our results to a blob storage bucket, that we can then also share with our colleagues.
 
