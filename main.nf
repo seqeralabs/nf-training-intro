@@ -43,8 +43,9 @@ process Collage {
     script:
     """
     mkdir -p resized
-    mogrify -resize 256x256 -quality 100 -path resized/ pics/*
-    montage -geometry 100 null: resized/* null: -background black +polaroid -gravity center -background '#ffbe76' png:- \
+    mogrify -resize 128x128 -path resized/ pics/*
+
+    montage -geometry 128 resized/* -background black +polaroid -background '#ffbe76' -geometry -10-10 png:- \
     | montage -label '$label' - -geometry +0+0 -background "#f0932b" montage.png
     """
 }
@@ -55,13 +56,15 @@ process CombineImages {
 
     input:
     path("montage.*.png")
-
-    output:
+    
+output:
     path("collage.png")
+    path("collage.compressed.jpg")
 
     script:
     """
     montage -geometry +10+10 montage.*.png -background "#ffbe76" -border 5 -bordercolor "#f0932b" collage.png
+    convert collage.png -define jpeg:extent=9M collage.compressed.jpg
     """
 }
 

@@ -1,4 +1,6 @@
 reports:
-  "*.png":
+  "collage.png":
     display: "Final composite image"
+  "collage.optimized.jpg":
+    display: "Compressed composite image"
 
