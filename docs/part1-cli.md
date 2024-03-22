@@ -88,7 +88,7 @@ This will add a label to the collage, adjust the size of the frame around the co
 
 You should now have a set of collages, one for each critter type, in the `collages/` directory.
 
-All you need to do now is combine them, which which you can do with the following command:
+All you need to do now is combine them, which you can do with the following command:
 
 ```bash
 montage -geometry +0+0 -tile 1x collages/* collage_all.png
