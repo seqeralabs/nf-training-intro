@@ -54,7 +54,7 @@ process CombineImages {
     publishDir params.outdir
 
     input:
-    path("input.*.png")
+    path("montage.*.png")
 
     output:
     path("collage.png")
