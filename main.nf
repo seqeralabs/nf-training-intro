@@ -45,8 +45,8 @@ process Collage {
     mkdir -p resized
     mogrify -resize 128x128 -path resized/ pics/*
 
-    montage -geometry 128 resized/* -background black +polaroid -background '#ffbe76' -geometry -10-10 png:- \
-    | montage -label '$label' - -geometry +0+0 -background "#f0932b" montage.png
+    montage -geometry 100 resized/* -background black +polaroid -background '#ffbe76' -geometry -10-10 png:- \
+    | montage -label '$label' -geometry +0+0 -background "#f0932b" - montage.png
     """
 }
 
