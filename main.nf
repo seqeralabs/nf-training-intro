@@ -38,15 +38,14 @@ process Collage {
     tuple val(label), path("pics/*")
 
     output:
-    path("*.png")
+    path("montage.png")
 
     script:
     """
     mkdir -p resized
     mogrify -resize 256x256 -quality 100 -path resized/ pics/*
-    montage -geometry 80 -tile 4x resized/* tmp.png
-    montage -label '$label' tmp.png -geometry +0+0 -background Gold ${label.replaceAll(" ", "_").toLowerCase()}.png
-    rm tmp.png
+    montage -geometry 100 null: resized/* null: -background black +polaroid -gravity center -background '#ffbe76' png:- \
+    | montage -label '$label' - -geometry +0+0 -background "#f0932b" montage.png
     """
 }
 
@@ -55,14 +54,14 @@ process CombineImages {
     publishDir params.outdir
 
     input:
-    path("inputs/*")
+    path("input.*.png")
 
     output:
     path("collage.png")
 
     script:
     """
-    montage -geometry +0+0 -tile 1x inputs/* collage.png
+    montage -geometry +0+0 -tile 1x input.*.png collage.png
     """
 }
 
