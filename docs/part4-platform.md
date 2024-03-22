@@ -10,7 +10,7 @@ Transitioning from crafting our classification steps into Nextflow and running l
 
 Head over to our beloved [Seqera Platform landing page](cloud.seqera.io) and log in with your Seqera GSuite account. Upon logging in, you will have access to Workspace called `nf-training` under the `seqeralabs` organization.
 
-An AWS Batch Compute Environment with valid credentials has been already setup for you to use.
+An AWS Batch Compute Environment with valid credentials has been already set up for you to use.
 
 <!-- TODO: screenshot here maybe -->
 
