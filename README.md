@@ -22,15 +22,12 @@ This knowledge will enhance your ability to connect with our customers, addressi
 
 For this workshop we're going to be using a tool called 'GitPod', which provides us with a ready-made software environment to play in. You will need a GitHub account, so if you don't have one, go to [GitHub](https://github.com/) and create one for yourself.
 
-### Browser plugin
-
-It will make things easier for you if you have a browser extension to provide easier access to GitPod. Go [here](https://www.gitpod.io/docs/configure/user-settings/browser-extension) and follow the link to install the extension for your preferred browser. Restart your browser if required.
-
 ### Start the GitPod environment
 
-Now, from this repository, you should see a green button with a funny-shaped 'G', to the right of the 'code' button. Click that, follow any prompts, wait, and you should get a GitPod workspace with all the right things installed.
+You can begin a new Gitpod environment by following the link below:
 
-![gitpod button](docs/assets/open-gitpod.png)
+[![Open in GitPod](https://img.shields.io/badge/Gitpod%20-%20Open%20new%20workspace%20-%20908a85?style=for-the-badge&logo=gitpod
+)](https://gitpod.io/?workspaceClass=g1-large&editor=code&autostart=false#https://github.com/seqeralabs/nf-training-intro)
 
 If you're not used to a command line environment, don't worry, you'll just be copying commands to follow along. But you can do things like:
 
