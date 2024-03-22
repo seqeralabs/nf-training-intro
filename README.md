@@ -30,7 +30,7 @@ Now, from this repository, you should see a green button with a funny-shaped 'G'
 If you're not used to a command line environment, don't worry, you'll just be copying commands to follow along. But you can do things like:
 
 ```bash
-cd data             # Change directory
+cd data             # Change directory to data
 ```
 ```bash
 ls                  # List all the image files
