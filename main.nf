@@ -63,7 +63,7 @@ output:
 
     script:
     """
-    montage -geometry +10+10 montage.*.png -background "#ffbe76" -border 5 -bordercolor "#f0932b" collage.png
+    montage -geometry +10+10 -quality 05 -background "#ffbe76" -border 5 -bordercolor "#f0932b" montage.*.png collage.png
     convert collage.png -define jpeg:extent=9M collage.compressed.jpg
     """
 }
