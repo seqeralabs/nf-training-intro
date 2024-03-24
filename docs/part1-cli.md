@@ -1,9 +1,10 @@
 # Part 1: Critter classification with the command-line
 
 ## What is the command-line?
-## What is the command-line?
 
 A command-line interface (CLI) is a means of interacting with a computer program by inputting lines of text called command-lines ([Wikipedia](https://en.wikipedia.org/wiki/Command-line_interface)). While it may seem daunting at first glance, it is a simple, text-only interface, and incredibly powerful tool that offers a direct way to communicate with and control your computer.
+
+In this section of our Nextflow workshop, we'll explore how to run an existing classification model using OpenAI's CLIP directly from the command-line, to both classify our critters and build a collage of images.
 
 ## Step 1: Find the critters
 
