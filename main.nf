@@ -8,11 +8,11 @@ workflow {
     pics = Channel.fromPath(params.input)
 
     Classify(pics, params.prompts)
-    | map { label, pic -> [label.text, pic] }
-    | groupTuple
-    | Collage
-    | collect
-    | CombineImages
+        | map { label, pic -> [ label.text, pic ] }
+        | groupTuple
+        | Collage
+        | collect
+        | CombineImages
 }
 
 process Classify {
@@ -20,8 +20,8 @@ process Classify {
     container 'robsyme/clip-cpu:1.0.0'
 
     input:
-    path(pic)
-    val(prompts)
+    path pic
+    val prompts
 
     output:
     tuple path("out.txt"), path(pic)
@@ -37,7 +37,7 @@ process Collage {
     tuple val(label), path("pics/*")
 
     output:
-    path("*.png")
+    path "*.png"
 
     script:
     """
@@ -52,10 +52,10 @@ process CombineImages {
     publishDir params.outdir
 
     input:
-    path("inputs/*")
+    path "inputs/*"
 
     output:
-    path("collage.png")
+    path "collage.png"
 
     script:
     """

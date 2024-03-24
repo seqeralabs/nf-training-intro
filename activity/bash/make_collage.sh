@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 # Loop over all our files to classify them
-
 ls data/*.png | while read -r picture; do
     
     # Run the classify command and fetch the label# 
@@ -15,7 +14,6 @@ ls data/*.png | while read -r picture; do
 done
 
 # Make a collage for each class
-
 mkdir -p collages
 
 ls classified | while read -r class; do
