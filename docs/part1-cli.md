@@ -10,7 +10,7 @@ In this section of our Nextflow workshop, we'll explore how to run an existing c
 
 For this exercise, we have created a folder called [`activity/cli/data`](../activity/cli/data) that just contains a copy of all of the original animal images in the top-level [`data/`](../data/) folder.
 
-You can either navigate to this directory via the File Explorer side-bar in the VS code user interface or the command-line. This is a good example of how you can do exactly the same thing via the user interface and the command-line.
+You can either navigate to this directory via the File Explorer side-bar in the VS Code user interface in Gitpod, or the command-line. This is a good example of how you can do exactly the same thing through the user interface and the command-line.
 
 1. Let's list all of the files in the current directory using the command-line. You should see the `activity` folder as shown below:
 
