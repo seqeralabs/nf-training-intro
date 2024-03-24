@@ -2,7 +2,10 @@
 
 **Welcome to our introductory session on Nextflow - Go with the Next(flow)!**
 
+![metro map](docs/assets/nf-training.svg)
+
 Nextflow is a powerful workflow language designed to streamline complex computational workflows, often used in fields like bioinformatics. Our goal today is not to transform you into overnight coding experts or bioinformatics scientists. Instead, we aim to bridge the understanding between our team and the users who rely on Nextflow.
+
 
 By the end of this session, you'll grasp the essentials: why Nextflow is a game-changer in managing large-scale data analysis and how it empowers our customers to achieve remarkable scientific breakthroughs with efficiency and flexibility. More specifically, this session will highlight key capabilities of Nextflow:
 
@@ -49,7 +52,7 @@ We've intentionally picked a test case quite different to the usual workloads, t
 
 Here's the scenario. You've been given a set of pictures of your colleagues' animals, and you want to be able to classify them, so you can make attractive collages of them for your company retreat. Unfortunately you've developed cat/dog/spider-blindness and can't 'classify the critters'. Fortunately this is 2024, so you can enlist the help of AI.
 
-In the different sections of this tutorial, we'll explore how to run an existing classification model using OpenAI's CLIP. CLIP (Contrastive Language–Image Pre-training) is a versatile tool that can understand and classify images based on natural language descriptions.
+In the different sections of this tutorial, we'll explore how to run an existing classification model using OpenAI's Contrastive Language–Image Pre-training (CLIP). It is a versatile tool that can understand and classify images based on natural language descriptions.
 
 We've provided you with a command called `classify.py`, which is a wrapper around CLIP, and there are a bunch of animal pictures in the `data/` folder. You're going to:
 
@@ -61,6 +64,7 @@ We've provided you with a command called `classify.py`, which is a wrapper aroun
 
 We're going to do this in 3 different ways of decreasing manual intervention, showing you the power of Nextflow. Please work through the following:
 
-- [Part 1. Critter classification with bare command line](docs/cli.md)
-- [Part 2. Critter classification with Bash scripting](docs/bash.md)
-- [Part 3. Critter classification with Nextflow](docs/nextflow.md)
+* [Part 1. Critter classification with bare command line](docs/part1-cli.md)
+* [Part 2. Critter classification with Bash scripting](docs/part2-bash.md)
+* [Part 3. Critter classification with Nextflow](docs/part3-nextflow.md)
+* [Part 4. Critter classification with Seqera Platform](docs/part4-platform.md)

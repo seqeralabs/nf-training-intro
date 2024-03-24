@@ -16,7 +16,7 @@ Change to the `/bash` activity directory. If you're currently still in the `cli`
 cd ../bash
 ```
 
-We've provided a script for you [here](../activity/bash/make_collage.sh). Have a look at this script and check that you understand the rough picture of what's going on (the fine detail is unimportant here). We're essentially automating what you did [before](../docs/cli.md), looping over all the input images, classifying them, making a collage for each class and combining those collages at the end.
+We've provided a script for you [here](../activity/bash/make_collage.sh). Have a look at this script and check that you understand the rough picture of what's going on (the fine detail is unimportant here). We're essentially automating what you did [before](../docs/part1-cli.md), looping over all the input images, classifying them, making a collage for each class and combining those collages at the end.
 
 Run this command to execute the script, and check that it works:
 
