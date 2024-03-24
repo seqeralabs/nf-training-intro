@@ -6,12 +6,12 @@ Nextflow is a powerful workflow language designed to streamline complex computat
 
 By the end of this session, you'll grasp the essentials: why Nextflow is a game-changer in managing large-scale data analysis and how it empowers our customers to achieve remarkable scientific breakthroughs with efficiency and flexibility. More specifically, this session will highlight key capabilities of Nextflow:
 
-- Scalability
-- Parallelism
-- Reproducibility
-- Resumability
-- Reporting
-- Flexibility
+- **Scalability**
+- **Parallelism**
+- **Reproducibility**
+- **Resumability**
+- **Reporting**
+- **Flexibility**
 
 This knowledge will enhance your ability to connect with our customers, addressing their needs and inquiries with greater empathy and insight.
 
