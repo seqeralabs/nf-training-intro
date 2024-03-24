@@ -4,7 +4,7 @@
 
 ![metro map](docs/assets/nf-training.svg)
 
-[Nextflow](https://www.nextflow.io/) is a powerful workflow language designed to streamline complex computational workflows, often used in fields like bioinformatics. The goal of this training workshop is not to transform you into overnight coding experts or bioinformatics scientists. Instead, we aim to highlight the key features and capabilities offered by using Nextflow with a set of very simple, relatable examples that should be digestable by anyone!
+[Nextflow](https://www.nextflow.io/) is a powerful workflow language designed to streamline complex computational workflows, often used in fields like bioinformatics. The goal of this training workshop is not to transform you overnight into coding experts or bioinformatics scientists. Instead, we aim to highlight the key features and capabilities offered by using Nextflow with a set of very simple, relatable examples that should be digestable by anyone!
 
 By the end of this workshop, you will grasp the essentials as to why Nextflow is a leading solution for managing large-scale data analysis and how it empowers users to achieve remarkable scientific breakthroughs with efficiency and flexibility. 
 
