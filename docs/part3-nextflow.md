@@ -42,7 +42,7 @@ process Classify {
     tuple path("out.txt"), path(pic)
 
     script:
-    "classify --image $pic --labels '$prompts' > out.txt"
+    "classify.py --image $pic --labels '$prompts' > out.txt"
 }
 ```
 
@@ -139,7 +139,7 @@ workflow {
 
 The `//` are 'comments', and will disable those lines for now. `.view()` lets us view the output of the Classify process in the meantime.
 
-Run the following command on the command line:
+Run the following command on the command-line:
 
 ```bash
 nextflow run main.nf --prompts 'cat,dog,cute dog'

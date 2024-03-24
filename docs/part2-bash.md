@@ -4,13 +4,13 @@ Hopefully that first approach wasn't too tricky, but it was a bit tedious runnin
 
 ## Introduction to Bash and Bash Scripting
 
-Bash, or the Bourne Again SHell, is a powerful command line interface (CLI) used widely across Unix-like operating systems. It enables users to execute commands, navigate file systems, and manipulate data. Bash's true potential is unlocked through scripting!
+Bash, or the Bourne Again SHell, is a powerful command-line interface (CLI) used widely across Unix-like operating systems. It enables users to execute commands, navigate file systems, and manipulate data. Bash's true potential is unlocked through scripting!
 
 A Bash script is essentially a file containing a series of commands that are executed sequentially by the Bash shell. Writing a script involves encapsulating commands you might normally type into the CLI, saving you time and reducing the potential for error when performing repetitive tasks. It also allows you to 'loop', repeating the same actions repeatedly with different inputs.
 
 ## Implementing the critter classification
 
-Change to the `/bash` activity directory. If you're currently still in the `cli` subdirectory you can do this on the command line with:
+Change to the `/bash` activity directory. If you're currently still in the `cli` subdirectory you can do this on the command-line with:
 
 ```bash
 cd ../bash
