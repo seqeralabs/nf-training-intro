@@ -1,10 +1,10 @@
-# Part 1. Critter classification with bare command line
+# Part 1. Critter classification with bare command-line
 
-## What is the Command Line?
+## What is the command-line?
 
-The command line is like a magic wand for your computer, allowing you to perform tasks quickly and directly through text commands, much like having a chat with your machine. While it may seem daunting at first glance, its a simple, text-only interface, and incredibly powerful tool that offers a direct way to communicate with and control your computer.
+The command-line is like a magic wand for your computer, allowing you to perform tasks quickly and directly through text commands, much like having a chat with your machine. While it may seem daunting at first glance, its a simple, text-only interface, and incredibly powerful tool that offers a direct way to communicate with and control your computer.
 
-In this section of our Nextflow tutorial, we'll explore how to run an existing classification model using OpenAI's CLIP directly from the command line, to both classify our critters and build a collage of images.
+In this section of our Nextflow tutorial, we'll explore how to run an existing classification model using OpenAI's CLIP directly from the command-line, to both classify our critters and build a collage of images.
 
 We're assuming that you are successfully in an environment where the files in this repository have been installed and the necessary software made available. Please go back and look at the environment setup in the [README](../README.md) if that's not the case.
 
@@ -53,7 +53,7 @@ Try to assign one of these images to a class, for example:
 classify.py --image data/rain-ready.png --labels 'cat,dog,cute dog'
 ```
 
-This should return a text output onto the command line, telling you which of the input labels was most likely to apply to the picture we specified as input.
+This should return a text output onto the command-line, telling you which of the input labels was most likely to apply to the picture we specified as input.
 
 We are not limited to the labels above. If you'd like to, play with specifying `'cat,dog,zebra,crocodile'`, or any other set of labels. Whatever the label, copy the image to a new folder named the same way. For example, if the above command returned `'dog'`, then do:
 
@@ -118,7 +118,7 @@ Try to answer the following questions for yourself:
 
 <details>
 <summary>Summary</summary>
-After classifying a few images one by one, you might notice a couple of things. First, it can be quite tedious to type out or copy-paste the command repeatedly for multiple images. Secondly, this method does not scale well if we have hundreds or thousands of images to classify. Imagine having to run each image through the command line individually—it would be incredibly time-consuming and inefficient.
+After classifying a few images one by one, you might notice a couple of things. First, it can be quite tedious to type out or copy-paste the command repeatedly for multiple images. Secondly, this method does not scale well if we have hundreds or thousands of images to classify. Imagine having to run each image through the command-line individually—it would be incredibly time-consuming and inefficient.
 </details>
 
 ## Next steps

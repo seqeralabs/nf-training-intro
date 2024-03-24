@@ -105,7 +105,7 @@ Additionally, you'll discover specifics about the 'machineType' or virtual machi
 
 ## Conclusions
 
-You've now journeyed from the simplicity of command-line commands, through the structured approach of Bash scripting, and into the expansive realm of Nextflow, mastering a suite of powerful techniques for data analysis. Each step has brought its own set of advancements: from the manual specificity of the command line, we moved to the automated efficiency of Bash scripting, only to surpass it with Nextflow's scalability, parallelism, and reproducibility.
+You've now journeyed from the simplicity of command-line commands, through the structured approach of Bash scripting, and into the expansive realm of Nextflow, mastering a suite of powerful techniques for data analysis. Each step has brought its own set of advancements: from the manual specificity of the command-line, we moved to the automated efficiency of Bash scripting, only to surpass it with Nextflow's scalability, parallelism, and reproducibility.
 
 More specifically, Nextflow allows us to achieve the following:
 

@@ -6,7 +6,6 @@
 
 Nextflow is a powerful workflow language designed to streamline complex computational workflows, often used in fields like bioinformatics. Our goal today is not to transform you into overnight coding experts or bioinformatics scientists. Instead, we aim to bridge the understanding between our team and the users who rely on Nextflow.
 
-
 By the end of this session, you'll grasp the essentials: why Nextflow is a game-changer in managing large-scale data analysis and how it empowers our customers to achieve remarkable scientific breakthroughs with efficiency and flexibility. More specifically, this session will highlight key capabilities of Nextflow:
 
 - **Scalability**
@@ -32,7 +31,7 @@ Now, from this repository, you should see a green button with a funny-shaped 'G'
 
 ![gitpod button](docs/assets/open-gitpod.png)
 
-If you're not used to a command line environment, don't worry, you'll just be copying commands to follow along. But you can do things like:
+If you're not used to a command-line environment, don't worry, you'll just be copying commands to follow along. But you can do things like:
 
 ```bash
 cd data             # Change directory to data
@@ -64,7 +63,7 @@ We've provided you with a command called `classify.py`, which is a wrapper aroun
 
 We're going to do this in 3 different ways of decreasing manual intervention, showing you the power of Nextflow. Please work through the following:
 
-* [Part 1. Critter classification with bare command line](docs/part1-cli.md)
-* [Part 2. Critter classification with Bash scripting](docs/part2-bash.md)
-* [Part 3. Critter classification with Nextflow](docs/part3-nextflow.md)
-* [Part 4. Critter classification with Seqera Platform](docs/part4-platform.md)
+- [Part 1. Critter classification with bare command-line](docs/part1-cli.md)
+- [Part 2. Critter classification with Bash scripting](docs/part2-bash.md)
+- [Part 3. Critter classification with Nextflow](docs/part3-nextflow.md)
+- [Part 4. Critter classification with Seqera Platform](docs/part4-platform.md)
