@@ -244,7 +244,7 @@ You should now have a set of collages, one for each critter type.
     montage -geometry +0+0 -tile 1x collages/* collage_all.png
     ```
 
-    The `-geometry +0+0` and `-tile 1x` parameters will ensure the images in the collage are of uniform size and are arranged in a 1x1 grid pattern, respectively.
+    The `-geometry +0+0` parameter will ensure there is no spacing between the collages, and the `-tile 1x` parameter will ensure the images are arranged in a single row of uniform size.
     
     You can download that final image from the GitPod user interface by right clicking on the `collage_all.png` and clicking 'Download'.
 
