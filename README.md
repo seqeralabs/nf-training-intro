@@ -10,12 +10,12 @@ By the end of this workshop, you will grasp the essentials as to why Nextflow is
 
 More specifically, this session will cover the following key capabilities of Nextflow:
 
-- Scalability
-- Parallelism
-- Reproducibility
-- Resumability
-- Reporting
-- Flexibility
+- **Scalability**
+- **Parallelism**
+- **Reproducibility**
+- **Resumability**
+- **Reporting**
+- **Flexibility**
 
 If you walk away from this workshop being able to understand and communicate these advantages to others then we will consider the workshop a success!
 

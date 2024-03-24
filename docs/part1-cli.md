@@ -1,6 +1,7 @@
 # Part 1: Critter classification with the command-line
 
 ## What is the command-line?
+## What is the command-line?
 
 A command-line interface (CLI) is a means of interacting with a computer program by inputting lines of text called command-lines ([Wikipedia](https://en.wikipedia.org/wiki/Command-line_interface)). While it may seem daunting at first glance, it is a simple, text-only interface, and incredibly powerful tool that offers a direct way to communicate with and control your computer.
 
