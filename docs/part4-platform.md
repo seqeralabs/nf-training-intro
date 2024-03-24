@@ -34,7 +34,7 @@ In a valiant effort akin to treasure hunting through the digital realms, we've m
 
 Your goal will be to classify the images in this bucket, in the Cloud.
 
-In previous steps, you were able to view the image files being used as input directly in your Gitpod environment, because they were stored locally. In this case, these files are stored in the Cloud which makes a bit less accessible. However, you can use the Data Explorer in the Platform to take a look at files in cloud storage similar to the Gitpod environment, but also benefit from endless storage and computing that is afforded by the Cloud.
+In previous steps, you were able to view the image files being used as input directly in your Gitpod environment, because they were stored on the same machine. In this case, these files are stored in the cloud which means our current machine can't access them directly. However, you can use the Data Explorer in the Platform to take a look at files in cloud storage similar to the Gitpod environment, but also benefit from endless storage and computing that is afforded by the Cloud.
 
 - Click on the 'Data Explorer' tab and click on the AWS bucket named `s3://seqera-development-permanent-bucket`
 - Click on the `scidev/` folder
@@ -56,7 +56,7 @@ s3://seqera-development-permanent-bucket/scidev/petpics/*
 
 ### Labels
 
-Similar to what you had done before, specify a list of labels in the 'prompts' field that you want to use to classify the images. For example, 'dog,cat,cute dog,beautiful dog'. Make sure these are comma-separated.
+Similar to what you had done before, specify a list of labels in the 'prompts' field that you want to use to classify the images. For example, 'dog,cat,cute dog,beautiful dog'. Make sure to separate each label with a comma.
 
 ### Output
 
