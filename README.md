@@ -74,7 +74,7 @@ You have been given a set of pictures of your colleagues' animals, and you want 
 ### The aim
 
 To make this workshop palatable for eveyone we have already:
-- Dumped a bunch of animal pictures in the [`data/`](./data/) folder. 
+- Dumped a bunch of animal pictures in the [`data/`](./data/) folder.
 - Written a simple Python script called [`classify.py`](./bin/classify.py), which is uses CLIP to classify the bloomin' critters.
 
 Your mission should you choose to accept is going to be to:
@@ -85,9 +85,9 @@ Your mission should you choose to accept is going to be to:
 
 ## Exercises
 
-This workshop has been split up into 4 sections with decreasing manual intervention to highlight the key strengths of Nextflow. The last section will help to contextualize how we can leverage Nextflow in combination with the [Seqera Platform](https://seqera.io/) to solve challenges like scalability and 
+This workshop has been split up into 4 sections with decreasing manual intervention to highlight the key strengths of Nextflow. The last section will help to contextualize how we can leverage Nextflow in combination with the [Seqera Platform](https://seqera.io/) to solve challenges like scalability and parallelism.
 
-Please complete the following critter classification sections in order:
+Once you have successfully provisioned a GitPod environment (see [Getting Started](#getting-started)) please complete the following critter classification sections in order:
 
 - [Part 1: Using the command-line](docs/part1-cli.md)
 - [Part 2: Using Bash scripting](docs/part2-bash.md)

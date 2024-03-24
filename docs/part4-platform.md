@@ -1,4 +1,4 @@
-# Part 4. Critter classification on Seqera Platform
+# Part 4: Critter classification on Seqera Platform
 
 ## Introduction to Running a Nextflow Workflow on Seqera Platform
 
@@ -58,7 +58,7 @@ The classification on the images in this bucket will take some time as there are
 
 ## Conclusions
 
-You've now journeyed from the simplicity of command-line commands, through the structured approach of Bash scripting, and into the expansive realm of Nextflow, mastering a suite of powerful techniques for data analysis. Each step has brought its own set of advancements: from the manual specificity of the command line, we moved to the automated efficiency of Bash scripting, only to surpass it with Nextflow's scalability, parallelism, and reproducibility.
+You've now journeyed from the simplicity of command-line commands, through the structured approach of Bash scripting, and into the expansive realm of Nextflow, mastering a suite of powerful techniques for data analysis. Each step has brought its own set of advancements: from the manual specificity of the command-line, we moved to the automated efficiency of Bash scripting, only to surpass it with Nextflow's scalability, parallelism, and reproducibility.
 
 Nextflow has not only enabled you to create robust, adaptable workflows but also ensured that these workflows can be precisely replicated and shared, thanks to its focus on reproducibility and detailed reporting. The leap to running these workflows on Seqera Platform demonstrates the transformative power of cloud execution, enhancing your projects with unparalleled scalability and flexibility. You can now not only classify 200 images, but 500, or 1000 images!
 
