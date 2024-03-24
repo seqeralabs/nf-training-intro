@@ -1,4 +1,4 @@
-# Part 2. Critter classification with Bash scripting
+# Part 2: Critter classification with Bash scripting
 
 Hopefully that first approach wasn't too tricky, but it was a bit tedious running all those commands wasn't it? Let's exercise our [3 virtues](https://thethreevirtues.com/) and try to make life easier for ourselves.
 

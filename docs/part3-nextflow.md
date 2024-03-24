@@ -1,4 +1,4 @@
-# Part 3. Critter classification with Nextflow
+# Part 3: Critter classification with Nextflow
 
 ## Introduction to Running a Nextflow Workflow
 

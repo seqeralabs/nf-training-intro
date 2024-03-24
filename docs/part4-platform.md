@@ -1,4 +1,4 @@
-# Part 4. Critter classification on Seqera Platform
+# Part 4: Critter classification on Seqera Platform
 
 ## Introduction to Running a Nextflow Workflow on Seqera Platform
 
