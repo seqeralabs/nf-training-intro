@@ -63,7 +63,7 @@ cd ..
 
 ### The background
 
-In the different sections of this tutorial, we will explore how to run an existing classification model using OpenAI's Contrastive Language–Image Pre-training (CLIP). It is a versatile tool that can understand and classify images based on natural language descriptions. Again don't worry, the previous sentence is a mouthful of random words to most of us - all will become clear as we progress through the tutorial!
+In the different sections of this tutorial, we will explore how to run an existing classification model using OpenAI's Contrastive Language–Image Pre-training ([CLIP](https://openai.com/research/clip)). It is a versatile tool that can understand and classify images based on natural language descriptions. Again don't worry, the previous sentence is a mouthful of random words to most of us - all will become clear as we progress through the tutorial!
 
 ### The challenge
 
@@ -85,7 +85,7 @@ Your mission should you choose to accept is going to be to:
 
 ## Exercises
 
-This workshop has been split up into 4 sections with decreasing manual intervention to highlight the key strengths of Nextflow. The last section will help to contextualize how we can leverage Nextflow in combination with the Seqera Platform to solve challenges like scalability and 
+This workshop has been split up into 4 sections with decreasing manual intervention to highlight the key strengths of Nextflow. The last section will help to contextualize how we can leverage Nextflow in combination with the [Seqera Platform](https://seqera.io/) to solve challenges like scalability and 
 
 Please complete the following critter classification sections in order:
 
