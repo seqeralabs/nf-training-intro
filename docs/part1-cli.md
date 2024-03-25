@@ -71,11 +71,11 @@ Let's break this down:
 Now let's run the `classify.py` script on a single dog pic called [`rain-ready.png`](../activity/cli/data/rain-ready.png) and see which classifier CLIP assigns to it! 
 
 ```
-$ classify.py --image data/rain-ready.png --labels 'cat,dog,cute_dog'
+$ classify.py --image data/rain-ready.png --labels 'animal,cat,ugly_dog,cute_dog'
 dog
 ```
 
-This should return a text output onto the command-line telling you which of the input labels was most likely to apply to the picture we specified as input. In this case, the critter was a `'dog'`! We are not limited to the labels we used above, for example, you can also specify `'cat,dog,zebra,crocodile'`, or any other set of labels.
+This should return a text output onto the command-line telling you which of the input labels was most likely to apply to the picture we specified as input. In this case, the critter was a `cute_dog'`! We are not limited to the labels we used above, for example, you can also specify `--labels 'cat,dog,zebra,crocodile'`, or any other set of comma-separated labels.
 
 For simplicity, let's use the same labels, classify each of the 8 images individually and then copy them into a folder based on the classification:
 
@@ -116,7 +116,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
 
     ```console
     $ classify.py --image data/rain-ready.png --labels 'cat,dog,cute_dog'
-    dog
+    cute_dog
     ```
 
     ```console
@@ -152,7 +152,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
     ```
 
     ```bash
-    cp data/rain-ready.png dog
+    cp data/rain-ready.png cute_dog
     ```
 
     ```bash
@@ -172,7 +172,7 @@ Now you should have 3 directories labelled by critter:
 
 You can also list the images that ended up in each directory by using the command-below:
 
-```
+```bash
 ls dog
 ```
 
@@ -189,42 +189,36 @@ Now lets try to create a collage of each of the directories containing label-spe
 2. Create a temporary image to make a collage with the correct layout for all of the images in the `'dog'` folder:
 
     ```bash
-    montage -geometry 80 -tile 4x dog/* dog_temp.png
+    montage dog/* dog_temp.png
     ```
 
-    The `-geometry 80` and `-tile 4x` parameters will ensure the images in the collage are of uniform size and are arranged in a 4x4 grid pattern, respectively.
+> [!TIP]
+> You can view the results of this command by clicking the `dog_temp.png` filename in the file explorer on the left-hand side of your window:
+> ![open collage](assets/open_dog_temp.png)
 
-    Now, let's repeat this same process for all of the other labels:
+To make the collage a little bit more interesting, we can add a few command-line arguments:
 
-    ```bash
-    montage -geometry 80 -tile 4x cat/* cat_temp.png
-    ```
+```bash
+montage -background black +polaroid -background '#ffbe76' dog/* dog_temp.png
+```
 
-    ```bash
-    montage -geometry 80 -tile 4x cute_dog/* cute_dog_temp.png
-    ```
+We can also use the `montage` command to write our classification label into the image:
 
-3. Now that we have created a temporary image with the correct layout for each collage, we can add the appopriate label, adjust the size of the frame around the collage, specify a background colour and create an output png file for each label in the `collages` directory. The following commands will do this for each of the labels:
+```bash
+montage -label 'dog' -geometry +0+0 -background "#f0932b" dog_temp.png collages/dog.png
+```
 
-    ```bash
-    montage -label dog dog_temp.png -geometry +0+0 -background Gold collages/dog.png
-    ```
+Now, let's repeat this same process for all of the other labels:
 
-    ```bash
-    montage -label cat cat_temp.png -geometry +0+0 -background Gold collages/cat.png
-    ```
+```bash
+montage -background black +polaroid -background '#ffbe76' cat/* cat_temp.png
+montage -label 'cat' -geometry +0+0 -background "#f0932b" cat_temp.png collages/cat.png
+```
 
-    ```bash
-    montage -label cute_dog cute_dog_temp.png -geometry +0+0 -background Gold collages/cute_dog.png
-    ```
-
-4. Now to be kind to storage let's clean up any intermediate images we don't want to keep.
-
-    ```
-    rm dog_temp.png
-    rm cat_temp.png
-    rm cute_dog_temp.png
-    ```
+```bash
+montage -background black +polaroid -background '#ffbe76' cute_dog/* cute_dog_temp.png
+montage -label 'cute_dog' -geometry +0+0 -background "#f0932b" cute_dog_temp.png collages/cute_dog.png
+```
 
 ## Step 4: Combine the collages
 
@@ -241,12 +235,12 @@ You should now have a set of collages, one for each critter type.
 2. Use `montage` again to combine all of the individual collages into a meta-collage called `collage_all.png`!
 
     ```bash
-    montage -geometry +0+0 -tile 1x collages/* collage_all.png
+    montage -geometry +10+10 -quality 05 -background "#ffbe76" -border 5 -bordercolor "#f0932b" collages/* collage_all.png
     ```
 
-    The `-geometry +0+0` parameter will ensure there is no spacing between the collages, and the `-tile 1x` parameter will ensure the images are arranged in a single row of uniform size.
+    The `-geometry +10+10` parameter will give us 10px spacing between the collages, the `-quality 05` parameter will compress our final image, and the `-background`, `-border`, and `-bordercolor` parameters add a little colour to the final image.
     
-    You can download that final image from the GitPod user interface by right clicking on the `collage_all.png` and clicking 'Download'.
+    You can view the final `collage_all.png` image directly in the GitPod user interface by clicking the filename in the file explorer on the left-hand side. You can also download the image to your local machine by right-clicking the filename and selecting 'Download'.
 
     Take a look - what do you think?
 
@@ -254,9 +248,11 @@ You should now have a set of collages, one for each critter type.
 
 Try to answer the following questions for yourself:
 
+- How easy would it be to try a new set of labels on this dataset?
 - What if there were 1000 images? Would you be happy following the above steps for all of them?
 - Even if you did, are you confident you would get the commands right if you had to type them out 100 times again?
 - How annoyed would you be if you had lost your place half way through and had to start again?
+
 
 <details>
 <summary>Summary</summary>
