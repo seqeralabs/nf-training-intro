@@ -10,12 +10,12 @@ Importantly, Nextflow solves a number of the problems you might have noticed usi
 
 ## Step 1: Find the critters
 
-For this exercise, we have created a folder called [`activity/nextflow/data`](../activity/nextflow/data) that contains a copy of all of the original animal images in the top-level [`data/`](../data/) folder.
+For this exercise, we have created a folder called [`exercise/nextflow/data`](../exercise/nextflow/data) that contains a copy of all of the original animal images in the top-level [`data/`](../data/) folder.
 
 1. Let's change to the appropriate directory:
 
     ```console
-    cd /workspace/nf-training-intro/activity/nextflow
+    cd /workspace/nf-training-intro/exercise/nextflow
     ```
 
 2. List the contents of the folder:
@@ -26,11 +26,11 @@ For this exercise, we have created a folder called [`activity/nextflow/data`](..
     collages  data  main.nf
     ```
 
-In this directory, you will see a [`main.nf`](../activity/nextflow/main.nf) script. This script will define our Nextflow pipeline, let's take a closer look in the next step.
+In this directory, you will see a [`main.nf`](../exercise/nextflow/main.nf) script. This script will define our Nextflow pipeline, let's take a closer look in the next step.
 
 ## Step 2: Nextflow 101
 
-The [`main.nf`](../activity/nextflow/main.nf) Nextflow script has several key components.
+The [`main.nf`](../exercise/nextflow/main.nf) Nextflow script has several key components.
 
 ### Processes
 
