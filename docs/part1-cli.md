@@ -33,7 +33,7 @@ You can either navigate to this directory via the File Explorer sidebar in the V
    cd cli
    ```
 
-3. You can check you are in the correct folder by using the [`pwd`](https://en.wikipedia.org/wiki/Pwd) (print working folder) command:
+3. You can check you are in the correct folder by using the [`pwd`](https://en.wikipedia.org/wiki/Pwd) (print working directory (folder)) command:
 
    ```console
    $ pwd
