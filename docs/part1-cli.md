@@ -15,12 +15,19 @@ You can either navigate to this directory via the File Explorer sidebar in the V
 1. Let's list all of the files in the current directory using the command-line by running the [`ls`](https://man7.org/linux/man-pages/man1/ls.1.html) command. You should see the `activity` folder as shown below:
 
    ```console
-   $ ls
+   ls
+   ```
 
+   ```
+   # Output:
    README.md  activity  assets  bin  data  docs  main.nf  nextflow.config  nextflow_schema.json  tower.yml
    ```
 
 2. You can either navigate directly to the `activity/cli/` folder by issuing the command below:
+
+   ```bash
+   cd activity/cli
+   ```
 
    ```bash
    cd activity/cli
@@ -33,19 +40,30 @@ You can either navigate to this directory via the File Explorer sidebar in the V
    cd cli
    ```
 
+   ```bash
+   cd activity
+   cd cli
+   ```
+
 3. You can check you are in the correct directory by using the [`pwd`](https://man7.org/linux/man-pages/man1/pwd.1.html) (print working directory) command:
 
    ```console
-   $ pwd
+   pwd
+   ```
 
+   ```
+   # Output:
    /workspace/nf-training-intro/activity/cli
    ```
 
 4. List the contents of the `data` folder:
 
    ```console
-   $ ls data
+   ls data
+   ```
 
+   ```
+   # Output:
    aussie.png  chihuahua.png  dog.png  hiding.png  pug.png  rain-ready.png  reflective.png  yawn.png
    ```
 
@@ -69,9 +87,14 @@ Let's break this down:
 4. `> out.txt` allows us to save the results or output of the classification into a file called `out.txt` that we can read later.
 
 Now let's run the `classify.py` script on a single dog pic called [`rain-ready.png`](../activity/cli/data/rain-ready.png) and see which classifier CLIP assigns to it!
+Now let's run the `classify.py` script on a single dog pic called [`rain-ready.png`](../activity/cli/data/rain-ready.png) and see which classifier CLIP assigns to it!
 
 ```
-$ classify.py --image data/rain-ready.png --labels 'animal,cat,ugly_dog,cute_dog'
+classify.py --image data/rain-ready.png --labels 'animal,cat,ugly_dog,cute_dog'
+```
+
+```
+# Output:
 dog
 ```
 
@@ -87,45 +110,97 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    mkdir cute_dog
    ```
 
+   ```bash
+   mkdir cat
+   mkdir dog
+   mkdir cute_dog
+   ```
+
 2. Classify each image individually:
 
    ```console
-   $ classify.py --image data/aussie.png --labels 'cat,dog,cute_dog'
+   classify.py --image data/aussie.png --labels 'cat,dog,cute_dog'
+   ```
+
+   ```
+   # Output:
    cute_dog
    ```
 
+   <br>
+
+   a. Chihuahua:
+
    ```console
-   $ classify.py --image data/chihuahua.png --labels 'cat,dog,cute_dog'
+   classify.py --image data/chihuahua.png --labels 'cat,dog,cute_dog'
+   ```
+
+   ```
+   # Output:
    cute_dog
    ```
 
+   <br/>
+   b. Dog:
+
    ```console
-   $ classify.py --image data/dog.png --labels 'cat,dog,cute_dog'
+   classify.py --image data/dog.png --labels 'cat,dog,cute_dog'
+   ```
+
+   ```
+   # Output:
    dog
    ```
 
+   <br>
+   c. Cat hiding:
+
    ```console
-   $ classify.py --image data/hiding.png --labels 'cat,dog,cute_dog'
+   classify.py --image data/hiding.png --labels 'cat,dog,cute_dog'
+   ```
+
+   ```
+   # Output:
    cat
    ```
+
+   <br>
+   d. Pug:
 
    ```console
    $ classify.py --image data/pug.png --labels 'cat,dog,cute_dog'
    cute_dog
    ```
 
+   <br/>
+   e. Pug with a raincoat:
+
    ```console
    $ classify.py --image data/rain-ready.png --labels 'cat,dog,cute_dog'
    cute_dog
    ```
 
+   <br>
+   f. Cat with sunglasses
+
    ```console
-   $ classify.py --image data/reflective.png --labels 'cat,dog,cute_dog'
+   classify.py --image data/reflective.png --labels 'cat,dog,cute_dog'
+   ```
+
+   ```
+   # Output:
    cat
    ```
 
+   <br/>
+   g. Cat yawning:
+
    ```console
    $ classify.py --image data/yawn.png --labels 'cat,dog,cute_dog
+   ```
+
+   ```
+   # Output:
    cat
    ```
 
@@ -133,6 +208,14 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
 
    ```bash
    cp data/aussie.png cute_dog
+   ```
+
+   ```bash
+   cp data/aussie.png cute_dog
+   ```
+
+   ```bash
+   cp data/chihuahua.png cute_dog
    ```
 
    ```bash
@@ -144,7 +227,19 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    ```
 
    ```bash
+   cp data/dog.png dog
+   ```
+
+   ```bash
    cp data/hiding.png cat
+   ```
+
+   ```bash
+   cp data/hiding.png cat
+   ```
+
+   ```bash
+   cp data/pug.png cute_dog
    ```
 
    ```bash
@@ -156,6 +251,14 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    ```
 
    ```bash
+   cp data/rain-ready.png cute_dog
+   ```
+
+   ```bash
+   cp data/reflective.png cat
+   ```
+
+   ```bash
    cp data/reflective.png cat
    ```
 
@@ -163,7 +266,11 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    cp data/yawn.png cat
    ```
 
-Just out of interest, did your copy-paste skills take a carpal tunnel battering there?
+   ```bash
+   cp data/yawn.png cat
+   ```
+
+   Just out of interest, did your copy paste skills take a carpal tunnel battering there?
 
 Now you should have 3 directories labelled by critter:
 
@@ -187,7 +294,15 @@ Now let's try to create a collage of each of the directories containing label-sp
    mkdir collages
    ```
 
+   ```bash
+   mkdir collages
+   ```
+
 2. Create a temporary image to make a collage with the correct layout for all of the images in the `'dog'` folder:
+
+   ```bash
+   montage dog/* dog_temp.png
+   ```
 
    ```bash
    montage dog/* dog_temp.png
@@ -228,8 +343,11 @@ You should now have a set of collages, one for each critter type.
 1. List the images that ended up in the `collages/` directory by using the command below:
 
    ```
-   $ ls collages
+   ls collages
+   ```
 
+   ```
+   # Output:
    cat.png cute_dog.png dog.png
    ```
 
@@ -239,10 +357,18 @@ You should now have a set of collages, one for each critter type.
    montage -geometry +10+10 -quality 05 -background "#ffbe76" -border 5 -bordercolor "#f0932b" collages/* collage_all.png
    ```
 
+   ```bash
+   montage -geometry +10+10 -quality 05 -background "#ffbe76" -border 5 -bordercolor "#f0932b" collages/* collage_all.png
+   ```
+
+   The `-geometry +10+10` parameter will give us 10px spacing between the collages, the `-quality 05` parameter will compress our final image, and the `-background`, `-border`, and `-bordercolor` parameters add a little colour to the final image.
+
+   You can view the final `collage_all.png` image directly in the GitPod user interface by clicking the filename in the file explorer on the left-hand side. You can also download the image to your local machine by right-clicking the filename and selecting 'Download'.
    The `-geometry +10+10` parameter will give us 10px spacing between the collages, the `-quality 05` parameter will compress our final image, and the `-background`, `-border`, and `-bordercolor` parameters add a little colour to the final image.
 
    You can view the final `collage_all.png` image directly in the GitPod user interface by clicking the filename in the file explorer on the left-hand side. You can also download the image to your local machine by right-clicking the filename and selecting 'Download'.
 
+   Take a look - what do you think?
    Take a look - what do you think?
 
 ## Quiz
