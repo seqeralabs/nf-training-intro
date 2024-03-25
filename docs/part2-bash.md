@@ -64,4 +64,4 @@ While Bash scripts offer more efficiency and scalability over running individual
 
 This is where Nextflow comes in to save the day. Nextflow is designed to address these limitations by enabling scalable and reproducible scientific workflows. It allows you to write pipelines that are portable across multiple execution environments to ensure consistent results. Nextflow also simplifies complex data-driven processes to automate and execute tasks in parallel.
 
-Let's see how to proceed to the next part: [Part 3. Critter classification with Nextflow](part3-nextflow.md).
+To see how, proceed to the next part: [Part 3. Critter classification with Nextflow](part3-nextflow.md).

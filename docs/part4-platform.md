@@ -86,7 +86,7 @@ You'll be able to not only view the collage in the Platform but also download it
 
 ## Step 7: Inspect the Run details
 
-At the top of the page for you Run, in the 'Parameters' and 'Configuration' tabs, you will be able to see the exact pipeline parameters and Nextflow configuration used, respectively. In the Parameters, you will be able to see which prompts or labels were used for classification, which inputs were specified, and where the results are saved. This helps reproduce results from a previous run, or a colleague's run.
+At the top of the page for your Run, in the 'Parameters' and 'Configuration' tabs, you will be able to see the exact pipeline parameters and Nextflow configuration used, respectively. In the Parameters, you will be able to see which prompts or labels were used for classification, which inputs were specified, and where the results are saved. This helps reproduce results from a previous run, or a colleague's run.
 
 ![alt text](assets/run-parameters.png)
 

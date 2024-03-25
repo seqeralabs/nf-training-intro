@@ -93,7 +93,7 @@ process Collage {
 }
 ```
 
-After resizing, this `Collage` process takes groups of labeled images and creates a collage for each label. It uses the montage command from ImageMagick (a software suite for image manipulation). Recall, that we were running two commands to achieve this earlier.
+After resizing, this `Collage` process takes groups of labeled images and creates a collage for each label. It uses the montage command from ImageMagick (a software suite for image manipulation). Recall that we were running two commands to achieve this earlier.
 
 ```groovy
 process CombineImages {
