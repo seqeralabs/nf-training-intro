@@ -36,7 +36,7 @@ RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86
 ENV PATH="/opt/conda/bin:$PATH"
 
 # Add classify to path
-ADD bin/classify /usr/local/bin/classify
+ADD bin/classify.py /usr/local/bin/classify.py
 
 # Change user to gitpod
 USER gitpod

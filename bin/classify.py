@@ -32,7 +32,7 @@ def main():
         
         max_label, max_value = max(zip(labels, probs[0]), key=lambda x: x[1])
 
-        print(max_label, end='')
+        print(max_label)
 
     # print("Label probs:")
     # for (label, prob) in zip(labels, probs[0]):
