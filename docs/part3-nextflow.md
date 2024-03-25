@@ -10,7 +10,7 @@ Importantly, Nextflow solves a number of the problems you might have noticed usi
 
 ## Step 1: Find the critters
 
-For this exercise, we have created a folder called [`exercise/nextflow/data`](../exercise/nextflow/data) that contains a copy of all of the original animal images in the top-level [`data/`](../data/) folder.
+For this exercise, we have created a folder called [`exercise/nextflow/data`](../exercise/nextflow/data) that contains a link/shortcut of all of the original animal images in the top-level [`data/`](../data/) folder.
 
 1. Let's change to the appropriate directory:
 
@@ -21,7 +21,7 @@ For this exercise, we have created a folder called [`exercise/nextflow/data`](..
 2. List the contents of the folder:
 
    ```console
-   $ ls
+   ls
 
    collages  data  main.nf
    ```
@@ -59,7 +59,7 @@ process Classify {
 
 ### Channels
 
-In Nextflow, [channels](https://www.nextflow.io/docs/latest/channel.html#channels) are used to transport data and connect processes together. Think of them as pipes through which your data flows. In this workflow, we make a channel of picture files called `pics`. This channel is responsible for making the images available to the first process (`Classify`) in the workflow.
+In Nextflow, [channels](https://www.nextflow.io/docs/latest/channel.html#channels) are used to transmit data and connect processes together. Think of them as pipes through which your data flows. In this workflow, we make a channel of picture files called `pics`. This channel is responsible for making the images available to the first process (`Classify`) in the workflow.
 
 We can create this channel in Nextflow using some built-in tools that are designed to find a set of files and add them to the channel. This is called a channel factory and in this example, we will specify where to look for the files using the `params.input` variable.
 
@@ -83,7 +83,7 @@ Before we start, we need to make sure Nextflow is installed in your environment.
 nextflow -version
 ```
 
-With Nextflow, initiating the workflow is as simple as running a command in your terminal, specifying the image folder and labels as input. Nextflow takes care of the rest, efficiently managing resources and running the pipeline reproducibly. Run the following on the command-line:
+With Nextflow, a single command can initiate the workflow, specifying the image folder and labels as input. Nextflow takes care of the rest, efficiently managing resources and running the pipeline reproducibly. Run the following on the command-line:
 
 ```bash
 nextflow run main.nf --input "data/*.png" --prompts 'cat,dog,cute_dog' --outdir results
@@ -101,7 +101,7 @@ collage_all.png
 
 ## Step 4: Resuming the workflow
 
-If we execute the same `nextflow run` command again, Nextflow will rerun the entire pipeline from scratch which can be wasteful. However, Nextflow has an intelligent caching mechanism that we can turn on by adding the `-resume` flag.
+If we execute the same `nextflow run` command again, Nextflow will rerun the entire pipeline which could be wasteful. However, Nextflow has an intelligent caching mechanism that we can turn on by adding the `-resume` flag.
 
 Re-run the workflow with this extra argument and you should see that the workflow completes much more quickly because it does not recompute the tasks that have already successfully completed.
 
@@ -117,9 +117,9 @@ As the pipeline runs in the background, Nextflow will do the following:
 
 - Data handling: Nextflow reads the input parameters and creates channels that facilitate the flow of data between processes. This automatic handling of data is more efficient and less error-prone than manual specification in Bash scripts.
 
-- Parallel execution: As the workflow progresses, Nextflow automatically manages the distribution of running the tasks for each image, across the available computational resources. This parallel execution is managed internally by Nextflow and is transparent to the user, contrasting with the sequential execution nature of Bash scripts.
+- Parallel execution: As the workflow progresses, Nextflow manages the distribution of running the tasks for each image, across the available computational resources. This parallel execution is controlled by Nextflow and is transparent to the user, contrasting with the sequential execution nature of Bash scripts.
 
-- Container management: For each process that has a `container` definition, Nextflow pulls the necessary container files and executes the commands within an isolated environment. This ensures consistency, reproducibility, and portability, addressing the common challenge of "it works on my machine but not on yours?!". Bash scripts, by themselves, do not provide such isolation, making it harder to reproduce results.
+- Container management: For each process that has a `container` definition, Nextflow uses the necessary container files and executes the commands within an isolated environment. This ensures consistency, reproducibility, and portability, addressing the common challenge of "it works on my machine but not on yours?!". Bash scripts, by themselves, do not provide such isolation, making it harder to reproduce results.
 
 ## Quiz
 
@@ -132,6 +132,6 @@ Try to answer the following questions for yourself:
 
 ## Summary
 
-By simplifying the complexity involved in task management, parallel processing, and environment consistency, you can now see how Nextflow provides a robust framework for executing data-intensive workflows. This allows bioinformaticians, researchers, developers, and analysts across a variety of domains to focus more on the logic and outcomes of their projects, rather than the intricacies of the computational processes and the underlying infrastructure.
+By simplifying the task management, parallel processing, and environment consistency, you can now see how Nextflow provides a robust framework for executing data-intensive workflows. This allows bioinformaticians, researchers, developers, and analysts across a variety of domains to focus more on the logic and outcomes of their projects, rather than the intricacies of the computational processes and the underlying infrastructure.
 
 In the next section of the workshop, [Part 4: Critter classification on Seqera Platform](part4-platform.md), we will show you how quickly we can transition to running the same workflow from a small GitPod environment to the Cloud by exploiting the power of the Seqera Platform!
