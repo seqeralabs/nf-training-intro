@@ -177,7 +177,7 @@ You can also list the images that ended up in each directory by using the comman
 ls dog
 ```
 
-## Step 3: folder a collage for each classifier
+## Step 3: Make a collage for each classifier
 
 Now let's try to create a collage of each of the directories containing label-specific images. We will be using a tool called [`montage`](https://imagemagick.org/script/montage.php) to create the collage. This tool will take as input a list of images and output a collage in PNG format.
 
@@ -187,7 +187,7 @@ Now let's try to create a collage of each of the directories containing label-sp
    mkdir collages
    ```
 
-2. Create a temporary image to folder a collage with the correct layout for all of the images in the `'dog'` folder:
+2. Create a temporary image to make a collage with the correct layout for all of the images in the `'dog'` folder:
 
    ```bash
    montage dog/* dog_temp.png
