@@ -172,7 +172,7 @@ Now you should have 3 directories labelled by critter:
 
 You can also list the images that ended up in each directory by using the command-below:
 
-```
+```bash
 ls dog
 ```
 
@@ -198,27 +198,27 @@ Now lets try to create a collage of each of the directories containing label-spe
 
     To make the collage a little bit more interesting, we can add a few command-line arguments:
 
-    ```bash
-    montage -background black +polaroid -background '#ffbe76' dog/* dog_temp.png
-    ```
+```bash
+montage -background black +polaroid -background '#ffbe76' dog/* dog_temp.png
+```
 
-    We can also use the `montage` command to write our classification label into the image:
+We can also use the `montage` command to write our classification label into the image:
 
-    ```bash
-    montage -label 'dog' -geometry +0+0 -background "#f0932b" dog_temp.png collages/dog.png
-    ```
+```bash
+montage -label 'dog' -geometry +0+0 -background "#f0932b" dog_temp.png collages/dog.png
+```
 
-    Now, let's repeat this same process for all of the other labels:
+Now, let's repeat this same process for all of the other labels:
 
-    ```bash
-    montage -background black +polaroid -background '#ffbe76' cat/* cat_temp.png
-    montage -label 'cat' -geometry +0+0 -background "#f0932b" cat_temp.png collages/cat.png
-    ```
+```bash
+montage -background black +polaroid -background '#ffbe76' cat/* cat_temp.png
+montage -label 'cat' -geometry +0+0 -background "#f0932b" cat_temp.png collages/cat.png
+```
 
-    ```bash
-    montage -background black +polaroid -background '#ffbe76' cute_dog/* cute_dog_temp.png
-    montage -label 'cute_dog' -geometry +0+0 -background "#f0932b" cute_dog_temp.png collages/cute_dog.png
-    ```
+```bash
+montage -background black +polaroid -background '#ffbe76' cute_dog/* cute_dog_temp.png
+montage -label 'cute_dog' -geometry +0+0 -background "#f0932b" cute_dog_temp.png collages/cute_dog.png
+```
 
 ## Step 4: Combine the collages
 
