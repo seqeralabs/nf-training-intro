@@ -197,7 +197,7 @@ Now let's try to create a collage of each of the directories containing label-sp
 > You can view the results of this command by clicking the `dog_temp.png` filename in the file explorer on the left-hand side of your window:
 > ![open collage](assets/open_dog_temp.png)
 
-To folder the collage a little bit more interesting, we can add a few command-line arguments:
+To make the collage a little bit more interesting, we can add a few command-line arguments:
 
 ```bash
 montage -background black +polaroid -background '#ffbe76' dog/* dog_temp.png
