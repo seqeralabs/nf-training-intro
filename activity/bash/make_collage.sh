@@ -1,27 +1,36 @@
 #!/usr/bin/env bash
 
-# List all of the image files in the 'data' directory and classify them in a loop
-ls data/*.png | while read -r picture; do
-    
-    # Run the classify command and fetch the label printed to the screen
-    label=$(classify --image $picture --labels 'cat,dog,cute_dog')
-    
+# Loop over all image files in the 'data' folder to classify them
+echo 'Classifying images...'
+for picture in data/*; do
+    # # Run the classify command and fetch the label
+    label=$(classify.py --image $picture --labels 'cat,dog,spider')
+
     # Create an output directory for this label, if it doesn't exist
     mkdir -p classified/$label
 
     # Copy the input file to the class diretory
-    cp $picture classified/$label
+    cp $picture classified/$label/
 done
 
-# Make a directory called 'collages'
-mkdir -p collages
+# Resize each image
+echo 'Resizing images...'
+for labeldir in classified/*; do
+    label=$(basename $labeldir)
+    mkdir -p resized/$label
+    mogrify -resize 100x100 -path resized/$label -format png $labeldir/*
+done
 
 # Make a collage for each class
-ls classified | while read -r class; do
-    montage -geometry 80 -tile 4x classified/$class/* tmp.png
-    montage -label '$class' tmp.png -geometry +0+0 -background Gold collages/${class}.png
-    rm tmp.png
+echo 'Making a collage for each label...'
+mkdir -p collages
+for labeldir in resized/*; do
+    label=$(basename $labeldir) 
+    montage -background black +polaroid -background '#ffbe76' $labeldir/* png:- \
+    | montage -label "$label" -geometry +0+0 -background "#f0932b" - collages/$label.png
 done
 
 # Combine the collages
-montage -geometry +0+0 -tile 1x collages/* collage_all.png
+echo 'Combining for final image...'
+montage -geometry +10+10 -quality 05 -background "#ffbe76" -border 5 -bordercolor "#f0932b" collages/* collage_all.png
+echo 'Done!'

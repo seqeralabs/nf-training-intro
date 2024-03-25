@@ -8,12 +8,13 @@ workflow {
     pics = Channel.fromPath(params.input)
 
     Classify(pics, params.prompts)
-    | map { label, pic -> [ label.text, pic ] }
-    | Resize
-    | groupTuple
-    | Collage
-    | collect
-    | CombineImages
+    | view
+    // | map { label, pic -> [ label.text.trim(), pic ] }
+    // | Resize
+    // | groupTuple
+    // | Collage
+    // | collect
+    // | CombineImages
 }
 
 process Classify {
