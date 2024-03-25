@@ -104,3 +104,4 @@ Once you have successfully provisioned a GitPod environment (see [Getting Starte
 - [GitHub website](https://github.com/)
 - [GitPod website](https://www.gitpod.io/)
 - [CLIP website](https://openai.com/research/clip)
+- [CLIP package repository](https://github.com/openai/CLIP)
