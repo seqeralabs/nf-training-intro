@@ -33,12 +33,11 @@ This will bring you to the Gitpod launch screen where you can click "Continue":
 
 ![Gitpod launch](docs/assets/gitpod-launch.png)
 
-
 ### Interacting with the command-line
 
 Please don't worry if you are unfamiliar with command-line environments, you will just be copying commands to follow along.
 
-The major difference between a command-line environment and conventional interfaces like Windows or macOS is that you have to issue commands to do even the simple things you would normally take for granted in a grapical user interface.
+The major difference between a command-line environment and conventional interfaces like Windows or macOS is that you have to issue commands to do even the simple things you would normally take for granted in a graphical user interface.
 
 For example, you would issue the following commands:
 
@@ -74,7 +73,7 @@ You have been given a set of pictures of your colleagues' animals, and you want 
 
 ### The aim
 
-To make this workshop palatable for eveyone we have already:
+To make this workshop palatable for everyone we have already:
 
 - Dumped a bunch of animal pictures in the [`data/`](./data/) folder.
 - Written a simple Python script called [`classify.py`](./bin/classify.py), which is uses CLIP to classify the bloomin' critters.
@@ -95,3 +94,14 @@ Once you have successfully provisioned a GitPod environment (see [Getting Starte
 - [Part 2: Using Bash scripting](docs/part2-bash.md)
 - [Part 3: Using Nextflow](docs/part3-nextflow.md)
 - [Part 4: Using the Seqera Platform](docs/part4-platform.md)
+
+## Resources
+
+- [Seqera website](https://seqera.io/)
+- [Nextflow docs](https://www.nextflow.io/docs/latest/index.html)
+- [nf-core website](https://nf-co.re/)
+- [Seqera Platform docs](https://docs.seqera.io/)
+- [GitHub website](https://github.com/)
+- [GitPod website](https://www.gitpod.io/)
+- [CLIP website](https://openai.com/research/clip)
+- [CLIP package repository](https://github.com/openai/CLIP)

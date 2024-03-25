@@ -9,7 +9,7 @@ for picture in data/*; do
     # Create an output directory for this label, if it doesn't exist
     mkdir -p classified/$label
 
-    # Copy the input file to the class diretory
+    # Copy the input file to the class directory
     cp $picture classified/$label/
 done
 
