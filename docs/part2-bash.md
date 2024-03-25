@@ -28,7 +28,7 @@ For this exercise, we have created a folder called [`activity/bash/data`](../act
 
 Now that you are in the correct location relative to where the input images are stored, you will be able to run the classification with the images in `data/`.
 
-## ## Step 2: Run the Bash script
+## Step 2: Run the Bash script
 
 We have written a bash script called [`make_collage.sh`](../activity/bash/make_collage.sh). Have a look at this script and check that you understand the rough picture of what's going on (the fine detail is unimportant here). We're essentially automating what you did [before](../docs/part1-cli.md), looping over all the input images, classifying them, making a collage for each class and combining those collages at the end.
 

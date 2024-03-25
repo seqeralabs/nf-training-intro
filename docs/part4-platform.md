@@ -30,7 +30,7 @@ As you are brought to the 'Pipeline Parameters' page, you will have the option o
 
 ## Step 3: Use data on cloud storage as input
 
-In a valiant effort akin to treasure hunting through the digital realms, we've meticulously combed through the delightful array of critter images found in Seqera's #social-pet-pics channel. These gems have now found a new home in an AWS S3 bucket, eagerly awaiting their moment of fame to be classified into 'cat' or 'dog' versus 'cute cat' or 'cute dog'.
+In a valiant effort akin to treasure hunting through the digital realms, we've meticulously combed through the delightful array of critter images found in Seqera's #social-pet-pics channel. These gems have now found a new home in an AWS S3 bucket, eagerly awaiting their moment of fame to be classified into 'cat' or 'dog' versus 'cute cat' or 'cute_dog'.
 
 Your goal will be to classify the images in this bucket, in the Cloud.
 
@@ -56,7 +56,7 @@ s3://seqera-development-permanent-bucket/scidev/petpics/*
 
 ### Labels
 
-Similar to what you had done before, specify a list of labels in the 'prompts' field that you want to use to classify the images. For example, 'dog,cat,cute dog,beautiful dog'. Make sure to separate each label with a comma.
+Similar to what you had done before, specify a list of labels in the 'prompts' field that you want to use to classify the images. For example, 'dog,cat,cute_dog,beautiful_dog'. Make sure to separate each label with a comma.
 
 ### Output
 
