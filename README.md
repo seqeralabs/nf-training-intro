@@ -41,7 +41,7 @@ The major difference between a command-line environment and conventional interfa
 
 For example, you would issue the following commands:
 
-- To enter a folder or folder called `data/`
+- To enter a folder called `data/`
 
 ```bash
 cd data
