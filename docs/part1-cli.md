@@ -238,7 +238,7 @@ ls dog
 
 ## Step 3: Resize all images for each classifier
 
-To make sure the images in our final collage are of a uniform size, let's run a resize command on our images in each of the 3 directires created for the critters:
+To make sure the images in our final collage are of a uniform size, let's run a resize command on the contents of the three folders:
 
 a. First for `dog/`:
 
