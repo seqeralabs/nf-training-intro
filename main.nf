@@ -42,7 +42,7 @@ process Resize {
 
     script:
     """
-    mogrify -resize 100x100 -path ./ -format png pics/*
+    mogrify -resize 100x100 -path . -format png pics/*
     """
 }
 
@@ -57,8 +57,8 @@ process Collage {
 
     script:
     """
-    montage pics/* -background black +polaroid -background '#ffbe76' png:- \
-    | montage -label '$label' -geometry +0+0 -background "#f0932b" - collage.png
+    montage pics/* -background black +polaroid -background '#ffbe76' collage_nolabel.png
+    montage -label '$label' -geometry +0+0 -background "#f0932b" collage_nolabel.png collage.png
     """
 }
 
