@@ -21,6 +21,7 @@ For this exercise, we have created a folder called [`activity/bash/data`](../act
    ```console
    pwd
    ```
+
    ```
    # Output
    /workspace/nf-training-intro/activity/bash
@@ -31,6 +32,7 @@ For this exercise, we have created a folder called [`activity/bash/data`](../act
    ```console
    ls data
    ```
+
    ```
    # Output
    aussie.png  chihuahua.png  dog.png  hiding.png  pug.png  rain-ready.png  reflective.png  yawn.png
