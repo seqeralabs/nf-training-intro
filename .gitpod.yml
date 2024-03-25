@@ -1,2 +1,2 @@
 # See .github/everything.Dockerfile
-image: robsyme/nf-training-intro:1.0.5
+image: robsyme/nf-training-intro:1.0.6
