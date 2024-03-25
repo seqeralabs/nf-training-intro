@@ -242,21 +242,9 @@ To make sure the images in our final collage are of a uniform size, let's run a 
 
 First we'll make a separate directory with the `mkdir` command to store our resized images, based on the label:
 
-a. First for `dog/`:
-
 ```bash
 mkdir -p resized/dog
-```
-
-b. Second for `cat/`:
-
-```bash
 mkdir -p resized/cat
-```
-
-c. Third for `cute_dog/`:
-
-```bash
 mkdir -p resized/cute_dog
 ```
 
