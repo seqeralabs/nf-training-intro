@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://raw.githubusercontent.com/./master/nextflow_schema.json",
-  "title": ". pipeline parameters",
+  "title": "nf-training-intro pipeline parameters",
   "description": "",
   "type": "object",
   "definitions": {

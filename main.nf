@@ -69,10 +69,10 @@ process CombineImages {
     path "in.*.png"
 
     output:
-    path "collage.png"
+    path "collage_all.png"
 
     script:
     """
-    montage -geometry +10+10 -quality 05 -background "#ffbe76" -border 5 -bordercolor "#f0932b" in.*.png collage.png
+    montage -geometry +10+10 -quality 05 -background "#ffbe76" -border 5 -bordercolor "#f0932b" in.*.png collage_all.png
     """
 }
