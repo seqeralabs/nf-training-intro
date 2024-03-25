@@ -177,8 +177,7 @@ tuple path("out.txt"), path(pic)
 The output from our `nextflow run` command includes lines such as:
 
 ```
-[dog
-, <path>/chihuahua.png]
+[dog, <path>/chihuahua.png]
 ```
 
 ... which are the contents of the channel returned from the `Classify` process. The classification ("dog") and image file (chihuahua.png) pair correspond to the pieces in the `Classify` output block.
