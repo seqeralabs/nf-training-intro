@@ -58,4 +58,4 @@ jobs:
 
       - name: Run pipeline with test data
         run: |
-          nextflow run ${GITHUB_WORKSPACE} --input './data/{aussi,pug,yawn}.png' -profile docker
+          nextflow run ${GITHUB_WORKSPACE} --input './data/{aussie,pug,yawn}.png' -profile docker
