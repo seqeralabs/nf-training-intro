@@ -15,7 +15,8 @@ RUN apt-get update --quiet && \
         curl \
         tree \
         graphviz \
-        software-properties-common
+        software-properties-common \
+        gsfonts
 
 # Install CLIP dependencies
 RUN apt-get update && apt-get -y install python3-venv python3-pip git imagemagick
