@@ -236,6 +236,28 @@ You can also list the images that ended up in each directory by using the comman
 ls dog
 ```
 
+## Step 3: Resize all images for each classifier
+
+To make sure the images in our final collage are of a uniform size, let's run a resize command on the contents of the three folders:
+
+a. First for `dog/`:
+
+```bash
+mogrify -resize 100x100 -path resized/dog -format png dog/*
+```
+
+b. Second for `cat/`:
+
+```bash
+mogrify -resize 100x100 -path resized/cat -format png cat/*
+```
+
+c. Third for `cute_dog/`:
+
+```bash
+mogrify -resize 100x100 -path resized/cute_dog -format png cute_dog/*
+```
+
 ## Step 3: Make a collage for each classifier
 
 Now let's try to create a collage of each of the directories containing label-specific images. We will be using a tool called [`montage`](https://imagemagick.org/script/montage.php) to create the collage. This tool will take as input a list of images and output a collage in PNG format.
@@ -243,13 +265,13 @@ Now let's try to create a collage of each of the directories containing label-sp
 1. Create a `collages` folder:
 
    ```bash
-   mkdir collages
+   mkdir -p collages
    ```
 
 2. Create a temporary image to make a collage with the correct layout for all of the images in the `'dog'` folder:
 
    ```bash
-   montage dog/* dog_temp.png
+   montage resized/dog/* dog_temp.png
    ```
 
 > [!TIP]
@@ -259,7 +281,7 @@ Now let's try to create a collage of each of the directories containing label-sp
 To make the collage a little bit more interesting, we can add a few command-line arguments:
 
 ```bash
-montage -background black +polaroid -background '#ffbe76' dog/* dog_temp.png
+montage -background black +polaroid -background '#ffbe76' resized/dog/* dog_temp.png
 ```
 
 We can also use the `montage` command to write our classification label into the image:
@@ -271,12 +293,12 @@ montage -label 'dog' -geometry +0+0 -background "#f0932b" dog_temp.png collages/
 Now, let's repeat this same process for all of the other labels:
 
 ```bash
-montage -background black +polaroid -background '#ffbe76' cat/* cat_temp.png
+montage -background black +polaroid -background '#ffbe76' resized/cat/* cat_temp.png
 montage -label 'cat' -geometry +0+0 -background "#f0932b" cat_temp.png collages/cat.png
 ```
 
 ```bash
-montage -background black +polaroid -background '#ffbe76' cute_dog/* cute_dog_temp.png
+montage -background black +polaroid -background '#ffbe76' resized/cat/cute_dog/* cute_dog_temp.png
 montage -label 'cute_dog' -geometry +0+0 -background "#f0932b" cute_dog_temp.png collages/cute_dog.png
 ```
 
@@ -300,9 +322,9 @@ You should now have a set of collages, one for each critter type.
    ```bash
    montage -geometry +10+10 -quality 05 -background "#ffbe76" -border 5 -bordercolor "#f0932b" collages/* collage_all.png
    ```
+
    The `-geometry +10+10` parameter will give us 10px spacing between the collages, the `-quality 05` parameter will compress our final image, and the `-background`, `-border`, and `-bordercolor` parameters add a little colour to the final image.
 
-   You can view the final `collage_all.png` image directly in the GitPod user interface by clicking the filename in the file explorer on the left-hand side. You can also download the image to your local machine by right-clicking the filename and selecting 'Download'.
    The `-geometry +10+10` parameter will give us 10px spacing between the collages, the `-quality 05` parameter will compress our final image, and the `-background`, `-border`, and `-bordercolor` parameters add a little colour to the final image.
 
    You can view the final `collage_all.png` image directly in the GitPod user interface by clicking the filename in the file explorer on the left-hand side. You can also download the image to your local machine by right-clicking the filename and selecting 'Download'.
