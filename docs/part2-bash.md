@@ -1,10 +1,10 @@
 # Part 2: Critter classification with Bash scripting
 
-Hopefully, the previous exercise using the command-line wasn't too tricky, but it was a bit tedious running all of those commands wasn't it? Let's exercise our [3 virtues](https://thethreevirtues.com/) and try to make life easier for ourselves.
+Hopefully, that first approach wasn't too tricky, but it was a bit tedious running all those commands wasn't it? Let's exercise our [3 virtues](https://thethreevirtues.com/) and try to make life easier for ourselves.
 
 ## Introduction to Bash and Bash Scripting
 
-[Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)), or the Bourne Again SHell, is a powerful command-line language used widely across Unix-like operating systems. It enables users to execute commands, navigate file systems, and manipulate data. Bash's true potential is unlocked through scripting!
+[Bash](<https://en.wikipedia.org/wiki/Bash_(Unix_shell)>), or the Bourne Again SHell, is a powerful command-line language used widely across Unix-like operating systems. It enables users to execute commands, navigate file systems, and manipulate data. Bash's true potential is unlocked through scripting!
 
 A Bash script is essentially a file containing a series of commands that are executed sequentially by the Bash shell. Writing a script involves encapsulating commands you might normally type on the command-line like you performed in the previous section. Scripting saves you time and reduces the potential for error when performing repetitive tasks. It also allows you to 'loop' through commands, for example, to repeat the same actions with different input files.
 
@@ -12,19 +12,31 @@ A Bash script is essentially a file containing a series of commands that are exe
 
 For this exercise, we have created a folder called [`activity/bash/data`](../activity/bash/data) that contains a copy of all of the original animal images in the top-level [`data/`](../data/) folder.
 
-1. Let's change to the appropriate directory:
+1. Let's change to the appropriate folder:
 
-    ```console
-    cd /workspace/nf-training-intro/activity/bash
-    ```
+   ```console
+   cd /workspace/nf-training-intro/activity/bash
+   ```
+
+   ```console
+   pwd
+   ```
+
+   ```
+   # Output
+   /workspace/nf-training-intro/activity/bash
+   ```
 
 2. List the contents of the `data` folder:
 
-    ```console
-    $ ls data
+   ```console
+   ls data
+   ```
 
-    aussie.png  chihuahua.png  dog.png  hiding.png  pug.png  rain-ready.png  reflective.png  yawn.png
-    ```
+   ```
+   # Output
+   aussie.png  chihuahua.png  dog.png  hiding.png  pug.png  rain-ready.png  reflective.png  yawn.png
+   ```
 
 Now that you are in the correct location relative to where the input images are stored, you will be able to run the classification with the images in `data/`.
 
@@ -32,7 +44,7 @@ Now that you are in the correct location relative to where the input images are 
 
 We have written a bash script called [`make_collage.sh`](../activity/bash/make_collage.sh). Have a look at this script and check that you understand the rough picture of what's going on (the fine detail is unimportant here). We're essentially automating what you did [before](../docs/part1-cli.md), looping over all the input images, classifying them, making a collage for each class and combining those collages at the end.
 
-You should see that running the Bash script below produces the composite collage file `collage_all.png` with a single command! 
+You should see that running the Bash script below produces the composite collage file `collage_all.png` with a single command!
 
 ```bash
 ./make_collage.sh

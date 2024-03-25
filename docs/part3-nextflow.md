@@ -53,65 +53,6 @@ process Classify {
 }
 ```
 
-You should also recognise the other processes. Immediately after classification, we resize the (potentially large) image to something that will fit in a 100x100 pixel box. The resized image is saved as a png file to the current directory (`.` is the directory in which the command is being run).
-
-```groovy
-process Resize {
-    container 'robsyme/imagemagick:latest'
-
-    input:
-    tuple val(label), path("pics/*")
-
-    output:
-    tuple val(label), path("*.png")
-
-    script:
-    """
-    mogrify -resize 100x100 -path . -format png pics/*
-    """
-}
-```
-
-After resizing, the `Collage` process below takes groups of labelled images and creates a collage for each label. It uses the `montage` command from ImageMagick (a software suite for image manipulation). Recall, we were running two commands to achieve this earlier.
-
-```groovy
-process Collage {
-    container 'robsyme/imagemagick:latest'
-
-    input:
-    tuple val(label), path("pics/*")
-
-    output:
-    path "collage.png"
-
-    script:
-    """
-    montage pics/* -background black +polaroid -background '#ffbe76' collage_nolabel.png
-    montage -label '$label' -geometry +0+0 -background "#f0932b" collage_nolabel.png collage.png
-    """
-}
-```
-
-The final `CombineImages` process gathers all of the collages created by the earlier `Collage` process and combines them into one large image called `collage_all.png`. This demonstrates Nextflow's ability to aggregate outputs from previous steps and produce a consolidated result, a task that would be cumbersome and error-prone in bash, especially with varying numbers of intermediate files.
-
-```groovy
-process CombineImages {
-    container 'robsyme/imagemagick:latest'
-    publishDir params.outdir
-
-    input:
-    path "in.*.png"
-
-    output:
-    path "collage_all.png"
-
-    script:
-    """
-    montage -geometry +10+10 -quality 05 -background "#ffbe76" -border 5 -bordercolor "#f0932b" in.*.png collage_all.png
-    """
-}
-```
-
 ### Parameters
 
 [Parameters](https://www.nextflow.io/docs/latest/cli.html#pipeline-parameters) or `params` allow for flexible, user-defined inputs into the workflow. For example, they enable users to specify input directories containing images (`params.input`), labels for classification (`params.prompts`), and output directories (`params.outdir`) at runtime that can be passed to the workflow. This flexibility is a stark contrast to our earlier Bash scripts, where such values would need to be hardcoded or passed in a less structured way.
@@ -120,7 +61,7 @@ process CombineImages {
 
 In Nextflow, [channels](https://www.nextflow.io/docs/latest/channel.html#channels) are used to transport data and connect processes together. Think of them as pipes through which your data flows. In this workflow, we make a channel of picture files called `pics`. This channel is responsible for making the images available to the first process (`Classify`) in the workflow.
 
-We can create this channel in Nextflow using some built-in tools which are designed to find a set of files and add them to the channel. This is called a channel factory and in this example, we will specify where to look for the files using the `params.input` variable.
+We can create this channel in Nextflow using some built-in tools that are designed to find a set of files and add them to the channel. This is called a channel factory and in this example, we will specify where to look for the files using the `params.input` variable.
 
 ```groovy
 pics = Channel.fromPath(params.input)

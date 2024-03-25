@@ -6,7 +6,7 @@ for picture in data/*; do
     # # Run the classify command and fetch the label
     label=$(classify.py --image $picture --labels 'cat,dog,spider')
 
-    # Create an output directory for this label, if it doesn't exist
+    # Create an output directory (folder) for this label, if it doesn't exist
     mkdir -p classified/$label
 
     # Copy the input file to the class directory
