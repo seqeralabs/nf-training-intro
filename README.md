@@ -33,7 +33,6 @@ This will bring you to the Gitpod launch screen where you can click "Continue":
 
 ![Gitpod launch](docs/assets/gitpod-launch.png)
 
-
 ### Interacting with the command-line
 
 Please don't worry if you are unfamiliar with command-line environments, you will just be copying commands to follow along.
