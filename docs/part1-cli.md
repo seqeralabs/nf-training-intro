@@ -152,7 +152,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    d. Pug:
 
    ```console
-   $ classify.py --image data/pug.png --labels 'cat,dog,cute_dog'
+   classify.py --image data/pug.png --labels 'cat,dog,cute_dog'
    cute_dog
    ```
 
@@ -160,7 +160,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    e. Pug with a raincoat:
 
    ```console
-   $ classify.py --image data/rain-ready.png --labels 'cat,dog,cute_dog'
+   classify.py --image data/rain-ready.png --labels 'cat,dog,cute_dog'
    cute_dog
    ```
 
@@ -180,7 +180,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    g. Cat yawning:
 
    ```console
-   $ classify.py --image data/yawn.png --labels 'cat,dog,cute_dog
+   classify.py --image data/yawn.png --labels 'cat,dog,cute_dog
    ```
 
    ```
@@ -239,6 +239,28 @@ ls dog
 ## Step 3: Resize all images for each classifier
 
 To make sure the images in our final collage are of a uniform size, let's run a resize command on the contents of the three folders:
+
+First we'll make a separate directory with the `mkdir` command to store our resized images, based on the label:
+
+a. First for `dog/`:
+
+```bash
+mkdir -p resized/dog
+```
+
+b. Second for `cat/`:
+
+```bash
+mkdir -p resized/cat
+```
+
+c. Third for `cute_dog/`:
+
+```bash
+mkdir -p resized/cute_dog
+```
+
+Second, we will run a command with the[`mogrify`](https://imagemagick.org/script/mogrify.php) image modification tool to resize our images for each classifier:
 
 a. First for `dog/`:
 
