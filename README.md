@@ -1,4 +1,4 @@
-# Go with the Next(flow)!
+# Go with the (Next)flow!
 
 **Welcome to our introductory session on Nextflow!**
 
@@ -94,6 +94,19 @@ Once you have successfully provisioned a GitPod environment (see [Getting Starte
 - [Part 2: Using Bash scripting](docs/part2-bash.md)
 - [Part 3: Using Nextflow](docs/part3-nextflow.md)
 - [Part 4: Using the Seqera Platform](docs/part4-platform.md)
+
+## Summary
+
+Congratulations on completing Go with the (Next)flow! 🎉 You've now gained a base-level understanding of Nextflow, its integration within the Platform, and why Seqera is the preferred choice for our customers.
+
+In summary, you should have a concrete understanding of the key capabilities of Nextflow:
+
+- **Scalability**: Nextflow allows for scalability from launching in a GitPod environment to cloud environments.
+- **Parallelism**: Tasks like classifying pictures can be run at the same time.
+- **Reproducibility**: Nextflow pipelines can be used over and over, even when the input changes (for example, adding different pictures to classify, or adding new prompts).
+- **Resumability**: If the pipeline fails, you can easily pick back up and don't need to start from scratch - for example, you can run Collage without having to run Resize again.
+- **Reporting**: Nextflow provides logs that you can examine to troubleshoot and Seqera Platform allows you to view reports quickly.
+- **Flexibility**: You can make selections based on what you need done - adding "best_dog" to the prompt.
 
 ## Resources
 
