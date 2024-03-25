@@ -6,7 +6,21 @@ In this exercise, we will transition from running Nextflow locally to AWS Batch 
 
 Log in to the [Seqera Platform](https://seqera.io/platform/) with your preferred credentials. After logging in, you should have access to a Workspace called `nf-training` under the `seqeralabs` organization ([link](https://cloud.seqera.io/orgs/seqeralabs/workspaces/nf-training)). An AWS Batch Compute Environment has already been set up for you to use to run the classification workflow so you don't need to worry about the minutiae.
 
-## Step 2: Pipeline settings
+## Step 2: Find the critters
+
+In a valiant effort akin to treasure hunting through the digital realms, we have meticulously combed through the delightful array of critter images found in Seqera's #social-pet-pics Slack channel. These gems have now found a new home in an AWS S3 bucket, eagerly awaiting their moment of fame to be classified into 'cat' or 'dog' versus 'cute_cat' or 'cute_dog'.
+
+Your mission, should you choose to accept will be to classify the images in this Cloud bucket.
+
+In previous steps, you were able to view the image files being used as input directly in your GitPod environment, because they were stored locally, on the same machine. In this case, these files are stored in the Cloud which means our current machine cannot access them directly. However, you can use the Data Explorer feature in the Platform to look at the files directly in Cloud storage without having to log into the AWS Console or use a command-line tool:
+
+- Click on the 'Data Explorer' tab
+- Click on the AWS bucket named `s3://seqera-development-permanent-bucket`
+- Click on the `scidev/` folder
+- Click on the `petpics/` folder
+- Click on any one of the jpeg files to preview the images
+
+## Step 3: Pipeline set-up
 
 If you go to the Launchpad in the `seqeralabs/nf-training` workspace, you will see a pipeline called `nf-training` that has been pre-configured to run on AWS Batch via the Seqera Platform. It was created with the following settings:
 
@@ -14,29 +28,11 @@ If you go to the Launchpad in the `seqeralabs/nf-training` workspace, you will s
 
 We just have to specify the AWS Batch Compute Environment where the pipeline will be run by default, the URL for the GitHub repository for the pipeline and the version or revision we want to run.
 
-## Step 3: The Launchpad
+## Step 4: Running the pipeline
 
-You can click on the 'Launch' button to start configuring your run.
+In the previous sections of the workshop, we only used 8 images in the GitPod environment. Let's make this more interesting by running the pipeline on 238 critter images on the Cloud!!
 
-As you are brought to the 'Pipeline Parameters' page, you will have the option of specifying which images you can use for classification, based on the `params.input` parameter. In the previous steps, we were using the few images that were provided for you. Let's make this more interesting...
-
-## Step 4: Use data on cloud storage as input
-
-In a valiant effort akin to treasure hunting through the digital realms, we've meticulously combed through the delightful array of critter images found in Seqera's #social-pet-pics channel. These gems have now found a new home in an AWS S3 bucket, eagerly awaiting their moment of fame to be classified into 'cat' or 'dog' versus 'cute cat' or 'cute_dog'.
-
-Your goal will be to classify the images in this bucket, in the Cloud.
-
-In previous steps, you were able to view the image files being used as input directly in your Gitpod environment, because they were stored on the same machine. In this case, these files are stored in the cloud which means our current machine can't access them directly. However, you can use the Data Explorer in the Platform to take a look at files in cloud storage similar to the Gitpod environment but also benefit from the endless storage and computing that is afforded by the Cloud.
-
-- Click on the 'Data Explorer' tab and click on the AWS bucket named `s3://seqera-development-permanent-bucket`
-- Click on the `scidev/` folder
-- Click on any one of the files to preview the image
-
-Without having to log into the AWS Console or use a command-line tool for AWS storage, we can view our data in the cloud directly through Data Explorer.
-
-## Step 5: Pipeline Parameters
-
-Now that we have previewed our input data, we continue with configuring our pipeline to be Launched. Navigate back to the 'Launchpad' and click on the `nf-training` pipeline which will bring you to the pipeline parameters page.
+Now that we know where the input data is located we can run the pipeline. Click on the 'Launch' button for the pipeline in the Launchpad which will bring you to the 'Pipeline Parameters' page. You will have the option of specifying the same parameters used on the command-line with Nextflow but now via an interactive user interface in the Seqera Platform.
 
 ### Input
 
@@ -60,7 +56,7 @@ In the 'outdir' field on the Parameters page, you can specify the following path
 s3://scidev-eu-west-1/nf-training/<your_name>/results
 ```
 
-## Step 6: Launch!
+## Step 5: Launch!
 
 Now you have specified which images your workflow will attempt to classify, indicated which labels on which you will perform classification, and specified where your results will live!
 
