@@ -94,3 +94,14 @@ Once you have successfully provisioned a GitPod environment (see [Getting Starte
 - [Part 2: Using Bash scripting](docs/part2-bash.md)
 - [Part 3: Using Nextflow](docs/part3-nextflow.md)
 - [Part 4: Using the Seqera Platform](docs/part4-platform.md)
+
+## Resources
+
+- [Seqera website](https://seqera.io/)
+- [Nextflow docs](https://www.nextflow.io/docs/latest/index.html)
+- [nf-core website](https://nf-co.re/)
+- [Seqera Platform docs](https://docs.seqera.io/)
+- [GitHub website](https://github.com/)
+- [GitPod website](https://www.gitpod.io/)
+- [CLIP website](https://openai.com/research/clip)
+- [CLIP package repository](https://github.com/openai/CLIP)

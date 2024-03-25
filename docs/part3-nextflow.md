@@ -150,7 +150,6 @@ workflow {
     Classify(pics, params.prompts)
     | view
 //    | Resize
-//    | map { label, pic -> [label.text.trim(), pic] }
 //    | groupTuple
 //    | Collage
 //    | collect
@@ -178,10 +177,11 @@ tuple path("out.txt"), path(pic)
 The output from our `nextflow run` command includes lines such as:
 
 ```
-[<path>/out.txt, <path>/chihuahua.png]
+[dog
+, <path>/chihuahua.png]
 ```
 
-... which are the contents of the channel returned from the `Classify` process. The out.txt and picture correspond to the two `path()` pieces in the `Classify` output block.
+... which are the contents of the channel returned from the `Classify` process. The classification ("dog") and image file (chihuahua.png) pair correspond to the pieces in the `Classify` output block.
 
 If we re-execute the same `nextflow run` command, Nextflow will re-calculate the classification step for each input image. Nextflow has an intelligent caching mechanism that we can turn on by adding the `-resume` flag.
 
@@ -200,7 +200,6 @@ workflow {
     Classify(pics, params.prompts)
     | Resize
     | view
-//    | map { label, pic -> [label.text.trim(), pic] }
 //    | groupTuple
 //    | Collage
 //    | collect
@@ -221,9 +220,8 @@ Progressively uncomment all of the workflow lines, running the command each time
 >
 >     Classify(pics, params.prompts)
 >     | Resize
->     | map { label, pic -> [label.text.trim(), pic] }
+>     | groupTuple
 >     | view
-> //    | groupTuple
 > //    | Collage
 > //    | collect
 > //    | CombineImages
