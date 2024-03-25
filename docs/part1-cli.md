@@ -12,7 +12,7 @@ For this exercise, we have created a folder called [`activity/cli/data`](../acti
 
 You can either navigate to this directory via the File Explorer sidebar in the VS Code user interface in Gitpod, or the command-line. This is a good example of how you can do exactly the same thing through the user interface and the command-line.
 
-1. Let's list all of the files in the current directory using the command-line. You should see the `activity` folder as shown below:
+1. Let's list all of the files in the current directory using the command-line by running the [`ls`](https://man7.org/linux/man-pages/man1/ls.1.html) command. You should see the `activity` folder as shown below:
 
    ```console
    ls
@@ -32,8 +32,7 @@ You can either navigate to this directory via the File Explorer sidebar in the V
    cd activity/cli
    ```
 
-   or you can run multiple `cd` commands to get there too:
-   or you can run multiple `cd` commands to get there too:
+   or you can run multiple [`cd`](https://linuxcommand.org/lc3_man_pages/cdh.html) commands to get there too:
 
    ```bash
    cd activity
@@ -44,7 +43,7 @@ You can either navigate to this directory via the File Explorer sidebar in the V
    cd cli
    ```
 
-3. You can check you are in the correct directory by using the [`pwd`](https://en.wikipedia.org/wiki/Pwd) (print working directory) command:
+3. You can check you are in the correct directory by using the [`pwd`](https://man7.org/linux/man-pages/man1/pwd.1.html) (print working directory) command:
 
    ```console
    pwd
@@ -101,7 +100,7 @@ This should return a text output onto the command-line telling you which of the 
 
 For simplicity, let's use the same labels, classify each of the 8 images individually and then copy them into a folder based on the classification:
 
-1. Precreate individual folders for each label with the [`mkdir`](https://en.wikipedia.org/wiki/Mkdir) (make directory) command:
+1. Precreate individual folders for each label with the [`mkdir`](https://man7.org/linux/man-pages/man1/mkdir.1.html) (make directory) command:
 
    ```bash
    mkdir cat
@@ -373,4 +372,4 @@ Try to answer the following questions for yourself:
 After classifying a few images one by one, you might notice a couple of things. First, it can be quite tedious to type out or copy-paste the command repeatedly for multiple images. Secondly, this method does not scale well if we have hundreds or thousands of images to classify. Imagine having to run each image through the command-line individually—it would be incredibly time-consuming and inefficient.
 </details>
 
-In the next section of the workshop: [Part 2: Critter classification with Bash scripting](part2-bash.md), we will instead encapsulate these commands into a Bash script. This will not only simplify the process of classifying multiple images but also sets the stage for understanding the power of automation and scalability — key features that Nextflow enhances in more complex workflows.
+In the next section of the workshop, [Part 2: Critter classification with Bash scripting](part2-bash.md), we will instead encapsulate these commands into a Bash script. This will not only simplify the process of classifying multiple images but also sets the stage for understanding the power of automation and scalability — key features that Nextflow enhances in more complex workflows.
