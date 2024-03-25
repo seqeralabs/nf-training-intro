@@ -12,7 +12,7 @@ For this exercise, we have created a folder called [`activity/cli/data`](../acti
 
 You can either navigate to this directory via the File Explorer sidebar in the VS Code user interface in Gitpod, or the command-line. This is a good example of how you can do exactly the same thing through the user interface and the command-line.
 
-1. Let's list all of the files in the current directory using the command-line. You should see the `activity` folder as shown below:
+1. Let's list all of the files in the current directory using the command-line by running the [`ls`](https://man7.org/linux/man-pages/man1/ls.1.html) command. You should see the `activity` folder as shown below:
 
    ```console
    $ ls
@@ -26,14 +26,14 @@ You can either navigate to this directory via the File Explorer sidebar in the V
    cd activity/cli
    ```
 
-   or you can run multiple `cd` commands to get there too:
+   or you can run multiple [`cd`](https://linuxcommand.org/lc3_man_pages/cdh.html) commands to get there too:
 
    ```bash
    cd activity
    cd cli
    ```
 
-3. You can check you are in the correct directory by using the [`pwd`](https://en.wikipedia.org/wiki/Pwd) (print working directory) command:
+3. You can check you are in the correct directory by using the [`pwd`](https://man7.org/linux/man-pages/man1/pwd.1.html) (print working directory) command:
 
    ```console
    $ pwd
@@ -79,7 +79,7 @@ This should return a text output onto the command-line telling you which of the 
 
 For simplicity, let's use the same labels, classify each of the 8 images individually and then copy them into a folder based on the classification:
 
-1. Precreate individual folders for each label with the [`mkdir`](https://en.wikipedia.org/wiki/Mkdir) (make directory) command:
+1. Precreate individual folders for each label with the [`mkdir`](https://man7.org/linux/man-pages/man1/mkdir.1.html) (make directory) command:
 
    ```bash
    mkdir cat
