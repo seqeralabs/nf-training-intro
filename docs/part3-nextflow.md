@@ -21,7 +21,13 @@ You should see the version info printed to the console.
 
 ### Step 2: Understanding Your Nextflow Workflow
 
-Navigate to the `activity/nextflow/` directory where you will see a `main.nf` script. This script will define our workflow - let's take a closer look.
+Navigate to the `activity/nextflow/` directory:
+
+```bash
+cd /workspace/nf-training-intro/activity/nextflow
+```
+
+In this directory, you will see a `main.nf` script. This script will define our workflow - let's take a closer look.
 
 Your workflow has several key components:
 
@@ -29,7 +35,7 @@ Your workflow has several key components:
 
 These are the building blocks of your workflow. Here is the 'Classify' process:
 
-```
+```groovy
 process Classify {
     memory '8G'
     container 'robsyme/clip-cpu:1.0.0'
@@ -50,7 +56,26 @@ This process will execute the `classify` command we have been running in earlier
 
 You should also recognise the other processes:
 
+```groovy
+process Resize {
+    container 'robsyme/imagemagick:latest'
+
+    input:
+    tuple val(label), path("pics/*")
+
+    output:
+    tuple val(label), path("*.png")
+
+    script:
+    """
+    mogrify -resize 100x100 -path . -format png pics/*
+    """
+}
 ```
+
+Immediately after classification, we resize the (potentially large) image to something that will fit in a 100x100 pixel box. The resized image is saved as a png file to the current directory (`.` is the directory in which the command is being run).
+
+```groovy
 process Collage {
     container 'robsyme/imagemagick:latest'
 
@@ -58,33 +83,32 @@ process Collage {
     tuple val(label), path("pics/*")
 
     output:
-    path("*.png")
+    path "collage.png"
 
     script:
     """
-    montage -geometry 80 -tile 4x pics/* tmp.png
-    montage -label '$label' tmp.png -geometry +0+0 -background Gold ${label.replaceAll(" ", "_").toLowerCase()}.png
-    rm tmp.png
+    montage pics/* -background black +polaroid -background '#ffbe76' png:- \
+    | montage -label '$label' -geometry +0+0 -background "#f0932b" - collage.png
     """
 }
 ```
 
-After classification, this process takes groups of labeled images and creates a collage for each label. It uses the montage command from ImageMagick (a software suite for image manipulation). Recall, we were running two commands to achieve this earlier.
+After resizing, this `Collage` process takes groups of labeled images and creates a collage for each label. It uses the montage command from ImageMagick (a software suite for image manipulation). Recall, we were running two commands to achieve this earlier.
 
-```
+```groovy
 process CombineImages {
     container 'robsyme/imagemagick:latest'
     publishDir params.outdir
 
     input:
-    path("inputs/*")
+    path "in.*.png"
 
     output:
-    path("collage.png")
+    path "collage.png"
 
     script:
     """
-    montage -geometry +0+0 -tile 1x inputs/* collage.png
+    montage -geometry +10+10 -quality 05 -background "#ffbe76" -border 5 -bordercolor "#f0932b" in.*.png collage.png
     """
 }
 ```
@@ -97,13 +121,13 @@ In Nextflow, channels are used to transport data and connect processes together.
 
 We can create this channel in Nextflow using some built-in tools which are designed to find a set of files and add them to the channel. This is called a channel factory and in this example, we will specify where to look for the files using the `params.input` variable.
 
-```
+```groovy
 pics = Channel.fromPath(params.input)
 ```
 
 Then we can pass that channel to a process, and get one or more channels in return;
 
-```
+```groovy
 Classify(pics, params.prompts)
 ```
 
@@ -117,27 +141,23 @@ Now that you understand how the Workflow is structured, you can now start runnin
 
 All of the data you will use as input for the workflow is provided in `activity/nextflow/data`. With Nextflow, initiating the workflow is as simple as running a command in your terminal, specifying your image folder and labels. Nextflow takes care of the rest, efficiently managing resources and ensuring the process is smooth.
 
-We have temporarily disabled some sections of the workflow, so that you can see how things change as we progressively add components. Right now the workflow section looks like:
+In our example `main.nf`, we have temporarily disabled some sections of the workflow so that you can see how things change as we progressively add components. Right now the workflow section looks like:
 
-```
+```groovy
 workflow {
     pics = Channel.fromPath(params.input)
 
     Classify(pics, params.prompts)
-    .view()
-//    | map { label, pic -> [label.text, pic] }
-//    .view()
+    | view
+//    | map { label, pic -> [label.text.trim(), pic] }
 //    | groupTuple
-//    .view()
 //    | Collage
-//    .view()
 //    | collect
-//    .view()
 //    | CombineImages
 }
 ```
 
-The `//` are 'comments', and will disable those lines for now. `.view()` lets us view the output of the Classify process in the meantime.
+The `//` are 'comments', and will disable those lines for now. The `view` "operator" lets us view the contents of the channel Classify process in the meantime.
 
 Run the following command on the command-line:
 
@@ -145,13 +165,66 @@ Run the following command on the command-line:
 nextflow run main.nf --prompts 'cat,dog,cute dog'
 ```
 
-TODO: show command output here.
+Nextflow scans the system and then runs as many "Classify" tasks in parallel as will fit on the available resources. When each of the classification tasks are complete, the task outputs are emitted into a "channel", the contents of which we print to the command line using the `view` operator. 
 
-You'll see the log output subsequently displayed to the terminal, and the status of each process in the workflow. You'll also see the content of the input channel, as produced by '.view()'
+The `Classify` process defined an output block that says that when the task completes, Nextflow should pass the `out.txt` file produced by the task and the `pic` image (recieved as input) down to the rest of the workflow:
 
-Now, edit the file, remove the first 'view'(), uncomment the following two lines (remove their //) and re-run. Again, look at the channel content and see if you can follow what's happening.
+```groovy
+output:
+tuple path("out.txt"), path(pic)
+```
+
+The output from our `nextflow run` command includes lines such as:
+
+```
+[<path>/out.txt, <path>/chihuahua.png]
+```
+
+Which are the contents of the channel returned from the `Classify` process.
+
+If we re-execute the same `nextflow run` command, Nextflow will re-calculate the classification step for each input image. Nextflow has an intelligent caching mechanism that we can turn on by adding the `-resume` flag. 
+
+Re-run the workflow with this extra argument and you should see that the workflow completes much more quickly:
+
+```bash
+nextflow run main.nf --prompts 'cat,dog,cute dog' -resume
+```
+
+Now, edit the file, move the `view` operator down one line, uncomment the line of the `map` operator (remove the //). The workflow block should look like:
+
+```groovy
+workflow {
+    pics = Channel.fromPath(params.input)
+
+    Classify(pics, params.prompts)
+    | map { label, pic -> [label.text.trim(), pic] }
+    | view
+//    | groupTuple
+//    | Collage
+//    | collect
+//    | CombineImages
+}
+```
+
+Re-run the workflow (using `-resume) and look at the channel content and see if you can follow what's happening.
 
 Progressively uncomment all of the workflow lines, running the command each time to see what the content of the channels is.
+
+> [!TIP]
+> At the next step, you should edit the `main.nf` to look like:
+> ```groovy
+> workflow {
+>     pics = Channel.fromPath(params.input)
+> 
+>     Classify(pics, params.prompts)
+>     | map { label, pic -> [label.text.trim(), pic] }
+>     | groupTuple
+>     | view
+> //    | Collage
+> //    | collect
+> //    | CombineImages
+> }
+> ```
 
 ### Step 4: Analyze workflow log and outputs
 
