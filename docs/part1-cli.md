@@ -192,9 +192,9 @@ Now lets try to create a collage of each of the directories containing label-spe
     montage dog/* dog_temp.png
     ```
 
-    You can view the results of this command by clicking the "dog_temp.png" filename in the file explorer on the left-hand side of your window:
-
-    ![open collage](assets/open_dog_temp.png)
+    > [!TIP]
+    > You can view the results of this command by clicking the `dog_temp.png` filename in the file explorer on the left-hand side of your window:
+    > ![open collage](assets/open_dog_temp.png)
 
     To make the collage a little bit more interesting, we can add a few command-line arguments:
 
