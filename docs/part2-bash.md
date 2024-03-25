@@ -1,6 +1,6 @@
 # Part 2: Critter classification with Bash scripting
 
-Hopefully, the previous exercise using the command-line wasn't too tricky, but it was a bit tedious running all of those commands wasn't it? Let's exercise our [3 virtues](https://thethreevirtues.com/) and try to make life easier for ourselves.
+Hopefully, the previous exercise using the command-line wasn't too tricky, but it was a bit tedious running all of those commands wasn't it? Let's exercise our [3 virtues](https://thethreevirtues.com/) and try to folder life easier for ourselves.
 
 ## Introduction to Bash and Bash Scripting
 
@@ -12,7 +12,7 @@ A Bash script is essentially a file containing a series of commands that are exe
 
 For this exercise, we have created a folder called [`activity/bash/data`](../activity/bash/data) that contains a copy of all of the original animal images in the top-level [`data/`](../data/) folder.
 
-1. Let's change to the appropriate directory:
+1. Let's change to the appropriate folder:
 
    ```console
    $ pwd
@@ -32,7 +32,7 @@ Now that you are in the correct location relative to where the input images are 
 
 ## Implementing the critter classification
 
-Change to the `/bash` activity directory. If you're currently still in the `cli` subdirectory you can do this on the command-line with:
+Change to the `/bash` activity folder. If you're currently still in the `cli` subfolder you can do this on the command-line with:
 
 ```bash
 cd ../bash

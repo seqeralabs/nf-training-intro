@@ -82,7 +82,7 @@ Once the run completes successfully, you will be able to view the final collage 
 - Navigate to the 'Reports' tab
 - Click on the final collage file titled `collage.compressed.jpeg`
 
-You'll be able to not only view the collage in the Platform, but also download it as well - all while still storing it in the Cloud and not having to worry about using up storage locally. You'll notice that the 'Path' for the collage file will point to the bucket path which you had specified in Step 4 as your output directory, or `outdir`.
+You'll be able to not only view the collage in the Platform, but also download it as well - all while still storing it in the Cloud and not having to worry about using up storage locally. You'll notice that the 'Path' for the collage file will point to the bucket path which you had specified in Step 4 as your output folder, or `outdir`.
 
 ## Step 7: Inspect the Run details
 

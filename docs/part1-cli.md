@@ -10,9 +10,9 @@ In this section of our Nextflow workshop, we'll explore how to run an existing c
 
 For this exercise, we have created a folder called [`activity/cli/data`](../activity/cli/data) that just contains a copy of all of the original animal images in the top-level [`data/`](../data/) folder.
 
-You can either navigate to this directory via the File Explorer side-bar in the VS Code user interface in Gitpod, or the command-line. This is a good example of how you can do exactly the same thing through the user interface and the command-line.
+You can either navigate to this folder via the File Explorer side-bar in the VS Code user interface in Gitpod, or the command-line. This is a good example of how you can do exactly the same thing through the user interface and the command-line.
 
-1. Let's list all of the files in the current directory using the command-line. You should see the `activity` folder as shown below:
+1. Let's list all of the files in the current folder using the command-line. You should see the `activity` folder as shown below:
 
    ```console
    $ ls
@@ -33,7 +33,7 @@ You can either navigate to this directory via the File Explorer side-bar in the 
    cd cli
    ```
 
-3. You can check you are in the correct directory by using the [`pwd`](https://en.wikipedia.org/wiki/Pwd) (print working directory) command:
+3. You can check you are in the correct folder by using the [`pwd`](https://en.wikipedia.org/wiki/Pwd) (print working folder) command:
 
    ```console
    $ pwd
@@ -79,7 +79,7 @@ This should return a text output onto the command-line telling you which of the 
 
 For simplicity, let's use the same labels, classify each of the 8 images individually and then copy them into a folder based on the classification:
 
-1. Precreate individual folders for each label with the [`mkdir`](https://en.wikipedia.org/wiki/Mkdir) (make directory) command:
+1. Precreate individual folders for each label with the [`mkdir`](https://en.wikipedia.org/wiki/Mkdir) (folder folder) command:
 
    ```bash
    mkdir cat
@@ -167,27 +167,27 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
 
 Now you should have 3 directories labelled by critter:
 
-1. A `dog/` directory with all of the images that were labelled as `'dog'`
-2. A `cat/` directory with all the images labelled as `'cat'`
-3. A `cute_dog/` directory with all the images labelled as `'cute_dog'`
+1. A `dog/` folder with all of the images that were labelled as `'dog'`
+2. A `cat/` folder with all the images labelled as `'cat'`
+3. A `cute_dog/` folder with all the images labelled as `'cute_dog'`
 
-You can also list the images that ended up in each directory by using the command-below:
+You can also list the images that ended up in each folder by using the command-below:
 
 ```bash
 ls dog
 ```
 
-## Step 3: Make a collage for each classifier
+## Step 3: folder a collage for each classifier
 
 Now lets try to create a collage of each of the directories containing label-specific images. We will be using a tool called [`montage`](https://imagemagick.org/script/montage.php) to create the collage. This tool will take as input a list of images and output a collage in png format.
 
-1. Create a `collages` directory:
+1. Create a `collages` folder:
 
    ```bash
    mkdir collages
    ```
 
-2. Create a temporary image to make a collage with the correct layout for all of the images in the `'dog'` folder:
+2. Create a temporary image to folder a collage with the correct layout for all of the images in the `'dog'` folder:
 
    ```bash
    montage dog/* dog_temp.png
@@ -197,7 +197,7 @@ Now lets try to create a collage of each of the directories containing label-spe
 > You can view the results of this command by clicking the `dog_temp.png` filename in the file explorer on the left-hand side of your window:
 > ![open collage](assets/open_dog_temp.png)
 
-To make the collage a little bit more interesting, we can add a few command-line arguments:
+To folder the collage a little bit more interesting, we can add a few command-line arguments:
 
 ```bash
 montage -background black +polaroid -background '#ffbe76' dog/* dog_temp.png
@@ -225,7 +225,7 @@ montage -label 'cute_dog' -geometry +0+0 -background "#f0932b" cute_dog_temp.png
 
 You should now have a set of collages, one for each critter type.
 
-1. List the images that ended up in the `collages/` directory by using the command-below:
+1. List the images that ended up in the `collages/` folder by using the command-below:
 
    ```
    $ ls collages

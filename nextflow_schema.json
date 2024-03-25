@@ -10,7 +10,10 @@
       "type": "object",
       "fa_icon": "fas fa-terminal",
       "description": "Define where the pipeline should find input data and save output data.",
-      "required": ["input", "outdir"],
+      "required": [
+        "input",
+        "outdir"
+      ],
       "properties": {
         "input": {
           "type": "string",
@@ -23,7 +26,7 @@
         "outdir": {
           "type": "string",
           "format": "directory-path",
-          "description": "The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.",
+          "description": "The output folder where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.",
           "fa_icon": "fas fa-folder-open"
         },
         "prompts": {

@@ -21,13 +21,13 @@ You should see the version info printed to the console.
 
 ### Step 2: Understanding Your Nextflow Workflow
 
-Navigate to the `activity/nextflow/` directory:
+Navigate to the `activity/nextflow/` folder:
 
 ```bash
 cd /workspace/nf-training-intro/activity/nextflow
 ```
 
-In this directory, you will see a `main.nf` script. This script will define our workflow - let's take a closer look.
+In this folder, you will see a `main.nf` script. This script will define our workflow - let's take a closer look.
 
 Your workflow has several key components:
 
@@ -73,7 +73,7 @@ process Resize {
 }
 ```
 
-Immediately after classification, we resize the (potentially large) image to something that will fit in a 100x100 pixel box. The resized image is saved as a png file to the current directory (`.` is the directory in which the command is being run).
+Immediately after classification, we resize the (potentially large) image to something that will fit in a 100x100 pixel box. The resized image is saved as a png file to the current folder (`.` is the folder in which the command is being run).
 
 ```groovy
 process Collage {
@@ -240,7 +240,7 @@ As the pipeline runs in the background, Nextflow be doing the following tasks:
 
 - Container Management: For each process that specifies a container, Nextflow pulls the necessary images and executes the commands within isolated environments. This ensures consistency and reproducibility, addressing the common challenge of "it works on my machine".
 
-Once it completes, you'll see the final `collage.png` available in a new directory called `results` - just like that!
+Once it completes, you'll see the final `collage.png` available in a new folder called `results` - just like that!
 
 ### Key Differences from Bash Scripting
 
