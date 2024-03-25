@@ -9,7 +9,6 @@ workflow {
 
     Classify(pics, params.prompts)
     | view
-    // | map { label, pic -> [ label.text.trim(), pic ] }
     // | Resize
     // | groupTuple
     // | Collage
@@ -26,10 +25,10 @@ process Classify {
     val prompts
 
     output:
-    tuple path("out.txt"), path(pic)
+    tuple stdout, path(pic)
 
     script:
-    "classify.py --image $pic --labels '$prompts' > out.txt"
+    "classify.py --image $pic --labels '$prompts'"
 }
 
 process Resize {
