@@ -110,12 +110,6 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    mkdir cute_dog
    ```
 
-   ```bash
-   mkdir cat
-   mkdir dog
-   mkdir cute_dog
-   ```
-
 2. Classify each image individually:
 
    ```console
