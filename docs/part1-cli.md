@@ -28,6 +28,7 @@ You can either navigate to this directory via the File Explorer sidebar in the V
    ```bash
    cd activity/cli
    ```
+
    ```bash
    cd activity/cli
    ```
@@ -38,6 +39,7 @@ You can either navigate to this directory via the File Explorer sidebar in the V
    cd activity
    cd cli
    ```
+
    ```bash
    cd activity
    cd cli
@@ -107,6 +109,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    mkdir dog
    mkdir cute_dog
    ```
+
    ```bash
    mkdir cat
    mkdir dog
@@ -206,6 +209,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    ```bash
    cp data/aussie.png cute_dog
    ```
+
    ```bash
    cp data/aussie.png cute_dog
    ```
@@ -213,6 +217,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    ```bash
    cp data/chihuahua.png cute_dog
    ```
+
    ```bash
    cp data/chihuahua.png cute_dog
    ```
@@ -220,6 +225,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    ```bash
    cp data/dog.png dog
    ```
+
    ```bash
    cp data/dog.png dog
    ```
@@ -227,6 +233,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    ```bash
    cp data/hiding.png cat
    ```
+
    ```bash
    cp data/hiding.png cat
    ```
@@ -234,6 +241,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    ```bash
    cp data/pug.png cute_dog
    ```
+
    ```bash
    cp data/pug.png cute_dog
    ```
@@ -241,6 +249,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    ```bash
    cp data/rain-ready.png cute_dog
    ```
+
    ```bash
    cp data/rain-ready.png cute_dog
    ```
@@ -248,6 +257,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    ```bash
    cp data/reflective.png cat
    ```
+
    ```bash
    cp data/reflective.png cat
    ```
@@ -255,6 +265,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    ```bash
    cp data/yawn.png cat
    ```
+
    ```bash
    cp data/yawn.png cat
    ```
@@ -262,7 +273,6 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    Just out of interest, did your copy paste skills take a carpal tunnel battering there?
 
 Now you should have 3 directories labelled by critter:
-
 
 1. A `dog/` directory with all of the images that were labelled as `'dog'`
 2. A `cat/` directory with all the images labelled as `'cat'`
@@ -283,6 +293,7 @@ Now let's try to create a collage of each of the directories containing label-sp
    ```bash
    mkdir collages
    ```
+
    ```bash
    mkdir collages
    ```
@@ -292,6 +303,7 @@ Now let's try to create a collage of each of the directories containing label-sp
    ```bash
    montage dog/* dog_temp.png
    ```
+
    ```bash
    montage dog/* dog_temp.png
    ```
@@ -344,6 +356,7 @@ You should now have a set of collages, one for each critter type.
    ```bash
    montage -geometry +10+10 -quality 05 -background "#ffbe76" -border 5 -bordercolor "#f0932b" collages/* collage_all.png
    ```
+
    ```bash
    montage -geometry +10+10 -quality 05 -background "#ffbe76" -border 5 -bordercolor "#f0932b" collages/* collage_all.png
    ```
