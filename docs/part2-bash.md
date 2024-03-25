@@ -15,53 +15,54 @@ For this exercise, we have created a folder called [`activity/bash/data`](../act
 1. Let's change to the appropriate folder:
 
    ```console
-   $ pwd
+   cd /workspace/nf-training-intro/activity/bash
+   ```
 
+   ```console
+   pwd
+   ```
+
+   ```
+   # Output
    /workspace/nf-training-intro/activity/bash
    ```
 
 2. List the contents of the `data` folder:
 
    ```console
-   $ ls data
+   ls data
+   ```
 
+   ```
+   # Output
    aussie.png  chihuahua.png  dog.png  hiding.png  pug.png  rain-ready.png  reflective.png  yawn.png
    ```
 
 Now that you are in the correct location relative to where the input images are stored, you will be able to run the classification with the images in `data/`.
 
-## Implementing the critter classification
+## Step 2: Run the Bash script
 
-Change to the `bash/` activity folder. If you're currently still in the `cli` subfolder you can do this on the command-line with:
+We have written a bash script called [`make_collage.sh`](../activity/bash/make_collage.sh). Have a look at this script and check that you understand the rough picture of what's going on (the fine detail is unimportant here). We're essentially automating what you did [before](../docs/part1-cli.md), looping over all the input images, classifying them, making a collage for each class and combining those collages at the end.
 
-```bash
-cd ../bash
-```
-
-We've provided a script for you [here](../activity/bash/make_collage.sh). Have a look at this script and check that you understand the rough picture of what's going on (the fine detail is unimportant here). We're essentially automating what you did [before](../docs/part1-cli.md), looping over all the input images, classifying them, making a collage for each class, and combining those collages at the end.
-
-Run this command to execute the script, and check that it works:
+You should see that running the Bash script below produces the composite collage file `collage_all.png` with a single command!
 
 ```bash
 ./make_collage.sh
 ```
 
-## Conclusions
+## Quiz
 
-You should see that the classification happens automatically using Bash scripting, producing `collage_all.png`, and hopefully see that this is an improvement. But ask yourself the following:
+Try to answer the following questions for yourself:
 
-- This is a little more reproducible because we're removing some human involvement. But what if someone in the host environment changes what the `classify` command does?
-- If this was a more time-consuming task where each image took 10 minutes to classify and there was a power failure, would we be able to resume the sequence of commands?
+- Is this an improvement compared to the previous exercise?
+- Is this more reproducible because we are removing some more human involvement?
 - How well will this scale to 1000s of images?
-- What would happen if you copied this script to a different computer where the software hasn't already been installed?
+- If this was a more time-consuming task where each image took 10 minutes to classify and there is a power failure at GitPod HQ, would we be able to resume the sequence of commands?
+- What would happen if you copied this script to a different computer where the required software hasn't already been installed in the executing environment?
+- What if someone in the host environment changes what the `classify.py` command does?
 
-<details>
-<summary>Summary</summary>
-While Bash scripts offer more efficiency and scalability over running individual CLI commands, there is still an important limitation concerning reproducibility and scalability. For instance, executing the same script across different computers, or environments might yield varying results due to differences in software versions, operating systems, or configurations. Moreover, Bash scripts can become unwieldy as the complexity of the tasks increases, especially when dealing with large datasets or requiring parallel processing.
-</details>
+## Summary
 
-## Next steps
+While Bash scripts offer more efficiency and scalability over running individual CLI commands, there is still an important limitation with respect to reproducibility and scalability. For instance, executing the same script across different computers, or environments might yield varying results due to differences in software versions, operating systems, or configurations. Moreover, Bash scripts can become unwieldy as the complexity of the tasks increases, especially when dealing with larger datasets or when requiring parallel processing.
 
-This is where Nextflow comes in to save the day. Nextflow is designed to address these limitations by enabling scalable and reproducible scientific workflows. It allows you to write pipelines that are portable across multiple execution environments to ensure consistent results. Nextflow also simplifies complex data-driven processes to automate and execute tasks in parallel.
-
-To see how, proceed to the next part: [Part 3. Critter classification with Nextflow](part3-nextflow.md).
+In the next section of the workshop, [Part 3: Critter classification with Nextflow](part3-nextflow.md), we will show how Nextflow comes to the rescue! Nextflow is designed to address these limitations by enabling scalable and reproducible scientific workflows. It allows you to write pipelines that are portable across multiple execution environments to ensure consistent results. Nextflow also simplifies complex data-driven processes to automate and execute tasks in parallel.
