@@ -29,6 +29,11 @@ You can begin a new Gitpod environment by following the link below:
 
 [![Open in GitPod](https://img.shields.io/badge/Gitpod%20-%20Open%20new%20workspace%20-%20908a85?style=for-the-badge&logo=gitpod)](https://gitpod.io/?workspaceClass=g1-large&editor=code&autostart=false#https://github.com/seqeralabs/nf-training-intro)
 
+This will bring you to the Gitpod launch screen where you can click "Continue":
+
+![Gitpod launch](docs/assets/gitpod-launch.png)
+
+
 ### Interacting with the command-line
 
 Please don't worry if you are unfamiliar with command-line environments, you will just be copying commands to follow along.
