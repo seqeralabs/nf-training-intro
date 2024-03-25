@@ -5,7 +5,7 @@ Nextflow is a workflow tool that enables the orchestration of complex computatio
 Importantly, Nextflow solves a number of the problems you might have noticed using Bash scripting:
 
 - Each task will run in parallel, limited only by available compute resources - it takes some effort to implement that in Bash.
-- Software is automatically made available specific to each process. You might not have appreciated that in the previous examples because we prepared your software environment for you in GitPod, but it's a very important consideration.
+- Software is automatically made available specific to each process. You might not have noticed in the previous examples because we prepared your software environment for you in GitPod, but it's a very important consideration.
 - Nextflow workflows are composed of modular processes (or scripts) that can be easily reused or modified. Bash scripts can be modular but tend to become more unwieldy as complexity increases.
 
 ## Step 1: Find the critters
