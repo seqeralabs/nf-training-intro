@@ -101,12 +101,12 @@ Congratulations on completing Go with the (Next)flow! 🎉 You've now gained a b
 
 In summary, you should have a concrete understanding of the key capabilities of Nextflow:
 
-- **Scalability**
-- **Parallelism**
-- **Reproducibility**
-- **Resumability**
-- **Reporting**
-- **Flexibility**
+- **Scalability**: Nextflow allows for scalability from launching in a GitPod environment to cloud environments.
+- **Parallelism**: Tasks like classifying pictures can be run at the same time.
+- **Reproducibility**: Nextflow pipelines can be used over and over, even when the input changes (for example, adding different pictures to classify, or adding new prompts).
+- **Resumability**: If the pipeline fails, you can easily pick back up and don't need to start from scratch - for example, you can run Collage without having to run Resize again.
+- **Reporting**: Nextflow provides logs that you can examine to troubleshoot and Seqera Platform allows you to view reports quickly.
+- **Flexibility**: You can make selections based on what you need done - adding "best dog" to the prompt.
 
 ## Resources
 
