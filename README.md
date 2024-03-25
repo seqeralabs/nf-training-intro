@@ -39,19 +39,19 @@ The major difference between a command-line environment and conventional interfa
 
 For example, you would issue the following commands:
 
-- To enter a directory or folder called `data/`
+- To enter a folder called `data/`
 
 ```bash
 cd data
 ```
 
-- List files in a directory/folder:
+- List files in a folder:
 
 ```bash
 ls
 ```
 
-- Go back up a level to a parent directory:
+- Go back up a level to a parent folder:
 
 ```bash
 cd ..

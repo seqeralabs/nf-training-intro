@@ -12,11 +12,14 @@ For this exercise, we have created a folder called [`activity/cli/data`](../acti
 
 You can either navigate to this directory via the File Explorer sidebar in the VS Code user interface in Gitpod, or the command-line. This is a good example of how you can do exactly the same thing through the user interface and the command-line.
 
-1. Let's list all of the files in the current directory using the command-line. You should see the `activity` folder as shown below:
+1. Let's list all of the files in the current folder using the command-line by running the [`ls`](https://man7.org/linux/man-pages/man1/ls.1.html) command. You should see the `activity` folder as shown below:
 
    ```console
-   $ ls
+   ls
+   ```
 
+   ```
+   # Output:
    README.md  activity  assets  bin  data  docs  main.nf  nextflow.config  nextflow_schema.json  tower.yml
    ```
 
@@ -26,26 +29,32 @@ You can either navigate to this directory via the File Explorer sidebar in the V
    cd activity/cli
    ```
 
-   or you can run multiple `cd` commands to get there too:
+   or you can run multiple [`cd`](https://linuxcommand.org/lc3_man_pages/cdh.html) commands to get there too:
 
    ```bash
    cd activity
    cd cli
    ```
 
-3. You can check you are in the correct directory by using the [`pwd`](https://en.wikipedia.org/wiki/Pwd) (print working directory) command:
+3. You can check you are in the correct folder by using the [`pwd`](https://man7.org/linux/man-pages/man1/pwd.1.html) (print working directory (folder)) command:
 
    ```console
-   $ pwd
+   pwd
+   ```
 
+   ```
+   # Output:
    /workspace/nf-training-intro/activity/cli
    ```
 
 4. List the contents of the `data` folder:
 
    ```console
-   $ ls data
+   ls data
+   ```
 
+   ```
+   # Output:
    aussie.png  chihuahua.png  dog.png  hiding.png  pug.png  rain-ready.png  reflective.png  yawn.png
    ```
 
@@ -71,7 +80,11 @@ Let's break this down:
 Now let's run the `classify.py` script on a single dog pic called [`rain-ready.png`](../activity/cli/data/rain-ready.png) and see which classifier CLIP assigns to it!
 
 ```
-$ classify.py --image data/rain-ready.png --labels 'animal,cat,ugly_dog,cute_dog'
+classify.py --image data/rain-ready.png --labels 'animal,cat,ugly_dog,cute_dog'
+```
+
+```
+# Output:
 dog
 ```
 
@@ -79,7 +92,7 @@ This should return a text output onto the command-line telling you which of the 
 
 For simplicity, let's use the same labels, classify each of the 8 images individually and then copy them into a folder based on the classification:
 
-1. Precreate individual folders for each label with the [`mkdir`](https://en.wikipedia.org/wiki/Mkdir) (make directory) command:
+1. Precreate individual folders for each label with the [`mkdir`](https://man7.org/linux/man-pages/man1/mkdir.1.html) (make directory (folder)) command:
 
    ```bash
    mkdir cat
@@ -90,42 +103,88 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
 2. Classify each image individually:
 
    ```console
-   $ classify.py --image data/aussie.png --labels 'cat,dog,cute_dog'
+   classify.py --image data/aussie.png --labels 'cat,dog,cute_dog'
+   ```
+
+   ```
+   # Output:
    cute_dog
    ```
 
+   <br>
+
+   a. Chihuahua:
+
    ```console
-   $ classify.py --image data/chihuahua.png --labels 'cat,dog,cute_dog'
+   classify.py --image data/chihuahua.png --labels 'cat,dog,cute_dog'
+   ```
+
+   ```
+   # Output:
    cute_dog
    ```
 
+   <br/>
+   b. Dog:
+
    ```console
-   $ classify.py --image data/dog.png --labels 'cat,dog,cute_dog'
+   classify.py --image data/dog.png --labels 'cat,dog,cute_dog'
+   ```
+
+   ```
+   # Output:
    dog
    ```
 
+   <br>
+   c. Cat hiding:
+
    ```console
-   $ classify.py --image data/hiding.png --labels 'cat,dog,cute_dog'
+   classify.py --image data/hiding.png --labels 'cat,dog,cute_dog'
+   ```
+
+   ```
+   # Output:
    cat
    ```
+
+   <br>
+   d. Pug:
 
    ```console
    $ classify.py --image data/pug.png --labels 'cat,dog,cute_dog'
    cute_dog
    ```
 
+   <br/>
+   e. Pug with a raincoat:
+
    ```console
    $ classify.py --image data/rain-ready.png --labels 'cat,dog,cute_dog'
    cute_dog
    ```
 
+   <br>
+   f. Cat with sunglasses
+
    ```console
-   $ classify.py --image data/reflective.png --labels 'cat,dog,cute_dog'
+   classify.py --image data/reflective.png --labels 'cat,dog,cute_dog'
+   ```
+
+   ```
+   # Output:
    cat
    ```
 
+   <br/>
+   g. Cat yawning:
+
    ```console
    $ classify.py --image data/yawn.png --labels 'cat,dog,cute_dog
+   ```
+
+   ```
+   # Output:
    cat
    ```
 
@@ -163,13 +222,13 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    cp data/yawn.png cat
    ```
 
-Just out of interest, did your copy-paste skills take a carpal tunnel battering there?
+   Just out of interest, did your copy paste skills take a carpal tunnel battering there?
 
 Now you should have 3 directories labelled by critter:
 
-1. A `dog/` directory with all of the images that were labelled as `'dog'`
-2. A `cat/` directory with all the images labelled as `'cat'`
-3. A `cute_dog/` directory with all the images labelled as `'cute_dog'`
+1. A `dog/` folder with all of the images that were labelled as `'dog'`
+2. A `cat/` folder with all the images labelled as `'cat'`
+3. A `cute_dog/` folder with all the images labelled as `'cute_dog'`
 
 You can also list the images that ended up in each directory by using the command below:
 
@@ -181,7 +240,7 @@ ls dog
 
 Now let's try to create a collage of each of the directories containing label-specific images. We will be using a tool called [`montage`](https://imagemagick.org/script/montage.php) to create the collage. This tool will take as input a list of images and output a collage in PNG format.
 
-1. Create a `collages` directory:
+1. Create a `collages` folder:
 
    ```bash
    mkdir collages
@@ -228,8 +287,11 @@ You should now have a set of collages, one for each critter type.
 1. List the images that ended up in the `collages/` directory by using the command below:
 
    ```
-   $ ls collages
+   ls collages
+   ```
 
+   ```
+   # Output:
    cat.png cute_dog.png dog.png
    ```
 
@@ -238,7 +300,9 @@ You should now have a set of collages, one for each critter type.
    ```bash
    montage -geometry +10+10 -quality 05 -background "#ffbe76" -border 5 -bordercolor "#f0932b" collages/* collage_all.png
    ```
+   The `-geometry +10+10` parameter will give us 10px spacing between the collages, the `-quality 05` parameter will compress our final image, and the `-background`, `-border`, and `-bordercolor` parameters add a little colour to the final image.
 
+   You can view the final `collage_all.png` image directly in the GitPod user interface by clicking the filename in the file explorer on the left-hand side. You can also download the image to your local machine by right-clicking the filename and selecting 'Download'.
    The `-geometry +10+10` parameter will give us 10px spacing between the collages, the `-quality 05` parameter will compress our final image, and the `-background`, `-border`, and `-bordercolor` parameters add a little colour to the final image.
 
    You can view the final `collage_all.png` image directly in the GitPod user interface by clicking the filename in the file explorer on the left-hand side. You can also download the image to your local machine by right-clicking the filename and selecting 'Download'.
@@ -259,4 +323,4 @@ Try to answer the following questions for yourself:
 After classifying a few images one by one, you might notice a couple of things. First, it can be quite tedious to type out or copy-paste the command repeatedly for multiple images. Secondly, this method does not scale well if we have hundreds or thousands of images to classify. Imagine having to run each image through the command-line individually—it would be incredibly time-consuming and inefficient.
 </details>
 
-In the next section of the workshop: [Part 2: Critter classification with Bash scripting](part2-bash.md), we will instead encapsulate these commands into a Bash script. This will not only simplify the process of classifying multiple images but also sets the stage for understanding the power of automation and scalability — key features that Nextflow enhances in more complex workflows.
+In the next section of the workshop, [Part 2: Critter classification with Bash scripting](part2-bash.md), we will instead encapsulate these commands into a Bash script. This will not only simplify the process of classifying multiple images but also sets the stage for understanding the power of automation and scalability — key features that Nextflow enhances in more complex workflows.

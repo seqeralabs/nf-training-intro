@@ -21,13 +21,13 @@ You should see the version info printed on the console.
 
 ### Step 2: Understanding Your Nextflow Workflow
 
-Navigate to the `activity/nextflow/` directory:
+Navigate to the `activity/nextflow/` folder:
 
 ```bash
 cd /workspace/nf-training-intro/activity/nextflow
 ```
 
-In this directory, you will see a `main.nf` script. This script will define our workflow - let's take a closer look.
+In this folder, you will see a `main.nf` script. This script will define our workflow - let's take a closer look.
 
 Your workflow has several key components:
 
@@ -177,8 +177,7 @@ tuple path("out.txt"), path(pic)
 The output from our `nextflow run` command includes lines such as:
 
 ```
-[dog
-, <path>/chihuahua.png]
+[dog, <path>/chihuahua.png]
 ```
 
 ... which are the contents of the channel returned from the `Classify` process. The classification ("dog") and image file (chihuahua.png) pair correspond to the pieces in the `Classify` output block.
@@ -240,7 +239,7 @@ As the pipeline runs in the background, Nextflow will be doing the following tas
 
 - Container Management: For each process that specifies a container, Nextflow pulls the necessary images and executes the commands within isolated environments. This ensures consistency and reproducibility, addressing the common challenge of "it works on my machine".
 
-Once it completes, you'll see the final `collage.png` available in a new directory called `results` - just like that!
+Once it completes, you'll see the final `collage.png` available in a new folder called `results` - just like that!
 
 ### Key Differences from Bash Scripting
 
