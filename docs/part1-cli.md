@@ -10,7 +10,7 @@ In this section of our Nextflow workshop, we'll explore how to run an existing c
 
 For this exercise, we have created a folder called [`activity/cli/data`](../activity/cli/data) that just contains a copy of all of the original animal images in the top-level [`data/`](../data/) folder.
 
-You can either navigate to this folder via the File Explorer side-bar in the VS Code user interface in Gitpod, or the command-line. This is a good example of how you can do exactly the same thing through the user interface and the command-line.
+You can either navigate to this directory via the File Explorer sidebar in the VS Code user interface in Gitpod, or the command-line. This is a good example of how you can do exactly the same thing through the user interface and the command-line.
 
 1. Let's list all of the files in the current folder using the command-line. You should see the `activity` folder as shown below:
 
@@ -53,7 +53,7 @@ Now that you are in the correct location relative to where the input images are 
 
 ## Step 2: Label each image
 
-In this step of the tutorial, we will explore how to run an existing classification model using OpenAI's CLIP tool directly from the command-line, to both classify our critters.
+In this step of the tutorial, we will explore how to run an existing classification model using OpenAI's CLIP tool directly from the command-line, to classify our critters.
 
 The main command we will be using looks like this:
 
@@ -163,7 +163,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    cp data/yawn.png cat
    ```
 
-   Just out of interest, did your copy paste skills take a carpal tunnel battering there?
+Just out of interest, did your copy-paste skills take a carpal tunnel battering there?
 
 Now you should have 3 directories labelled by critter:
 
@@ -171,7 +171,7 @@ Now you should have 3 directories labelled by critter:
 2. A `cat/` folder with all the images labelled as `'cat'`
 3. A `cute_dog/` folder with all the images labelled as `'cute_dog'`
 
-You can also list the images that ended up in each folder by using the command-below:
+You can also list the images that ended up in each directory by using the command below:
 
 ```bash
 ls dog
@@ -179,7 +179,7 @@ ls dog
 
 ## Step 3: folder a collage for each classifier
 
-Now lets try to create a collage of each of the directories containing label-specific images. We will be using a tool called [`montage`](https://imagemagick.org/script/montage.php) to create the collage. This tool will take as input a list of images and output a collage in png format.
+Now let's try to create a collage of each of the directories containing label-specific images. We will be using a tool called [`montage`](https://imagemagick.org/script/montage.php) to create the collage. This tool will take as input a list of images and output a collage in PNG format.
 
 1. Create a `collages` folder:
 
@@ -225,7 +225,7 @@ montage -label 'cute_dog' -geometry +0+0 -background "#f0932b" cute_dog_temp.png
 
 You should now have a set of collages, one for each critter type.
 
-1. List the images that ended up in the `collages/` folder by using the command-below:
+1. List the images that ended up in the `collages/` directory by using the command below:
 
    ```
    $ ls collages
@@ -250,9 +250,9 @@ You should now have a set of collages, one for each critter type.
 Try to answer the following questions for yourself:
 
 - How easy would it be to try a new set of labels on this dataset?
-- What if there were 1000 images? Would you be happy following the above steps for all of them?
+- What if there were 1000 images? Would you be happy to follow the above steps for all of them?
 - Even if you did, are you confident you would get the commands right if you had to type them out 100 times again?
-- How annoyed would you be if you had lost your place half way through and had to start again?
+- How annoyed would you be if you had lost your place halfway through and had to start again?
 
 <details>
 <summary>Summary</summary>
