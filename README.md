@@ -1,4 +1,4 @@
-# Go with the Next(flow)!
+# Go with the (Next)flow!
 
 **Welcome to our introductory session on Nextflow!**
 
@@ -94,6 +94,19 @@ Once you have successfully provisioned a GitPod environment (see [Getting Starte
 - [Part 2: Using Bash scripting](docs/part2-bash.md)
 - [Part 3: Using Nextflow](docs/part3-nextflow.md)
 - [Part 4: Using the Seqera Platform](docs/part4-platform.md)
+
+## Summary
+
+Congratulations on completing Go with the (Next)flow! 🎉 You've now gained a base-level understanding of Nextflow, its integration within the Platform, and why Seqera is the preferred choice for our customers.
+
+In summary, you should have a concrete understanding of the key capabilities of Nextflow:
+
+- **Scalability**
+- **Parallelism**
+- **Reproducibility**
+- **Resumability**
+- **Reporting**
+- **Flexibility**
 
 ## Resources
 
