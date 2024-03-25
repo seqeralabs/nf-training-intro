@@ -29,16 +29,7 @@ You can either navigate to this directory via the File Explorer sidebar in the V
    cd activity/cli
    ```
 
-   ```bash
-   cd activity/cli
-   ```
-
    or you can run multiple [`cd`](https://linuxcommand.org/lc3_man_pages/cdh.html) commands to get there too:
-
-   ```bash
-   cd activity
-   cd cli
-   ```
 
    ```bash
    cd activity
@@ -86,7 +77,6 @@ Let's break this down:
 3. `--labels '<LABEL_1>,<LABEL_2>,<LABEL_3>'` is the set of labels/classifiers we want to assign to the images
 4. `> out.txt` allows us to save the results or output of the classification into a file called `out.txt` that we can read later.
 
-Now let's run the `classify.py` script on a single dog pic called [`rain-ready.png`](../activity/cli/data/rain-ready.png) and see which classifier CLIP assigns to it!
 Now let's run the `classify.py` script on a single dog pic called [`rain-ready.png`](../activity/cli/data/rain-ready.png) and see which classifier CLIP assigns to it!
 
 ```
@@ -205,19 +195,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    ```
 
    ```bash
-   cp data/aussie.png cute_dog
-   ```
-
-   ```bash
    cp data/chihuahua.png cute_dog
-   ```
-
-   ```bash
-   cp data/chihuahua.png cute_dog
-   ```
-
-   ```bash
-   cp data/dog.png dog
    ```
 
    ```bash
@@ -229,14 +207,6 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    ```
 
    ```bash
-   cp data/hiding.png cat
-   ```
-
-   ```bash
-   cp data/pug.png cute_dog
-   ```
-
-   ```bash
    cp data/pug.png cute_dog
    ```
 
@@ -245,19 +215,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    ```
 
    ```bash
-   cp data/rain-ready.png cute_dog
-   ```
-
-   ```bash
    cp data/reflective.png cat
-   ```
-
-   ```bash
-   cp data/reflective.png cat
-   ```
-
-   ```bash
-   cp data/yawn.png cat
    ```
 
    ```bash
@@ -288,15 +246,7 @@ Now let's try to create a collage of each of the directories containing label-sp
    mkdir collages
    ```
 
-   ```bash
-   mkdir collages
-   ```
-
 2. Create a temporary image to make a collage with the correct layout for all of the images in the `'dog'` folder:
-
-   ```bash
-   montage dog/* dog_temp.png
-   ```
 
    ```bash
    montage dog/* dog_temp.png
@@ -350,11 +300,6 @@ You should now have a set of collages, one for each critter type.
    ```bash
    montage -geometry +10+10 -quality 05 -background "#ffbe76" -border 5 -bordercolor "#f0932b" collages/* collage_all.png
    ```
-
-   ```bash
-   montage -geometry +10+10 -quality 05 -background "#ffbe76" -border 5 -bordercolor "#f0932b" collages/* collage_all.png
-   ```
-
    The `-geometry +10+10` parameter will give us 10px spacing between the collages, the `-quality 05` parameter will compress our final image, and the `-background`, `-border`, and `-bordercolor` parameters add a little colour to the final image.
 
    You can view the final `collage_all.png` image directly in the GitPod user interface by clicking the filename in the file explorer on the left-hand side. You can also download the image to your local machine by right-clicking the filename and selecting 'Download'.
@@ -362,7 +307,6 @@ You should now have a set of collages, one for each critter type.
 
    You can view the final `collage_all.png` image directly in the GitPod user interface by clicking the filename in the file explorer on the left-hand side. You can also download the image to your local machine by right-clicking the filename and selecting 'Download'.
 
-   Take a look - what do you think?
    Take a look - what do you think?
 
 ## Quiz
