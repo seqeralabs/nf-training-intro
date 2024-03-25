@@ -8,7 +8,6 @@ workflow {
     pics = Channel.fromPath(params.input)
 
     Classify(pics, params.prompts)
-    | map { label, pic -> [ label.text, pic ] }
     | Resize
     | groupTuple
     | Collage
@@ -25,10 +24,10 @@ process Classify {
     val prompts
 
     output:
-    tuple path("out.txt"), path(pic)
+    tuple stdout, path(pic)
 
     script:
-    "classify.py --image $pic --labels '$prompts' > out.txt"
+    "classify.py --image $pic --labels '$prompts'"
 }
 
 process Resize {
