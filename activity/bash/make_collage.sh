@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Loop over all our files to classify them
+# Loop over all image files in the 'data' folder to classify them
 echo 'Classifying images...'
 for picture in data/*; do
     # # Run the classify command and fetch the label
