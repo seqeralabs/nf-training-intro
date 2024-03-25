@@ -10,12 +10,12 @@ A Bash script is essentially a file containing a series of commands that are exe
 
 ## Step 1: Find the critters
 
-For this exercise, we have created a folder called [`activity/bash/data`](../activity/bash/data) that contains a copy of all of the original animal images in the top-level [`data/`](../data/) folder.
+For this exercise, we have created a folder called [`exercise/bash/data`](../exercise/bash/data) that contains a copy of all of the original animal images in the top-level [`data/`](../data/) folder.
 
 1. Let's change to the appropriate folder:
 
    ```console
-   cd /workspace/nf-training-intro/activity/bash
+   cd /workspace/nf-training-intro/exercise/bash
    ```
 
    ```console
@@ -24,7 +24,7 @@ For this exercise, we have created a folder called [`activity/bash/data`](../act
 
    ```
    # Output
-   /workspace/nf-training-intro/activity/bash
+   /workspace/nf-training-intro/exercise/bash
    ```
 
 2. List the contents of the `data` folder:
@@ -42,7 +42,7 @@ Now that you are in the correct location relative to where the input images are 
 
 ## Step 2: Run the Bash script
 
-We have written a bash script called [`make_collage.sh`](../activity/bash/make_collage.sh). Have a look at this script and check that you understand the rough picture of what's going on (the fine detail is unimportant here). We're essentially automating what you did [before](../docs/part1-cli.md), looping over all the input images, classifying them, making a collage for each class and combining those collages at the end.
+We have written a bash script called [`make_collage.sh`](../exercise/bash/make_collage.sh). Have a look at this script and check that you understand the rough picture of what's going on (the fine detail is unimportant here). We're essentially automating what you did [before](../docs/part1-cli.md), looping over all the input images, classifying them, making a collage for each class and combining those collages at the end.
 
 You should see that running the Bash script below produces the composite collage file `collage_all.png` with a single command!
 

@@ -8,11 +8,11 @@ In this section of our Nextflow workshop, we'll explore how to run an existing c
 
 ## Step 1: Find the critters
 
-For this exercise, we have created a folder called [`activity/cli/data`](../activity/cli/data) that just contains a copy of all of the original animal images in the top-level [`data/`](../data/) folder.
+For this exercise, we have created a folder called [`exercise/cli/data`](../exercise/cli/data) that just contains a copy of all of the original animal images in the top-level [`data/`](../data/) folder.
 
 You can either navigate to this directory via the File Explorer sidebar in the VS Code user interface in Gitpod, or the command-line. This is a good example of how you can do exactly the same thing through the user interface and the command-line.
 
-1. Let's list all of the files in the current folder using the command-line by running the [`ls`](https://man7.org/linux/man-pages/man1/ls.1.html) command. You should see the `activity` folder as shown below:
+1. Let's list all of the files in the current folder using the command-line by running the [`ls`](https://man7.org/linux/man-pages/man1/ls.1.html) command. You should see the `exercise` folder as shown below:
 
    ```console
    ls
@@ -20,19 +20,19 @@ You can either navigate to this directory via the File Explorer sidebar in the V
 
    ```
    # Output:
-   README.md  activity  assets  bin  data  docs  main.nf  nextflow.config  nextflow_schema.json  tower.yml
+   README.md  exercise  assets  bin  data  docs  main.nf  nextflow.config  nextflow_schema.json  tower.yml
    ```
 
-2. You can either navigate directly to the `activity/cli/` folder by issuing the command below:
+2. You can either navigate directly to the `exercise/cli/` folder by issuing the command below:
 
    ```bash
-   cd activity/cli
+   cd exercise/cli
    ```
 
    or you can run multiple [`cd`](https://linuxcommand.org/lc3_man_pages/cdh.html) commands to get there too:
 
    ```bash
-   cd activity
+   cd exercise
    cd cli
    ```
 
@@ -44,7 +44,7 @@ You can either navigate to this directory via the File Explorer sidebar in the V
 
    ```
    # Output:
-   /workspace/nf-training-intro/activity/cli
+   /workspace/nf-training-intro/exercise/cli
    ```
 
 4. List the contents of the `data` folder:
@@ -77,7 +77,7 @@ Let's break this down:
 3. `--labels '<LABEL_1>,<LABEL_2>,<LABEL_3>'` is the set of labels/classifiers we want to assign to the images
 4. `> out.txt` allows us to save the results or output of the classification into a file called `out.txt` that we can read later.
 
-Now let's run the `classify.py` script on a single dog pic called [`rain-ready.png`](../activity/cli/data/rain-ready.png) and see which classifier CLIP assigns to it!
+Now let's run the `classify.py` script on a single dog pic called [`rain-ready.png`](../exercise/cli/data/rain-ready.png) and see which classifier CLIP assigns to it!
 
 ```
 classify.py --image data/rain-ready.png --labels 'animal,cat,ugly_dog,cute_dog'
@@ -152,7 +152,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    d. Pug:
 
    ```console
-   $ classify.py --image data/pug.png --labels 'cat,dog,cute_dog'
+   classify.py --image data/pug.png --labels 'cat,dog,cute_dog'
    cute_dog
    ```
 
@@ -160,7 +160,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    e. Pug with a raincoat:
 
    ```console
-   $ classify.py --image data/rain-ready.png --labels 'cat,dog,cute_dog'
+   classify.py --image data/rain-ready.png --labels 'cat,dog,cute_dog'
    cute_dog
    ```
 
@@ -180,7 +180,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    g. Cat yawning:
 
    ```console
-   $ classify.py --image data/yawn.png --labels 'cat,dog,cute_dog
+   classify.py --image data/yawn.png --labels 'cat,dog,cute_dog
    ```
 
    ```
@@ -239,6 +239,16 @@ ls dog
 ## Step 3: Resize all images for each classifier
 
 To make sure the images in our final collage are of a uniform size, let's run a resize command on the contents of the three folders:
+
+First we'll make a separate directory with the `mkdir` command to store our resized images, based on the label:
+
+```bash
+mkdir -p resized/dog
+mkdir -p resized/cat
+mkdir -p resized/cute_dog
+```
+
+Second, we will run a command with the[`mogrify`](https://imagemagick.org/script/mogrify.php) image modification tool to resize our images for each classifier:
 
 a. First for `dog/`:
 

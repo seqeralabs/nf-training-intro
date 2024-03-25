@@ -21,10 +21,10 @@ You should see the version info printed on the console.
 
 ### Step 2: Understanding Your Nextflow Workflow
 
-Navigate to the `activity/nextflow/` folder:
+Navigate to the `exercise/nextflow/` folder:
 
 ```bash
-cd /workspace/nf-training-intro/activity/nextflow
+cd /workspace/nf-training-intro/exercise/nextflow
 ```
 
 In this folder, you will see a `main.nf` script. This script will define our workflow - let's take a closer look.
@@ -139,7 +139,7 @@ Parameters (`params`) allow for flexible, user-defined inputs into the workflow.
 
 Now that you understand how the Workflow is structured, you can now start running some Nextflow magic!
 
-All of the data you will use as input for the workflow is provided in `activity/nextflow/data`. With Nextflow, initiating the workflow is as simple as running a command in your terminal, and specifying your image folder and labels. Nextflow takes care of the rest, efficiently managing resources and ensuring the process is smooth.
+All of the data you will use as input for the workflow is provided in `exercise/nextflow/data`. With Nextflow, initiating the workflow is as simple as running a command in your terminal, and specifying your image folder and labels. Nextflow takes care of the rest, efficiently managing resources and ensuring the process is smooth.
 
 In our example `main.nf`, we have temporarily disabled some sections of the workflow so that you can see how things change as we progressively add components. Right now the workflow section looks like this:
 
