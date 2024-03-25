@@ -1,22 +1,16 @@
 # Part 4: Critter classification on Seqera Platform
 
-## Introduction to Running a Nextflow Workflow on Seqera Platform
-
-Transitioning from crafting our classification steps into Nextflow and running locally, we're now stepping up to Seqera Platform, making our critter-classification project even more collaborative and accessible. This move isn't just about scaling up; it's about bringing collaborators into our fun classification journey, enabling anyone, anywhere, to classify their favorite critters using the same parameters. It's also about effortlessly handling data in the Cloud, without getting tangled in the technicalities, and keeping an eye on costs, ensuring our animal adventure stays budget-friendly. Nextflow Tower is here to make sharing, collaborating, and cloud computing a breeze for our critter-classifying escapades.
-
-## Running the workflow on Seqera Platform
+In this exercise, we will transition from running Nextflow locally to AWS Batch via the Seqera Platform which will make our critter classification project even more collaborative and accessible. This move is not just about scaling up; it is about bringing collaborators into our fun classification journey, enabling anyone, anywhere, to classify their favorite critters using the same parameters. It is also about effortlessly handling data in the Cloud, without getting tangled in the technicalitie. Seqera Platform is here to make sharing, collaborating, and cloud computing a breeze for our critter-classifying escapades.
 
 ## Step 1: Log in to Seqera Platform
 
-Head over to our beloved [Seqera Platform landing page](cloud.seqera.io) and log in with your Seqera GSuite account. Upon logging in, you will have access to a Workspace called `nf-training` under the `seqeralabs` organization.
-
-An AWS Batch Compute Environment with valid credentials has already been set up for you to use.
+Log in the [Seqera Platform](https://seqera.io/platform/) with your preferred credentials. After logging in, you should have access to a Workspace called `nf-training` under the `seqeralabs` organization. An AWS Batch Compute Environment with valid credentials has already been set up for you to use.
 
 <!-- TODO: screenshot here maybe -->
 
 ## Step 2: Launch the workflow
 
-If you go to the Launchpad in the `seqeralabs/nf-training` workspace, you'll see a pipeline pre-configured on the Launchpad called `nf-training`. You can click on the 'Launch' button to start configuring your run.
+If you go to the Launchpad in the `seqeralabs/nf-training` workspace, you will see a pipeline pre-configured on the Launchpad called `nf-training`. You can click on the 'Launch' button to start configuring your run.
 
  <details>
 <summary>Pipeline Configuration Details</summary>
