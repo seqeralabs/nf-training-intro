@@ -14,14 +14,14 @@ For this exercise, we have created a folder called [`activity/bash/data`](../act
 
 1. Let's change to the appropriate directory:
 
-    ```console
-    cd /workspace/nf-training-intro/activity/bash
-    ```
+   ```console
+   cd /workspace/nf-training-intro/activity/bash
+   ```
 
-    ```console
-    pwd
-    /workspace/nf-training-intro/activity/bash
-    ```
+   ```console
+   pwd
+   /workspace/nf-training-intro/activity/bash
+   ```
 
 2. List the contents of the `data` folder:
 
@@ -37,7 +37,7 @@ Now that you are in the correct location relative to where the input images are 
 
 We have written a bash script called [`make_collage.sh`](../activity/bash/make_collage.sh). Have a look at this script and check that you understand the rough picture of what's going on (the fine detail is unimportant here). We're essentially automating what you did [before](../docs/part1-cli.md), looping over all the input images, classifying them, making a collage for each class and combining those collages at the end.
 
-You should see that running the Bash script below produces the composite collage file `collage_all.png` with a single command! 
+You should see that running the Bash script below produces the composite collage file `collage_all.png` with a single command!
 
 ```bash
 ./make_collage.sh
