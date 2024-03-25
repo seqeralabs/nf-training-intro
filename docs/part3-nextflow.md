@@ -6,28 +6,28 @@ Nextflow is a workflow tool that enables the orchestration of complex computatio
 
 Importantly this approach addresses a number of the problems you might have noticed using the Bash scripting:
 
-- Processes will run in parallel, limited only by available compute resources (it takes some effort to make that happen in Bash). In fact you often use compute resources outside of the machine you execute the workflow on.
+- Processes will run in parallel, limited only by available compute resources (it takes some effort to make that happen in Bash). You often use compute resources outside of the machine you execute the workflow on.
 - Software is automatically made available specific to each process. You might not have appreciated that in the previous examples because we prepared your software environment for you, but it's a very important consideration.
 
 ### Step 1: Setting Up Your Workspace
 
-Before we start, we need make sure Nextflow is installed in your environment. This should already have been set up for you, but we can run commands like the following to see exactly what version of Nextflow we will be using:
+Before we start, we need to make sure Nextflow is installed in your environment. This should already have been set up for you, but we can run commands like the following to see exactly what version of Nextflow we will be using:
 
 ```bash
 nextflow -version
 ```
 
-You should see the version info printed to the console.
+You should see the version info printed on the console.
 
 ### Step 2: Understanding Your Nextflow Workflow
 
-Navigate to the `activity/nextflow/` directory:
+Navigate to the `activity/nextflow/` folder:
 
 ```bash
 cd /workspace/nf-training-intro/activity/nextflow
 ```
 
-In this directory, you will see a `main.nf` script. This script will define our workflow - let's take a closer look.
+In this folder, you will see a `main.nf` script. This script will define our workflow - let's take a closer look.
 
 Your workflow has several key components:
 
@@ -73,7 +73,7 @@ process Resize {
 }
 ```
 
-Immediately after classification, we resize the (potentially large) image to something that will fit in a 100x100 pixel box. The resized image is saved as a png file to the current directory (`.` is the directory in which the command is being run).
+Immediately after classification, we resize the (potentially large) image to something that will fit in a 100x100 pixel box. The resized image is saved as a PNG file to the current directory (`.` is the directory in which the command is being run).
 
 ```groovy
 process Collage {
@@ -93,7 +93,7 @@ process Collage {
 }
 ```
 
-After resizing, this `Collage` process takes groups of labeled images and creates a collage for each label. It uses the montage command from ImageMagick (a software suite for image manipulation). Recall, we were running two commands to achieve this earlier.
+After resizing, this `Collage` process takes groups of labeled images and creates a collage for each label. It uses the montage command from ImageMagick (a software suite for image manipulation). Recall that we were running two commands to achieve this earlier.
 
 ```groovy
 process CombineImages {
@@ -119,7 +119,7 @@ This final process gathers all the collages created by the earlier `Collage` pro
 
 In Nextflow, channels are used to transport data and connect processes together. Think of them as pipes through which your data flows. In this workflow, we make a channel of picture files called `pics`. This channel is responsible for making the images available to the first process (`Classify`) in the workflow.
 
-We can create this channel in Nextflow using some built-in tools which are designed to find a set of files and add them to the channel. This is called a channel factory and in this example, we will specify where to look for the files using the `params.input` variable.
+We can create this channel in Nextflow using some built-in tools that are designed to find a set of files and add them to the channel. This is called a channel factory and in this example, we will specify where to look for the files using the `params.input` variable.
 
 ```groovy
 pics = Channel.fromPath(params.input)
@@ -139,9 +139,9 @@ Parameters (`params`) allow for flexible, user-defined inputs into the workflow.
 
 Now that you understand how the Workflow is structured, you can now start running some Nextflow magic!
 
-All of the data you will use as input for the workflow is provided in `activity/nextflow/data`. With Nextflow, initiating the workflow is as simple as running a command in your terminal, specifying your image folder and labels. Nextflow takes care of the rest, efficiently managing resources and ensuring the process is smooth.
+All of the data you will use as input for the workflow is provided in `activity/nextflow/data`. With Nextflow, initiating the workflow is as simple as running a command in your terminal, and specifying your image folder and labels. Nextflow takes care of the rest, efficiently managing resources and ensuring the process is smooth.
 
-In our example `main.nf`, we have temporarily disabled some sections of the workflow so that you can see how things change as we progressively add components. Right now the workflow section looks like:
+In our example `main.nf`, we have temporarily disabled some sections of the workflow so that you can see how things change as we progressively add components. Right now the workflow section looks like this:
 
 ```groovy
 workflow {
@@ -165,7 +165,7 @@ Run the following command on the command-line:
 nextflow run main.nf --prompts 'cat,dog,cute dog'
 ```
 
-Nextflow scans the system and then runs as many "Classify" tasks in parallel as will fit on the available resources. When each of the classification tasks are complete, the task outputs are emitted into a "channel", the contents of which we print to the command line using the `view` operator. 
+Nextflow scans the system and then runs as many "Classify" tasks in parallel as will fit on the available resources. When each of the classification tasks are complete, the task outputs are emitted into a "channel", the contents of which we print to the command line using the `view` operator.
 
 The `Classify` process defined an output block that says that when the task completes, Nextflow should pass the `out.txt` file produced by the task and the `pic` image (received as input) down to the rest of the workflow:
 
@@ -177,13 +177,12 @@ tuple path("out.txt"), path(pic)
 The output from our `nextflow run` command includes lines such as:
 
 ```
-[dog
-, <path>/chihuahua.png]
+[dog, <path>/chihuahua.png]
 ```
 
 ... which are the contents of the channel returned from the `Classify` process. The classification ("dog") and image file (chihuahua.png) pair correspond to the pieces in the `Classify` output block.
 
-If we re-execute the same `nextflow run` command, Nextflow will re-calculate the classification step for each input image. Nextflow has an intelligent caching mechanism that we can turn on by adding the `-resume` flag. 
+If we re-execute the same `nextflow run` command, Nextflow will re-calculate the classification step for each input image. Nextflow has an intelligent caching mechanism that we can turn on by adding the `-resume` flag.
 
 Re-run the workflow with this extra argument and you should see that the workflow completes much more quickly:
 
@@ -191,7 +190,7 @@ Re-run the workflow with this extra argument and you should see that the workflo
 nextflow run main.nf --prompts 'cat,dog,cute dog' -resume
 ```
 
-Now, edit the file, move the `view` operator down one line, uncomment the line of the `Resize` process (remove the //). The workflow block should look like:
+Now, edit the file, move the `view` operator down one line, and uncomment the line of the `map` operator (remove the //). The workflow block should look like:
 
 ```groovy
 workflow {
@@ -213,10 +212,11 @@ Progressively uncomment all of the workflow lines, running the command each time
 
 > [!TIP]
 > At the next step, you should edit the `main.nf` to look like:
+>
 > ```groovy
 > workflow {
 >     pics = Channel.fromPath(params.input)
-> 
+>
 >     Classify(pics, params.prompts)
 >     | Resize
 >     | groupTuple
@@ -229,9 +229,9 @@ Progressively uncomment all of the workflow lines, running the command each time
 
 ### Step 4: Analyze workflow log and outputs
 
-As the pipeline runs in the background, Nextflow be doing the following tasks:
+As the pipeline runs in the background, Nextflow will be doing the following tasks:
 
-- Nextflow Initialization: Nextflow initializes the workflow based on your script, prepare the environment, and make software available through containers.
+- Nextflow Initialization: Nextflow initializes the workflow based on your script, prepares the environment, and makes software available through containers.
 
 - Data Handling: Nextflow reads the input parameters and creates channels that facilitate the flow of data between processes. This automatic handling of data paths is more efficient and less error-prone than manual specification in Bash scripts.
 
@@ -239,11 +239,11 @@ As the pipeline runs in the background, Nextflow be doing the following tasks:
 
 - Container Management: For each process that specifies a container, Nextflow pulls the necessary images and executes the commands within isolated environments. This ensures consistency and reproducibility, addressing the common challenge of "it works on my machine".
 
-Once it completes, you'll see the final `collage.png` available in a new directory called `results` - just like that!
+Once it completes, you'll see the final `collage.png` available in a new folder called `results` - just like that!
 
 ### Key Differences from Bash Scripting
 
-- Parallel Processing: Nextflow inherently supports parallel processing of tasks. This means, we don't need to specify images to our `classify` command, one-by-one.
+- Parallel Processing: Nextflow inherently supports parallel processing of tasks. This means we don't need to specify images to our `classify` command one-by-one.
 
 - Containerization: Each process in the Nextflow workflow can be executed within a container, ensuring consistency across different computing environments. Bash scripts, by themselves, do not provide such isolation, making it harder to reproduce results.
 
@@ -256,8 +256,8 @@ By simplifying the complexity involved in task management, parallel processing, 
 However, ask yourself the following questions:
 
 - What if you wanted to share the results of your classification with your colleagues?
-- What if a collaborator of yours wanted to also run classification with this workflow, using the same parameters? How would you share those with them?
-- What if you wanted to run this workflow on data stored in the Cloud, but did not have knowledge of the cloud execution and storage?
+- What if a collaborator of yours also wanted to run classification with this workflow, using the same parameters? How would you share those with them?
+- What if you wanted to run this workflow on data stored in the Cloud, but did not know the cloud execution and storage?
 - Machine learning can become costly if you are using large datasets, what if you wanted to better understand how costly running this classification workflow was in the Cloud?
 
 ## Next Steps

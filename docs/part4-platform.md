@@ -8,9 +8,9 @@ Transitioning from crafting our classification steps into Nextflow and running l
 
 ## Step 1: Log in to Seqera Platform
 
-Head over to our beloved [Seqera Platform landing page](cloud.seqera.io) and log in with your Seqera GSuite account. Upon logging in, you will have access to Workspace called `nf-training` under the `seqeralabs` organization.
+Head over to our beloved [Seqera Platform landing page](cloud.seqera.io) and log in with your Seqera GSuite account. Upon logging in, you will have access to a Workspace called `nf-training` under the `seqeralabs` organization.
 
-An AWS Batch Compute Environment with valid credentials has been already set up for you to use.
+An AWS Batch Compute Environment with valid credentials has already been set up for you to use.
 
 <!-- TODO: screenshot here maybe -->
 
@@ -20,7 +20,7 @@ If you go to the Launchpad in the `seqeralabs/nf-training` workspace, you'll see
 
  <details>
 <summary>Pipeline Configuration Details</summary>
-The `nf-training` has already been configured on the Launchpad to use an AWS Compute Environment. When adding the pipeline to the Launchpad, a Pipeline Name, Description, and the Compute Environment available in the Workspace was selected. Additionally, to specify where the Nextflow workflow was being pulled from, the Github repository URL was specified. The pipeline is configured to use the 'Master' branch of the repository.
+The `nf-training` has already been configured on the Launchpad to use an AWS Compute Environment. When adding the pipeline to the Launchpad, a Pipeline Name, Description, and the Compute Environment available in the Workspace were selected. Additionally, to specify where the Nextflow workflow was being pulled from, the GitHub repository URL was specified. The pipeline is configured to use the 'Master' branch of the repository.
 
 ![Launchpad configuration](assets/pipeline-launchpad-config.png)
 
@@ -34,17 +34,17 @@ In a valiant effort akin to treasure hunting through the digital realms, we've m
 
 Your goal will be to classify the images in this bucket, in the Cloud.
 
-In previous steps, you were able to view the image files being used as input directly in your Gitpod environment, because they were stored on the same machine. In this case, these files are stored in the cloud which means our current machine can't access them directly. However, you can use the Data Explorer in the Platform to take a look at files in cloud storage similar to the Gitpod environment, but also benefit from endless storage and computing that is afforded by the Cloud.
+In previous steps, you were able to view the image files being used as input directly in your Gitpod environment, because they were stored on the same machine. In this case, these files are stored in the cloud which means our current machine can't access them directly. However, you can use the Data Explorer in the Platform to take a look at files in cloud storage similar to the Gitpod environment but also benefit from the endless storage and computing that is afforded by the Cloud.
 
 - Click on the 'Data Explorer' tab and click on the AWS bucket named `s3://seqera-development-permanent-bucket`
 - Click on the `scidev/` folder
 - Click on any one of the files to preview the image
 
-Without having to log into the AWS Console or use a command-line tool for AWS storage, we are able to view our data in the cloud directly through Data Explorer.
+Without having to log into the AWS Console or use a command-line tool for AWS storage, we can view our data in the cloud directly through Data Explorer.
 
 ## Step 4: Pipeline Parameters
 
-Now that we have previewed out input data, we continue on with configuring our pipeline to be Launched. Navigate back to the 'Launchpad' and click on the `nf-training` pipeline which will bring you to the pipeline parameters page.
+Now that we have previewed our input data, we continue with configuring our pipeline to be Launched. Navigate back to the 'Launchpad' and click on the `nf-training` pipeline which will bring you to the pipeline parameters page.
 
 ### Input
 
@@ -60,7 +60,7 @@ Similar to what you had done before, specify a list of labels in the 'prompts' f
 
 ### Output
 
-In our previous examples, we were saving our results of the classification into a local folder called `results/` in our Gitpod environment. On the Cloud however, we want to save our results to a cloud storage bucket, so that we can then also share with our colleagues.
+In our previous examples, we saved our results of the classification into a local folder called `results/` in our Gitpod environment. On the Cloud, however, we want to save our results to a cloud storage bucket, so that we can then also share with our colleagues.
 
 In the 'outdir' field on the Parameters page, you can specify the following path to an output bucket and prefix:
 
@@ -72,7 +72,7 @@ s3://scidev-eu-west-1/nf-training/<your_name>/results
 
 Now you have specified which images your workflow will attempt to classify, indicated which labels on which you will perform classification, and specified where your results will live!
 
-You can go ahead and click 'Launch'. The classification on the images in this bucket will take some time as there are over >200 images to comb through but you are now successfully running a machine learning workflow in the Cloud!
+You can go ahead and click 'Launch'. The classification of the images in this bucket will take some time as there are over >200 images to comb through but you are now successfully running a machine learning workflow in the Cloud!
 
 ## Step 6: Inspect the Results
 
@@ -82,11 +82,11 @@ Once the run completes successfully, you will be able to view the final collage 
 - Navigate to the 'Reports' tab
 - Click on the final collage file titled `collage.compressed.jpeg`
 
-You'll be able to not only view the collage in the Platform, but also download it as well - all while still storing it in the Cloud and not having to worry about using up storage locally. You'll notice that the 'Path' for the collage file will point to the bucket path which you had specified in Step 4 as your output directory, or `outdir`.
+You'll be able to not only view the collage in the Platform but also download it as well - all while still storing it in the Cloud and not having to worry about using up storage locally. You'll notice that the 'Path' for the collage file will point to the bucket path that you had specified in Step 4 as your output directory, or `outdir`.
 
 ## Step 7: Inspect the Run details
 
-At the top of the page for you Run, in the 'Parameters' and 'Configuration' tabs, you will be able to see the exact pipeline parameters and Nextflow configuration used, respectively. In the Parameters, you will be able to see which prompts or labels were used for classification, which inputs were specified, and where the results are saved. This is helpful for reproducing results from a previous run, or a colleague's run.
+At the top of the page for your Run, in the 'Parameters' and 'Configuration' tabs, you will be able to see the exact pipeline parameters and Nextflow configuration used, respectively. In the Parameters, you will be able to see which prompts or labels were used for classification, which inputs were specified, and where the results are saved. This helps reproduce results from a previous run, or a colleague's run.
 
 ![alt text](assets/run-parameters.png)
 
@@ -109,15 +109,15 @@ You've now journeyed from the simplicity of command-line commands, through the s
 
 More specifically, Nextflow allows us to achieve the following:
 
-- **Scalability**: Nextflow allows workflows to automatically scale across multiple computing environments, from a single Gitpod environment to high-performance computing clusters and cloud environment with minimal manual configuration.
+- **Scalability**: Nextflow allows workflows to automatically scale across multiple computing environments, from a single Gitpod environment to high-performance computing clusters and cloud environments with minimal manual configuration.
 - **Parallelism**: By decomposing a workflow into smaller, independent tasks, Nextflow can execute these tasks in parallel, significantly speeding up the overall process.
 - **Reproducibility**: Nextflow ensures reproducibility by encapsulating each task in containers, like Docker, which packages all necessary software and dependencies. This means that workflows can be rerun under the same conditions, even on different systems (Gitpod, AWS), and produce the same results.
 - **Resumability**: Workflows in Nextflow can be paused and resumed at any point without rerunning completed tasks.
-- **Reporting**: Nextflow provides detailed reports and logs for each workflow execution, including metrics on resource utilization, task execution times, and success/failure statuses. Seqera Platform additionally allows us to view results of our pipeline quickly and provides insight into the workflow's performance and aiding in troubleshooting and optimization.
+- **Reporting**: Nextflow provides detailed reports and logs for each workflow execution, including metrics on resource utilization, task execution times, and success/failure statuses. Seqera Platform additionally allows us to view the results of our pipeline quickly and provides insight into the workflow's performance and aids in troubleshooting and optimization.
 - **Flexibility**: Nextflow supports flexibility in execution platforms (local, cloud, HPC), as well as languages (Python scripts like `classify.py`, R scripts, Bash) making it highly adaptable to different computing needs.
 
 Nextflow has not only enabled you to create robust, adaptable workflows but also ensured that these workflows can be precisely replicated and shared, thanks to its focus on reproducibility and detailed reporting. The leap to running these workflows on Seqera Platform demonstrates the transformative power of cloud execution, enhancing your projects with unparalleled scalability and flexibility. You can now not only classify 200 images, but 500, or 1000 images!
 
-By harnessing the Platform's management and monitoring capabilities, we've seen how tasks can transition seamlessly from local development to cloud-based execution, embodying the ultimate promise of Nextflow's portability, resumability and flexibility.
+By harnessing the Platform's management and monitoring capabilities, we've seen how tasks can transition seamlessly from local development to cloud-based execution, embodying the ultimate promise of Nextflow's portability, resumability, and flexibility.
 
 So, here's to you, the maestro of this critter classification concerto, for embracing the flow and charting a path through the digital wilderness with "Go with the Next(flow)"!

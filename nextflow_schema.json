@@ -17,18 +17,27 @@
           "format": "path",
           "exists": true,
           "description": "Glob pattern matching pictures for classification",
-          "help_text": "You will need to create a design file with information about the samples in your experiment before running the pipeline. Use this parameter to specify its location. It has to be a comma-separated file with 3 columns, and a header row.",
+          "help_text": "You will need to specify a path to the input images (PNG, JPEG) you want to classify. You can use a glob pattern to match multiple files (e.g. 'data/*.jpg').",
           "fa_icon": "fas fa-images"
         },
         "outdir": {
           "type": "string",
           "format": "directory-path",
-          "description": "The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.",
+          "description": "The output folder where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.",
           "fa_icon": "fas fa-folder-open"
-        },
+        }
+      }
+    },
+    "classification_options": {
+      "title": "Classification options",
+      "type": "object",
+      "description": "Define parameters for performing classification",
+      "default": "",
+      "properties": {
         "prompts": {
           "type": "string",
-          "description": "Comma-separated list of prompts",
+          "description": "Comma-separated list of prompts/labels for classification",
+          "help_text": "Use this parameter to specify the labels you want to use for the classification (e.g. 'dog,cute_dog,cat') of the input images. The prompts have to be separated by commas.",
           "fa_icon": "fas fa-hammer"
         }
       }
@@ -37,6 +46,9 @@
   "allOf": [
     {
       "$ref": "#/definitions/input_output_options"
+    },
+    {
+      "$ref": "#/definitions/classification_options"
     }
   ]
 }
