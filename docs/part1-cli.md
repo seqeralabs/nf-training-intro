@@ -29,16 +29,7 @@ You can either navigate to this directory via the File Explorer sidebar in the V
    cd activity/cli
    ```
 
-   ```bash
-   cd activity/cli
-   ```
-
    or you can run multiple [`cd`](https://linuxcommand.org/lc3_man_pages/cdh.html) commands to get there too:
-
-   ```bash
-   cd activity
-   cd cli
-   ```
 
    ```bash
    cd activity
@@ -86,7 +77,6 @@ Let's break this down:
 3. `--labels '<LABEL_1>,<LABEL_2>,<LABEL_3>'` is the set of labels/classifiers we want to assign to the images
 4. `> out.txt` allows us to save the results or output of the classification into a file called `out.txt` that we can read later.
 
-Now let's run the `classify.py` script on a single dog pic called [`rain-ready.png`](../activity/cli/data/rain-ready.png) and see which classifier CLIP assigns to it!
 Now let's run the `classify.py` script on a single dog pic called [`rain-ready.png`](../activity/cli/data/rain-ready.png) and see which classifier CLIP assigns to it!
 
 ```
@@ -205,19 +195,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    ```
 
    ```bash
-   cp data/aussie.png cute_dog
-   ```
-
-   ```bash
    cp data/chihuahua.png cute_dog
-   ```
-
-   ```bash
-   cp data/chihuahua.png cute_dog
-   ```
-
-   ```bash
-   cp data/dog.png dog
    ```
 
    ```bash
@@ -229,14 +207,6 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    ```
 
    ```bash
-   cp data/hiding.png cat
-   ```
-
-   ```bash
-   cp data/pug.png cute_dog
-   ```
-
-   ```bash
    cp data/pug.png cute_dog
    ```
 
@@ -245,19 +215,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    ```
 
    ```bash
-   cp data/rain-ready.png cute_dog
-   ```
-
-   ```bash
    cp data/reflective.png cat
-   ```
-
-   ```bash
-   cp data/reflective.png cat
-   ```
-
-   ```bash
-   cp data/yawn.png cat
    ```
 
    ```bash
