@@ -23,15 +23,11 @@ If you walk away from this workshop being able to understand and communicate the
 
 For this workshop we are going to be using a tool called [`GitPod`](https://www.gitpod.io/), which provides us with a fully managed environment to deliver the training. You will need a GitHub account, so if you don't have one, go to [GitHub](https://github.com/) and create one for yourself.
 
-### GitPod browser plugin
-
-It will make things easier for you if you have a browser extension to provide easier access to GitPod. Go [here](https://www.gitpod.io/docs/configure/user-settings/browser-extension) and follow the link to install the extension for your preferred browser. Restart your browser if required.
-
 ### Open the GitPod environment
 
-At the top of the [nf-training-intro](https://github.com/seqeralabs/nf-training-intro) GitHub repository, you should see a green button with a funny-shaped 'G'. Click that button, follow any prompts, wait for the environment to initialize, and you should get a GitPod workspace with everything pre-installed for this training workshop.
+You can begin a new Gitpod environment by following the link below:
 
-![gitpod button](docs/assets/open-gitpod.png)
+[![Open in GitPod](https://img.shields.io/badge/Gitpod%20-%20Open%20new%20workspace%20-%20908a85?style=for-the-badge&logo=gitpod)](https://gitpod.io/?workspaceClass=g1-large&editor=code&autostart=false#https://github.com/seqeralabs/nf-training-intro)
 
 ### Interacting with the command-line
 
