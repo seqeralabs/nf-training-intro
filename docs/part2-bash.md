@@ -12,7 +12,7 @@ A Bash script is essentially a file containing a series of commands that are exe
 
 For this exercise, we have created a folder called [`activity/bash/data`](../activity/bash/data) that contains a copy of all of the original animal images in the top-level [`data/`](../data/) folder.
 
-1. Let's change to the appropriate directory:
+1. Let's change to the appropriate folder:
 
    ```console
    cd /workspace/nf-training-intro/activity/bash

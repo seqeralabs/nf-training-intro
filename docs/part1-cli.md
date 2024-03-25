@@ -12,7 +12,7 @@ For this exercise, we have created a folder called [`activity/cli/data`](../acti
 
 You can either navigate to this directory via the File Explorer sidebar in the VS Code user interface in Gitpod, or the command-line. This is a good example of how you can do exactly the same thing through the user interface and the command-line.
 
-1. Let's list all of the files in the current directory using the command-line by running the [`ls`](https://man7.org/linux/man-pages/man1/ls.1.html) command. You should see the `activity` folder as shown below:
+1. Let's list all of the files in the current folder using the command-line by running the [`ls`](https://man7.org/linux/man-pages/man1/ls.1.html) command. You should see the `activity` folder as shown below:
 
    ```console
    ls
@@ -45,7 +45,7 @@ You can either navigate to this directory via the File Explorer sidebar in the V
    cd cli
    ```
 
-3. You can check you are in the correct directory by using the [`pwd`](https://man7.org/linux/man-pages/man1/pwd.1.html) (print working directory) command:
+3. You can check you are in the correct folder by using the [`pwd`](https://man7.org/linux/man-pages/man1/pwd.1.html) (print working directory (folder)) command:
 
    ```console
    pwd
@@ -102,7 +102,7 @@ This should return a text output onto the command-line telling you which of the 
 
 For simplicity, let's use the same labels, classify each of the 8 images individually and then copy them into a folder based on the classification:
 
-1. Precreate individual folders for each label with the [`mkdir`](https://man7.org/linux/man-pages/man1/mkdir.1.html) (make directory) command:
+1. Precreate individual folders for each label with the [`mkdir`](https://man7.org/linux/man-pages/man1/mkdir.1.html) (make directory (folder)) command:
 
    ```bash
    mkdir cat
@@ -274,9 +274,9 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
 
 Now you should have 3 directories labelled by critter:
 
-1. A `dog/` directory with all of the images that were labelled as `'dog'`
-2. A `cat/` directory with all the images labelled as `'cat'`
-3. A `cute_dog/` directory with all the images labelled as `'cute_dog'`
+1. A `dog/` folder with all of the images that were labelled as `'dog'`
+2. A `cat/` folder with all the images labelled as `'cat'`
+3. A `cute_dog/` folder with all the images labelled as `'cute_dog'`
 
 You can also list the images that ended up in each directory by using the command below:
 
@@ -288,7 +288,7 @@ ls dog
 
 Now let's try to create a collage of each of the directories containing label-specific images. We will be using a tool called [`montage`](https://imagemagick.org/script/montage.php) to create the collage. This tool will take as input a list of images and output a collage in PNG format.
 
-1. Create a `collages` directory:
+1. Create a `collages` folder:
 
    ```bash
    mkdir collages
