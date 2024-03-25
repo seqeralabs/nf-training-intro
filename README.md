@@ -31,15 +31,15 @@ This will bring you to the Gitpod launch screen where you can click "Continue":
 
 ![Gitpod launch](docs/assets/gitpod-launch.png)
 
-### VSCode
+### Visual Studio Code
 
-Once Gitpod has started, you should see a set of panes displaying lots of information. This is VSCode, software designed for developing other software, known as an Integrated Development Environment (IDE). You may be familiar with it already, but if you are not there are three main windows we will be interacting with.
+Once Gitpod has started, you should see a set of panes displaying lots of information. This is Visual Studio Code (VS Code), software designed for developing other software, known as an Integrated Development Environment (IDE). You may be familiar with it already, but if you are not there are three main windows we will be interacting with.
 
 1. The code editor which is central. This is where will **view and edit code**.
-1. The file browser on the left. This is where we can **explore and open files**.
-1. The terminal or command-line on the bottom. This is how we will be **interacting with software**.
+2. The file browser on the left. This is where we can **explore and open files**.
+3. The terminal or command-line on the bottom. This is how we will be **interacting with software**.
 
-If you would like any further information, please check out this [introductory documentation for vscode](https://code.visualstudio.com/docs/introvideos/codeediting).
+If you would like any further information, please check out this [introductory documentation for VS Code](https://code.visualstudio.com/docs/introvideos/codeediting).
 
 ### Interacting with the command-line
 
