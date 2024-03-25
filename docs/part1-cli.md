@@ -1,124 +1,262 @@
-# Part 1. Critter classification with bare command line
+# Part 1: Critter classification with the command-line
 
-## What is the Command Line?
+## What is the command-line?
 
-The command line is like a magic wand for your computer, allowing you to perform tasks quickly and directly through text commands, much like having a chat with your machine. While it may seem daunting at first glance, its a simple, text-only interface, and incredibly powerful tool that offers a direct way to communicate with and control your computer.
+A command-line interface (CLI) is a means of interacting with a computer program by inputting lines of text called command-lines ([Wikipedia](https://en.wikipedia.org/wiki/Command-line_interface)). While it may seem daunting at first glance, it is a simple, text-only interface, and incredibly powerful tool that offers a direct way to communicate with and control your computer.
 
-In this section of our Nextflow tutorial, we'll explore how to run an existing classification model using OpenAI's CLIP directly from the command line, to both classify our critters and build a collage of images.
+In this section of our Nextflow workshop, we'll explore how to run an existing classification model using OpenAI's CLIP directly from the command-line, to both classify our critters and build a collage of images.
 
-We're assuming that you are successfully in an environment where the files in this repository have been installed and the necessary software made available. Please go back and look at the environment setup in the [README](../README.md) if that's not the case.
+## Step 1: Find the critters
 
-The main command we'll be using looks like this:
+For this exercise, we have created a folder called [`activity/cli/data`](../activity/cli/data) that just contains a copy of all of the original animal images in the top-level [`data/`](../data/) folder.
+
+You can either navigate to this directory via the File Explorer side-bar in the VS Code user interface in Gitpod, or the command-line. This is a good example of how you can do exactly the same thing through the user interface and the command-line.
+
+1. Let's list all of the files in the current directory using the command-line. You should see the `activity` folder as shown below:
+
+    ```console
+    $ ls
+
+    README.md  activity  assets  bin  data  docs  main.nf  nextflow.config  nextflow_schema.json  tower.yml
+    ```
+
+2. You can either navigate directly to the `activity/cli/` folder by issuing the command below:
+
+    ```bash
+    cd activity/cli
+    ```
+
+    or you can run multiple `cd` commands to get there too:
+
+    ```bash
+    cd activity
+    cd cli
+    ```
+
+3. You can check you are in the correct directory by using the [`pwd`](https://en.wikipedia.org/wiki/Pwd) (print working directory) command:
+
+    ```console
+    $ pwd
+
+    /workspace/nf-training-intro/activity/cli
+    ```
+
+4. List the contents of the `data` folder:
+
+    ```console
+    $ ls data
+
+    aussie.png  chihuahua.png  dog.png  hiding.png  pug.png  rain-ready.png  reflective.png  yawn.png
+    ```
+
+Now that you are in the correct location relative to where the input images are stored, you will be able to run the classification with the images in `data/`.
+
+## Step 2: Label each image
+
+In this step of the tutorial, we will explore how to run an existing classification model using OpenAI's CLIP tool directly from the command-line, to both classify our critters.
+
+The main command we will be using looks like this:
 
 ```bash
-classify.py --image PICTURE --labels 'LABELS' > out.txt
+classify.py --image <YOUR_PICTURE> --labels '<LABEL_1>,<LABEL_2>,<LABEL_3>' > out.txt
 ```
 
 Let's break this down:
 
-1. `classify.py` is the command we will use to run the classification model
-2. `--image PICTURE` specifies the image file we would like to classify as input
-3. `--labels 'LABELS'` is the set of classifiers we want to assign to the images
-4. `> out.txt` allows us to save the results or output of the classification into a file we can read later.
+1. `classify.py` is the Python script we have created to run the classification model
+2. `--image <YOUR_PICTURE>` specifies the image file we would like to classify as input
+3. `--labels '<LABEL_1>,<LABEL_2>,<LABEL_3>'` is the set of labels/classifiers we want to assign to the images
+4. `> out.txt` allows us to save the results or output of the classification into a file called `out.txt` that we can read later.
 
-Now we can get started!
+Now let's run the `classify.py` script on a single dog pic called [`rain-ready.png`](../activity/cli/data/rain-ready.png) and see which classifier CLIP assigns to it! 
 
-## Step 1: Label each image
+```
+$ classify.py --image data/rain-ready.png --labels 'animal,cat,ugly_dog,cute_dog'
+dog
+```
 
-First, let's take a look at the images available to us.
+This should return a text output onto the command-line telling you which of the input labels was most likely to apply to the picture we specified as input. In this case, the critter was a `cute_dog'`! We are not limited to the labels we used above, for example, you can also specify `--labels 'cat,dog,zebra,crocodile'`, or any other set of comma-separated labels.
 
-Run this command to see the directory structure:
+For simplicity, let's use the same labels, classify each of the 8 images individually and then copy them into a folder based on the classification:
+
+1. Precreate individual folders for each label with the [`mkdir`](https://en.wikipedia.org/wiki/Mkdir) (make directory) command:
+
+    ```bash
+    mkdir cat
+    mkdir dog
+    mkdir cute_dog
+    ```
+
+2. Classify each image individually:
+
+    ```console
+    $ classify.py --image data/aussie.png --labels 'cat,dog,cute_dog'
+    cute_dog
+    ```
+
+    ```console
+    $ classify.py --image data/chihuahua.png --labels 'cat,dog,cute_dog'
+    cute_dog
+    ```
+
+    ```console
+    $ classify.py --image data/dog.png --labels 'cat,dog,cute_dog'
+    dog
+    ```
+
+    ```console
+    $ classify.py --image data/hiding.png --labels 'cat,dog,cute_dog'
+    cat
+    ```
+
+    ```console
+    $ classify.py --image data/pug.png --labels 'cat,dog,cute_dog'
+    cute_dog
+    ```
+
+    ```console
+    $ classify.py --image data/rain-ready.png --labels 'cat,dog,cute_dog'
+    cute_dog
+    ```
+
+    ```console
+    $ classify.py --image data/reflective.png --labels 'cat,dog,cute_dog'
+    cat
+    ```
+
+    ```console
+    $ classify.py --image data/yawn.png --labels 'cat,dog,cute_dog
+    cat
+    ```
+
+3. Copy each image to a folder based on the classifier label:
+
+    ```bash
+    cp data/aussie.png cute_dog
+    ```
+
+    ```bash
+    cp data/chihuahua.png cute_dog
+    ```
+
+    ```bash
+    cp data/dog.png dog
+    ```
+
+    ```bash
+    cp data/hiding.png cat
+    ```
+
+    ```bash
+    cp data/pug.png cute_dog
+    ```
+
+    ```bash
+    cp data/rain-ready.png cute_dog
+    ```
+
+    ```bash
+    cp data/reflective.png cat
+    ```
+
+    ```bash
+    cp data/yawn.png cat
+    ```
+
+    Just out of interest, did your copy paste skills take a carpal tunnel battering there?
+
+Now you should have 3 directories labelled by critter:
+1. A `dog/` directory with all of the images that were labelled as `'dog'`
+2. A `cat/` directory with all the images labelled as `'cat'`
+3. A `cute_dog/` directory with all the images labelled as `'cute_dog'`
+
+You can also list the images that ended up in each directory by using the command-below:
 
 ```bash
-ls
+ls dog
 ```
 
-Change to the `/cli` directory by typing the following into the terminal:
+## Step 3: Make a collage for each classifier
+
+Now lets try to create a collage of each of the directories containing label-specific images. We will be using a tool called [`montage`](https://imagemagick.org/script/montage.php) to create the collage. This tool will take as input a list of images and output a collage in png format.
+
+1. Create a `collages` directory:
+
+    ```bash
+    mkdir collages
+    ```
+
+2. Create a temporary image to make a collage with the correct layout for all of the images in the `'dog'` folder:
+
+    ```bash
+    montage dog/* dog_temp.png
+    ```
+
+> [!TIP]
+> You can view the results of this command by clicking the `dog_temp.png` filename in the file explorer on the left-hand side of your window:
+> ![open collage](assets/open_dog_temp.png)
+
+To make the collage a little bit more interesting, we can add a few command-line arguments:
 
 ```bash
-cd activity/cli
+montage -background black +polaroid -background '#ffbe76' dog/* dog_temp.png
 ```
 
-You should see that the images are available to you here in the `data` subdirectory:
+We can also use the `montage` command to write our classification label into the image:
 
 ```bash
-ls data
+montage -label 'dog' -geometry +0+0 -background "#f0932b" dog_temp.png collages/dog.png
 ```
 
-Now that you understand the directories with images, you can now run the classification with the images in `data/`.
-
-Try to assign one of these images to a class, for example:
-
-```
-classify.py --image data/rain-ready.png --labels 'cat,dog,cute dog'
-```
-
-This should return a text output onto the command line, telling you which of the input labels was most likely to apply to the picture we specified as input.
-
-We are not limited to the labels above. If you'd like to, play with specifying `'cat,dog,zebra,crocodile'`, or any other set of labels. Whatever the label, copy the image to a new folder named the same way. For example, if the above command returned `'dog'`, then do:
+Now, let's repeat this same process for all of the other labels:
 
 ```bash
-mkdir dog               # Create a new folder
+montage -background black +polaroid -background '#ffbe76' cat/* cat_temp.png
+montage -label 'cat' -geometry +0+0 -background "#f0932b" cat_temp.png collages/cat.png
 ```
 
 ```bash
-cp data/rain-ready.png dog  # Copy the image into the new folder
+montage -background black +polaroid -background '#ffbe76' cute_dog/* cute_dog_temp.png
+montage -label 'cute_dog' -geometry +0+0 -background "#f0932b" cute_dog_temp.png collages/cute_dog.png
 ```
 
-Do the same for all the images under `data`, making sure to use the same set of labels each time.
+## Step 4: Combine the collages
 
-## Step 2: Make a collage for each class
+You should now have a set of collages, one for each critter type.
 
-Now you should have directories labelled by critter. For example a `dog/` directory with all the images that were labelled as 'dog', a `cat/` directory with all the images labelled as 'cat', etc (dependent on whatever labels you used).
+1. List the images that ended up in the `collages/` directory by using the command-below:
 
-Start by making a `collages` directory. By now you should know the command to create a new directory:
+    ```
+    $ ls collages
 
-```bash
-mkdir collages
-```
+    cat.png cute_dog.png dog.png
+    ```
 
-You can now make a collage for each collection of critters using commands like the below. For 'dog' you might first run:
+2. Use `montage` again to combine all of the individual collages into a meta-collage called `collage_all.png`!
 
-```bash
-montage -geometry 80 -tile 4x dogs/* tmp.png
-```
+    ```bash
+    montage -geometry +10+10 -quality 05 -background "#ffbe76" -border 5 -bordercolor "#f0932b" collages/* collage_all.png
+    ```
 
-This will make sure our images in the collage are of uniform size, arranged in a 4x4 grid pattern, and that we want to use all images in the `dogs/` directory.
+    The `-geometry +10+10` parameter will give us 10px spacing between the collages, the `-quality 05` parameter will compress our final image, and the `-background`, `-border`, and `-bordercolor` parameters add a little colour to the final image.
+    
+    You can view the final `collage_all.png` image directly in the GitPod user interface by clicking the filename in the file explorer on the left-hand side. You can also download the image to your local machine by right-clicking the filename and selecting 'Download'.
 
-After that, you can run:
-
-```bash
-montage -label '$label' tmp.png -geometry +0+0 -background Gold collages/dog.png
-rm tmp.png
-```
-
-This will add a label to the collage, adjust the size of the frame around the collage, specify a background colour, and clean up any intermediate images we don't want to keep.
-
-## Step 3: Combine the collages
-
-You should now have a set of collages, one for each critter type, in the `collages/` directory.
-
-All you need to do now is combine them, which you can do with the following command:
-
-```bash
-montage -geometry +0+0 -tile 1x collages/* collage_all.png
-```
-
-You can download that final image from the GitPod user interface by right clicking on the `collage_all.png` and clicking 'Download'.
-
-Take a look - what do you think?
+    Take a look - what do you think?
 
 ## Conclusions
 
 Try to answer the following questions for yourself:
 
-- What if there were 1000 images? Would you be happy doing the above for all of them?
-- Even if you did, are you confident you would get the commands right, if you had to type them out 100 times again?
+- How easy would it be to try a new set of labels on this dataset?
+- What if there were 1000 images? Would you be happy following the above steps for all of them?
+- Even if you did, are you confident you would get the commands right if you had to type them out 100 times again?
 - How annoyed would you be if you had lost your place half way through and had to start again?
+
 
 <details>
 <summary>Summary</summary>
-After classifying a few images one by one, you might notice a couple of things. First, it can be quite tedious to type out or copy-paste the command repeatedly for multiple images. Secondly, this method does not scale well if we have hundreds or thousands of images to classify. Imagine having to run each image through the command line individually—it would be incredibly time-consuming and inefficient.
+After classifying a few images one by one, you might notice a couple of things. First, it can be quite tedious to type out or copy-paste the command repeatedly for multiple images. Secondly, this method does not scale well if we have hundreds or thousands of images to classify. Imagine having to run each image through the command-line individually—it would be incredibly time-consuming and inefficient.
 </details>
 
 ## Next steps
