@@ -32,7 +32,7 @@ Now that you are in the correct location relative to where the input images are 
 
 ## Implementing the critter classification
 
-Change to the `/bash` activity folder. If you're currently still in the `cli` subfolder you can do this on the command-line with:
+Change to the `bash/` activity folder. If you're currently still in the `cli` subfolder you can do this on the command-line with:
 
 ```bash
 cd ../bash
