@@ -14,9 +14,9 @@ For this exercise, we have created a folder called [`exercise/nextflow/data`](..
 
 1. Let's change to the appropriate directory:
 
-    ```console
-    cd /workspace/nf-training-intro/exercise/nextflow
-    ```
+   ```console
+   cd /workspace/nf-training-intro/exercise/nextflow
+   ```
 
 2. List the contents of the folder:
 
