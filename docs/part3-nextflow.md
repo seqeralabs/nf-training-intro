@@ -20,11 +20,11 @@ For this exercise, we have created a folder called [`exercise/nextflow/data`](..
 
 2. List the contents of the folder:
 
-    ```console
-    $ ls
+   ```console
+   $ ls
 
-    collages  data  main.nf
-    ```
+   collages  data  main.nf
+   ```
 
 In this directory, you will see a [`main.nf`](../exercise/nextflow/main.nf) script. This script will define our Nextflow pipeline, let's take a closer look in the next step.
 
@@ -101,7 +101,7 @@ collage_all.png
 
 ## Step 4: Resuming the workflow
 
-If we execute the same `nextflow run` command again, Nextflow will rerun the entire pipeline from scratch which can be wasteful. However, Nextflow has an intelligent caching mechanism that we can turn on by adding the `-resume` flag. 
+If we execute the same `nextflow run` command again, Nextflow will rerun the entire pipeline from scratch which can be wasteful. However, Nextflow has an intelligent caching mechanism that we can turn on by adding the `-resume` flag.
 
 Re-run the workflow with this extra argument and you should see that the workflow completes much more quickly because it does not recompute the tasks that have already successfully completed.
 
