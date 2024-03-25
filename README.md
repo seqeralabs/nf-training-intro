@@ -2,8 +2,6 @@
 
 **Welcome to our introductory session on Nextflow!**
 
-![metro map](docs/assets/nf-training.svg)
-
 [Nextflow](https://www.nextflow.io/) is a powerful workflow language designed to streamline complex computational workflows, often used in fields like bioinformatics. The goal of this training workshop is not to transform you overnight into a coding expert or bioinformatics scientist. Instead, we aim to highlight the key features and capabilities offered by using Nextflow with a set of very simple, relatable examples that should be digestible by anyone!
 
 By the end of this workshop, you will grasp the essentials as to why Nextflow is a leading solution for managing large-scale data analysis and how it empowers users to achieve remarkable scientific breakthroughs with efficiency and flexibility.
@@ -83,6 +81,8 @@ Your mission should you choose to accept is going to be to:
 - Use CLIP to assign critters to classes based on a list of labels you provide.
 - Make a collage of the critters in each class.
 - Combine the collages to create a single, glorious critter cornucopia.
+
+![nf-training-intro metro map](docs/assets/nf-training.png)
 
 ## Exercises
 
