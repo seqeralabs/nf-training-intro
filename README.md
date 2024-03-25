@@ -37,7 +37,7 @@ This will bring you to the Gitpod launch screen where you can click "Continue":
 
 Please don't worry if you are unfamiliar with command-line environments, you will just be copying commands to follow along.
 
-The major difference between a command-line environment and conventional interfaces like Windows or macOS is that you have to issue commands to do even the simple things you would normally take for granted in a grapical user interface.
+The major difference between a command-line environment and conventional interfaces like Windows or macOS is that you have to issue commands to do even the simple things you would normally take for granted in a graphical user interface.
 
 For example, you would issue the following commands:
 
@@ -73,7 +73,7 @@ You have been given a set of pictures of your colleagues' animals, and you want 
 
 ### The aim
 
-To make this workshop palatable for eveyone we have already:
+To make this workshop palatable for everyone we have already:
 
 - Dumped a bunch of animal pictures in the [`data/`](./data/) folder.
 - Written a simple Python script called [`classify.py`](./bin/classify.py), which is uses CLIP to classify the bloomin' critters.

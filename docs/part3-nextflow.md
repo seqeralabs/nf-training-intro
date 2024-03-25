@@ -168,7 +168,7 @@ nextflow run main.nf --prompts 'cat,dog,cute dog'
 
 Nextflow scans the system and then runs as many "Classify" tasks in parallel as will fit on the available resources. When each of the classification tasks are complete, the task outputs are emitted into a "channel", the contents of which we print to the command line using the `view` operator. 
 
-The `Classify` process defined an output block that says that when the task completes, Nextflow should pass the `out.txt` file produced by the task and the `pic` image (recieved as input) down to the rest of the workflow:
+The `Classify` process defined an output block that says that when the task completes, Nextflow should pass the `out.txt` file produced by the task and the `pic` image (received as input) down to the rest of the workflow:
 
 ```groovy
 output:
