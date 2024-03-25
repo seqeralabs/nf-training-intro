@@ -240,7 +240,7 @@ You should now have a set of collages, one for each critter type.
 
     The `-geometry +10+10` parameter will give us 10px spacing between the collages, the `-quality 05` parameter will compress our final image, and the `-background`, `-border`, and `-bordercolor` parameters add a little colour to the final image.
     
-    You can download that final image from the GitPod user interface by right clicking on the `collage_all.png` and clicking 'Download'.
+    You can view the final `collage_all.png` image directly in the GitPod user interface by clicking the filename in the file explorer on the left-hand side. You can also download the image to your local machine by right-clicking the filename and selecting 'Download'.
 
     Take a look - what do you think?
 
@@ -248,6 +248,7 @@ You should now have a set of collages, one for each critter type.
 
 Try to answer the following questions for yourself:
 
+- How easy would it be to try a new set of labels on this dataset?
 - What if there were 1000 images? Would you be happy following the above steps for all of them?
 - Even if you did, are you confident you would get the commands right if you had to type them out 100 times again?
 - How annoyed would you be if you had lost your place half way through and had to start again?
