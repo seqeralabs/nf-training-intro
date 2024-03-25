@@ -34,7 +34,7 @@ RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86
     mkdir -p /workspace/data && \
     chown -R gitpod:gitpod /opt/conda /workspace/data
 
-ENV PATH="/opt/conda/bin:$PATH"
+ENV PATH="/opt/conda/bin:/workspace/nf-training-intro/bin:$PATH"
 
 # Add classify to path
 ADD bin/classify.py /usr/local/bin/classify.py
