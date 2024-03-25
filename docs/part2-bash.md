@@ -4,7 +4,7 @@ Hopefully, that first approach wasn't too tricky, but it was a bit tedious runni
 
 ## Introduction to Bash and Bash Scripting
 
-[Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)), or the Bourne Again SHell, is a powerful command-line language used widely across Unix-like operating systems. It enables users to execute commands, navigate file systems, and manipulate data. Bash's true potential is unlocked through scripting!
+[Bash](<https://en.wikipedia.org/wiki/Bash_(Unix_shell)>), or the Bourne Again SHell, is a powerful command-line language used widely across Unix-like operating systems. It enables users to execute commands, navigate file systems, and manipulate data. Bash's true potential is unlocked through scripting!
 
 A Bash script is essentially a file containing a series of commands that are executed sequentially by the Bash shell. Writing a script involves encapsulating commands you might normally type on the command-line like you performed in the previous section. Scripting saves you time and reduces the potential for error when performing repetitive tasks. It also allows you to 'loop' through commands, for example, to repeat the same actions with different input files.
 
@@ -14,19 +14,19 @@ For this exercise, we have created a folder called [`activity/bash/data`](../act
 
 1. Let's change to the appropriate directory:
 
-    ```console
-    $ pwd
+   ```console
+   $ pwd
 
-    /workspace/nf-training-intro/activity/bash
-    ```
+   /workspace/nf-training-intro/activity/bash
+   ```
 
 2. List the contents of the `data` folder:
 
-    ```console
-    $ ls data
+   ```console
+   $ ls data
 
-    aussie.png  chihuahua.png  dog.png  hiding.png  pug.png  rain-ready.png  reflective.png  yawn.png
-    ```
+   aussie.png  chihuahua.png  dog.png  hiding.png  pug.png  rain-ready.png  reflective.png  yawn.png
+   ```
 
 Now that you are in the correct location relative to where the input images are stored, you will be able to run the classification with the images in `data/`.
 
