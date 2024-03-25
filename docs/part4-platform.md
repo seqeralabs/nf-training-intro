@@ -4,25 +4,23 @@ In this exercise, we will transition from running Nextflow locally to AWS Batch 
 
 ## Step 1: Log in to Seqera Platform
 
-Log in the [Seqera Platform](https://seqera.io/platform/) with your preferred credentials. After logging in, you should have access to a Workspace called `nf-training` under the `seqeralabs` organization. An AWS Batch Compute Environment with valid credentials has already been set up for you to use.
+Log in to the [Seqera Platform](https://seqera.io/platform/) with your preferred credentials. After logging in, you should have access to a Workspace called `nf-training` under the `seqeralabs` organization ([link](https://cloud.seqera.io/orgs/seqeralabs/workspaces/nf-training)). An AWS Batch Compute Environment has already been set up for you to use to run the classification workflow so you don't need to worry about the minutiae.
 
-<!-- TODO: screenshot here maybe -->
+## Step 2: Pipeline settings
 
-## Step 2: Launch the workflow
-
-If you go to the Launchpad in the `seqeralabs/nf-training` workspace, you will see a pipeline pre-configured on the Launchpad called `nf-training`. You can click on the 'Launch' button to start configuring your run.
-
- <details>
-<summary>Pipeline Configuration Details</summary>
-The `nf-training` has already been configured on the Launchpad to use an AWS Compute Environment. When adding the pipeline to the Launchpad, a Pipeline Name, Description, and the Compute Environment available in the Workspace were selected. Additionally, to specify where the Nextflow workflow was being pulled from, the GitHub repository URL was specified. The pipeline is configured to use the 'Master' branch of the repository.
+If you go to the Launchpad in the `seqeralabs/nf-training` workspace, you will see a pipeline called `nf-training` that has been pre-configured to run on AWS Batch via the Seqera Platform. It was created with the following settings:
 
 ![Launchpad configuration](assets/pipeline-launchpad-config.png)
 
-</details>
+We just have to specify the AWS Batch Compute Environment where the pipeline will be run by default, the URL for the GitHub repository for the pipeline and the version or revision we want to run.
+
+## Step 3: The Launchpad
+
+You can click on the 'Launch' button to start configuring your run.
 
 As you are brought to the 'Pipeline Parameters' page, you will have the option of specifying which images you can use for classification, based on the `params.input` parameter. In the previous steps, we were using the few images that were provided for you. Let's make this more interesting...
 
-## Step 3: Use data on cloud storage as input
+## Step 4: Use data on cloud storage as input
 
 In a valiant effort akin to treasure hunting through the digital realms, we've meticulously combed through the delightful array of critter images found in Seqera's #social-pet-pics channel. These gems have now found a new home in an AWS S3 bucket, eagerly awaiting their moment of fame to be classified into 'cat' or 'dog' versus 'cute cat' or 'cute_dog'.
 
@@ -36,7 +34,7 @@ In previous steps, you were able to view the image files being used as input dir
 
 Without having to log into the AWS Console or use a command-line tool for AWS storage, we can view our data in the cloud directly through Data Explorer.
 
-## Step 4: Pipeline Parameters
+## Step 5: Pipeline Parameters
 
 Now that we have previewed our input data, we continue with configuring our pipeline to be Launched. Navigate back to the 'Launchpad' and click on the `nf-training` pipeline which will bring you to the pipeline parameters page.
 
@@ -62,7 +60,7 @@ In the 'outdir' field on the Parameters page, you can specify the following path
 s3://scidev-eu-west-1/nf-training/<your_name>/results
 ```
 
-## Step 5: Launch!
+## Step 6: Launch!
 
 Now you have specified which images your workflow will attempt to classify, indicated which labels on which you will perform classification, and specified where your results will live!
 
