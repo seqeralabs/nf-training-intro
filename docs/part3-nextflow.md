@@ -165,7 +165,7 @@ Run the following command on the command-line:
 nextflow run main.nf --prompts 'cat,dog,cute dog'
 ```
 
-Nextflow scans the system and then runs as many "Classify" tasks in parallel as will fit on the available resources. When each of the classification tasks are complete, the task outputs are emitted into a "channel", the contents of which we print to the command line using the `view` operator. 
+Nextflow scans the system and then runs as many "Classify" tasks in parallel as will fit on the available resources. When each of the classification tasks are complete, the task outputs are emitted into a "channel", the contents of which we print to the command line using the `view` operator.
 
 The `Classify` process defined an output block that says that when the task completes, Nextflow should pass the `out.txt` file produced by the task and the `pic` image (received as input) down to the rest of the workflow:
 
@@ -183,7 +183,7 @@ The output from our `nextflow run` command includes lines such as:
 
 ... which are the contents of the channel returned from the `Classify` process. The classification ("dog") and image file (chihuahua.png) pair correspond to the pieces in the `Classify` output block.
 
-If we re-execute the same `nextflow run` command, Nextflow will re-calculate the classification step for each input image. Nextflow has an intelligent caching mechanism that we can turn on by adding the `-resume` flag. 
+If we re-execute the same `nextflow run` command, Nextflow will re-calculate the classification step for each input image. Nextflow has an intelligent caching mechanism that we can turn on by adding the `-resume` flag.
 
 Re-run the workflow with this extra argument and you should see that the workflow completes much more quickly:
 
@@ -213,10 +213,11 @@ Progressively uncomment all of the workflow lines, running the command each time
 
 > [!TIP]
 > At the next step, you should edit the `main.nf` to look like:
+>
 > ```groovy
 > workflow {
 >     pics = Channel.fromPath(params.input)
-> 
+>
 >     Classify(pics, params.prompts)
 >     | Resize
 >     | groupTuple
