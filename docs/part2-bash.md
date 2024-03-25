@@ -20,14 +20,19 @@ For this exercise, we have created a folder called [`activity/bash/data`](../act
 
    ```console
    pwd
+   ```
+   ```
+   # Output
    /workspace/nf-training-intro/activity/bash
    ```
 
 2. List the contents of the `data` folder:
 
    ```console
-   $ ls data
-
+   ls data
+   ```
+   ```
+   # Output
    aussie.png  chihuahua.png  dog.png  hiding.png  pug.png  rain-ready.png  reflective.png  yawn.png
    ```
 
