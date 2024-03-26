@@ -50,7 +50,7 @@ Similar to what you had done before, specify a list of labels in the 'prompts' f
 
 In our previous examples, we saved the results of the classification in a local folder called `results/` in our GitPod environment. However, now that we are running the pipeline on AWS, we want to save our results to a remote storage bucket so that we can also share the results with our colleagues.
 
-In the 'outdir' field of the Parameters page, you can specify the path below by replacing the `<your_name>` field with your actual name (please refrain from impersonating others :shakefist:):
+In the 'outdir' field of the Parameters page, you can specify the path below by replacing the `<YOUR_NAME>` field with your actual name (please refrain from impersonating others :shakefist:):
 
 ```
 s3://scidev-eu-west-1/nf-training/<your_name>/results
