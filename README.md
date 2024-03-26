@@ -19,7 +19,7 @@ If you walk away from this workshop being able to understand and communicate the
 
 ## Getting started
 
-For this workshop, we are going to be using a tool called [`GitPod`](https://www.gitpod.io/), which provides us with a fully managed environment to deliver the training. You will need a GitHub account, so if you don't have one, go to [GitHub](https://github.com/) and create one for yourself.
+For this workshop, we are going to be using a tool called [`GitPod`](https://www.gitpod.io/), which provides us with a fully managed environment to deliver the training. You will need a GitHub account, so if you don't have one, go to [GitHub](https://github.com/join) and create one for yourself.
 
 ### Open the GitPod environment
 
@@ -30,42 +30,6 @@ You can begin a new Gitpod environment by following the link below:
 This will bring you to the Gitpod launch screen where you can click "Continue":
 
 ![Gitpod launch](docs/assets/gitpod-launch.png)
-
-### Visual Studio Code
-
-Once Gitpod has started, you should see a set of panes displaying lots of information. This is Visual Studio Code (VS Code), software designed for developing other software, known as an Integrated Development Environment (IDE). You may be familiar with it already, but if you are not there are three main windows we will be interacting with.
-
-1. The code editor which is central. This is where will **view and edit code**.
-2. The file browser on the left. This is where we can **explore and open files**.
-3. The terminal or command-line on the bottom. This is how we will be **interacting with software**.
-
-If you would like any further information, please check out this [introductory documentation for VS Code](https://code.visualstudio.com/docs/introvideos/codeediting).
-
-### Interacting with the command-line
-
-Please don't worry if you are unfamiliar with command-line environments, you will just be copying commands to follow along.
-
-The major difference between a command-line environment and conventional interfaces like Windows or macOS is that you have to issue commands to do even the simple things you normally take for granted in a graphical user interface.
-
-For example, you would issue the following commands:
-
-- To enter a folder called `data/`
-
-```bash
-cd data
-```
-
-- List files in a folder:
-
-```bash
-ls
-```
-
-- Go back up a level to a parent folder:
-
-```bash
-cd ..
-```
 
 ## Solving critter blindness
 

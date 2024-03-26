@@ -1,8 +1,44 @@
 # Part 1: Critter classification with the command-line
 
+## Visual Studio Code
+
+Once Gitpod has started, you should see a set of panes displaying lots of information. This is Visual Studio Code (VS Code), software designed for developing other software, known as an Integrated Development Environment (IDE). You may be familiar with it already, but if you are not there are three main windows we will be interacting with.
+
+1. The code editor which is central. This is where will **view and edit code**.
+2. The file browser on the left. This is where we can **explore and open files**.
+3. The terminal or command-line on the bottom. This is how we will be **interacting with software**.
+
+If you would like any further information, please check out this [introductory documentation for VS Code](https://code.visualstudio.com/docs/introvideos/codeediting).
+
 ## What is the command-line?
 
 A command-line interface (CLI) is a means of interacting with a computer program by inputting lines of text called command-lines ([Wikipedia](https://en.wikipedia.org/wiki/Command-line_interface)). While it may seem daunting at first glance, it is a simple, text-only interface, and incredibly powerful tool that offers a direct way to communicate with and control your computer.
+
+### Interacting with the command-line
+
+Please don't worry if you are unfamiliar with command-line environments, you will just be copying commands to follow along.
+
+The major difference between a command-line environment and conventional interfaces like Windows or macOS is that you have to issue commands to do even the simple things you normally take for granted in a graphical user interface.
+
+For example, you would issue the following commands:
+
+- To enter a folder called `data/`
+
+```bash
+cd data
+```
+
+- List files in a folder:
+
+```bash
+ls
+```
+
+- Go back up a level to a parent folder:
+
+```bash
+cd ..
+```
 
 In this section of our Nextflow workshop, we'll explore how to run an existing classification model using OpenAI's CLIP directly from the command-line, to both classify our critters and build a collage of images.
 
@@ -35,6 +71,12 @@ You can either navigate to this directory via the File Explorer sidebar in the V
    cd exercise
    cd cli
    ```
+
+If you get lost, you can always close the terminal using the trash can icon on the right-hand side and then open up a fresh new terminal. In a fresh terminal, to move to the correct directory for the first part of the exercise, you will need to type the command below and press return:
+
+```bash
+cd exercise/cli
+```
 
 3. You can check you are in the correct folder by using the [`pwd`](https://man7.org/linux/man-pages/man1/pwd.1.html) (print working directory (folder)) command:
 
