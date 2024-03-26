@@ -84,7 +84,7 @@ cd exercise/cli
    ```
 
    Which should return:
-  >  `/workspace/nf-training-intro/exercise/cli`
+   >  `/workspace/nf-training-intro/exercise/cli`
 
 4. List the contents of the `data` folder:
 
@@ -347,7 +347,6 @@ You should now have a set of collages, one for each critter type.
 
    Which should return:
    > `cat.png cute_dog.png dog.png`
-
 
 2. Use `montage` again to combine all of the individual collages into a meta-collage called `collage_all.png`!
 
