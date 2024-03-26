@@ -1,8 +1,44 @@
 # Part 1: Critter classification with the command-line
 
+## Visual Studio Code
+
+Once Gitpod has started, you should see a set of panes displaying lots of information. This is Visual Studio Code (VS Code), software designed for developing other software, known as an Integrated Development Environment (IDE). You may be familiar with it already, but if you are not there are three main windows we will be interacting with.
+
+1. The code editor which is central. This is where will **view and edit code**.
+2. The file browser on the left. This is where we can **explore and open files**.
+3. The terminal or command-line on the bottom. This is how we will be **interacting with software**.
+
+If you would like any further information, please check out this [introductory documentation for VS Code](https://code.visualstudio.com/docs/introvideos/codeediting).
+
 ## What is the command-line?
 
 A command-line interface (CLI) is a means of interacting with a computer program by inputting lines of text called command-lines ([Wikipedia](https://en.wikipedia.org/wiki/Command-line_interface)). While it may seem daunting at first glance, it is a simple, text-only interface, and incredibly powerful tool that offers a direct way to communicate with and control your computer.
+
+### Interacting with the command-line
+
+Please don't worry if you are unfamiliar with command-line environments, you will just be copying commands to follow along.
+
+The major difference between a command-line environment and conventional interfaces like Windows or macOS is that you have to issue commands to do even the simple things you normally take for granted in a graphical user interface.
+
+For example, you would issue the following commands:
+
+- To enter a folder called `data/`
+
+```bash
+cd data
+```
+
+- List files in a folder:
+
+```bash
+ls
+```
+
+- Go back up a level to a parent folder:
+
+```bash
+cd ..
+```
 
 In this section of our Nextflow workshop, we'll explore how to run an existing classification model using OpenAI's CLIP directly from the command-line, to both classify our critters and build a collage of images.
 
@@ -35,6 +71,12 @@ You can either navigate to this directory via the File Explorer sidebar in the V
    cd exercise
    cd cli
    ```
+
+If you get lost, you can always close the terminal using the trash can icon on the right-hand side and then open up a fresh new terminal. In a fresh terminal, to move to the correct directory for the first part of the exercise, you will need to type the command below and press return:
+
+```bash
+cd exercise/cli
+```
 
 3. You can check you are in the correct folder by using the [`pwd`](https://man7.org/linux/man-pages/man1/pwd.1.html) (print working directory (folder)) command:
 
@@ -85,144 +127,132 @@ classify.py --image data/rain-ready.png --labels 'animal,cat,ugly_dog,cute_dog'
 
 ```
 # Output:
-dog
+cute_dog
 ```
 
-This should return a text output onto the command-line telling you which of the input labels was most likely to apply to the picture we specified as input. In this case, the critter was a `cute_dog'`! We are not limited to the labels we used above, for example, you can also specify `--labels 'cat,dog,zebra,crocodile'`, or any other set of comma-separated labels.
+This should return a text output onto the command-line telling you which of the input labels was most likely to apply to the picture we specified as input. In this case, the critter was a `cute_dog`! We are not limited to the labels we used above, for example, you can also specify `--labels 'cat,dog,zebra,crocodile'`, or any other set of comma-separated labels.
 
 For simplicity, let's use the same labels, classify each of the 8 images individually and then copy them into a folder based on the classification:
 
-1. Precreate individual folders for each label with the [`mkdir`](https://man7.org/linux/man-pages/man1/mkdir.1.html) (make directory (folder)) command:
+### Classify each image individually
 
-   ```bash
-   mkdir cat
-   mkdir dog
-   mkdir cute_dog
-   ```
+a. Aussie:
 
-2. Classify each image individually:
+```console
+classify.py --image data/aussie.png --labels 'cat,dog,cute_dog'
+```
 
-   ```console
-   classify.py --image data/aussie.png --labels 'cat,dog,cute_dog'
-   ```
+which should return `cute_dog`
 
-   ```
-   # Output:
-   cute_dog
-   ```
+<br>
 
-   <br>
+b. Chihuahua:
 
-   a. Chihuahua:
+```console
+classify.py --image data/chihuahua.png --labels 'cat,dog,cute_dog'
+```
 
-   ```console
-   classify.py --image data/chihuahua.png --labels 'cat,dog,cute_dog'
-   ```
+which should return `cute_dog`
 
-   ```
-   # Output:
-   cute_dog
-   ```
+<br/>
+c. Dog:
 
-   <br/>
-   b. Dog:
+```console
+classify.py --image data/dog.png --labels 'cat,dog,cute_dog'
+```
 
-   ```console
-   classify.py --image data/dog.png --labels 'cat,dog,cute_dog'
-   ```
+which should return `dog`
 
-   ```
-   # Output:
-   dog
-   ```
+<br>
+d. Cat hiding:
 
-   <br>
-   c. Cat hiding:
+```console
+classify.py --image data/hiding.png --labels 'cat,dog,cute_dog'
+```
 
-   ```console
-   classify.py --image data/hiding.png --labels 'cat,dog,cute_dog'
-   ```
+which should return `cat`
 
-   ```
-   # Output:
-   cat
-   ```
+<br>
+e. Pug:
 
-   <br>
-   d. Pug:
+```console
+classify.py --image data/pug.png --labels 'cat,dog,cute_dog'
+```
 
-   ```console
-   classify.py --image data/pug.png --labels 'cat,dog,cute_dog'
-   cute_dog
-   ```
+which should return `cute_dog`
 
-   <br/>
-   e. Pug with a raincoat:
+<br/>
+f. Pug with a raincoat:
 
-   ```console
-   classify.py --image data/rain-ready.png --labels 'cat,dog,cute_dog'
-   cute_dog
-   ```
+```console
+classify.py --image data/rain-ready.png --labels 'cat,dog,cute_dog'
+```
 
-   <br>
-   f. Cat with sunglasses
+which should return `cute_dog`
 
-   ```console
-   classify.py --image data/reflective.png --labels 'cat,dog,cute_dog'
-   ```
+<br>
+g. Cat with sunglasses
 
-   ```
-   # Output:
-   cat
-   ```
+```console
+classify.py --image data/reflective.png --labels 'cat,dog,cute_dog'
+```
 
-   <br/>
-   g. Cat yawning:
+which should return `cat`
 
-   ```console
-   classify.py --image data/yawn.png --labels 'cat,dog,cute_dog
-   ```
+<br/>
+h. Cat yawning:
 
-   ```
-   # Output:
-   cat
-   ```
+```console
+classify.py --image data/yawn.png --labels 'cat,dog,cute_dog
+```
 
-3. Copy each image to a folder based on the classifier label:
+which should return `cat`
 
-   ```bash
-   cp data/aussie.png cute_dog
-   ```
+### Create folders for each label
 
-   ```bash
-   cp data/chihuahua.png cute_dog
-   ```
+Create individual folders for each label with the [`mkdir`](https://man7.org/linux/man-pages/man1/mkdir.1.html) (make directory (folder)) command:
 
-   ```bash
-   cp data/dog.png dog
-   ```
+```bash
+mkdir cat
+mkdir dog
+mkdir cute_dog
+```
 
-   ```bash
-   cp data/hiding.png cat
-   ```
+### Copy each image to a folder based on the classifier label
 
-   ```bash
-   cp data/pug.png cute_dog
-   ```
+```bash
+cp data/aussie.png cute_dog
+```
 
-   ```bash
-   cp data/rain-ready.png cute_dog
-   ```
+```bash
+cp data/chihuahua.png cute_dog
+```
 
-   ```bash
-   cp data/reflective.png cat
-   ```
+```bash
+cp data/dog.png dog
+```
 
-   ```bash
-   cp data/yawn.png cat
-   ```
+```bash
+cp data/hiding.png cat
+```
 
-   Just out of interest, did your copy paste skills take a carpal tunnel battering there?
+```bash
+cp data/pug.png cute_dog
+```
+
+```bash
+cp data/rain-ready.png cute_dog
+```
+
+```bash
+cp data/reflective.png cat
+```
+
+```bash
+cp data/yawn.png cat
+```
+
+Just out of interest, did your copy paste skills take a carpal tunnel battering there?
 
 Now you should have 3 directories labelled by critter:
 
@@ -268,7 +298,7 @@ c. Third for `cute_dog/`:
 mogrify -resize 100x100 -path resized/cute_dog -format png cute_dog/*
 ```
 
-## Step 3: Make a collage for each classifier
+## Step 4: Make a collage for each classifier
 
 Now let's try to create a collage of each of the directories containing label-specific images. We will be using a tool called [`montage`](https://imagemagick.org/script/montage.php) to create the collage. This tool will take as input a list of images and output a collage in PNG format.
 
@@ -312,7 +342,7 @@ montage -background black +polaroid -background '#ffbe76' resized/cat/cute_dog/*
 montage -label 'cute_dog' -geometry +0+0 -background "#f0932b" cute_dog_temp.png collages/cute_dog.png
 ```
 
-## Step 4: Combine the collages
+## Step 5: Combine the collages
 
 You should now have a set of collages, one for each critter type.
 
