@@ -24,10 +24,8 @@ For this exercise, we have created a folder called [`exercise/nextflow/data`](..
    ls
    ```
 
-   ```
-   # Output
-   collages  data  main.nf
-   ```
+   Which should return:
+   >  `collages  data  main.nf`
 
 In this directory, you will see a [`main.nf`](../exercise/nextflow/main.nf) script. This script will define our Nextflow pipeline, let's take a closer look in the next step.
 
@@ -84,13 +82,13 @@ Now that you understand how the workflow is structured, you can start running so
 
 Before we start, we need to make sure Nextflow is installed in your environment. This should already have been set up for you, so we can run the command below and the version of Nextflow will be printed to the console:
 
-```bash
+```console
 nextflow -version
 ```
 
 With Nextflow, a single command can initiate the workflow, specifying the image folder and labels as input. Nextflow takes care of the rest, efficiently managing resources and running the pipeline reproducibly. Run the following on the command-line:
 
-```bash
+```console
 nextflow run main.nf --input "data/*.png" --prompts 'cat,dog,cute_dog' --outdir results
 ```
 
@@ -98,14 +96,12 @@ Nextflow takes each input image and then runs as many `Classify` tasks in parall
 
 Once the pipeline completes, you will see the final `collage_all.png` available in a new directory called `results` - just like that! You can view the contents of the folder with the command below:
 
-```bash
+```console
 ls results
 ```
 
-```
-# Output
-collage_all.png
-```
+Which should return:
+> `collage_all.png`
 
 ## Step 4: Resuming the workflow
 
@@ -113,7 +109,7 @@ If we execute the same `nextflow run` command again, Nextflow will rerun the ent
 
 Re-run the workflow with this extra argument and you should see that the workflow completes much more quickly because it does not recompute the tasks that have already successfully completed.
 
-```bash
+```console
 nextflow run main.nf --input "data/*.png" --prompts 'cat,dog,cute_dog' --outdir results -resume
 ```
 
