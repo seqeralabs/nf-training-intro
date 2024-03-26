@@ -380,6 +380,6 @@ Try to answer the following questions for yourself:
 
 ## Summary
 
-After classifying a few images one by one, you might notice a couple of things. First, it can be quite tedious to type out or copy-paste the command repeatedly for multiple images. Secondly, this method does not scale well if we have hundreds or thousands of images to classify. Imagine having to run each image through the command-line individually—it would be incredibly time-consuming and inefficient.
+After classifying a few images one by one, you will notice a couple of things. First, it can be quite tedious to type out or copy-paste the command repeatedly for multiple images. Secondly, this method does not scale well if we have hundreds or thousands of images to classify. Imagine having to run each image through the command-line individually - it would be incredibly time-consuming and inefficient.
 
 In the next section of the workshop, [Part 2: Critter classification with Bash scripting](part2-bash.md), we will instead encapsulate these commands into a Bash script. This will not only simplify the process of classifying multiple images but also sets the stage for understanding the power of automation and scalability — key features that Nextflow enhances in more complex workflows.
