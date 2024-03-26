@@ -134,123 +134,125 @@ This should return a text output onto the command-line telling you which of the 
 
 For simplicity, let's use the same labels, classify each of the 8 images individually and then copy them into a folder based on the classification:
 
-1. Precreate individual folders for each label with the [`mkdir`](https://man7.org/linux/man-pages/man1/mkdir.1.html) (make directory (folder)) command:
+### Classify each image individually
 
-   ```bash
-   mkdir cat
-   mkdir dog
-   mkdir cute_dog
-   ```
+a. Aussie:
 
-2. Classify each image individually:
+```console
+classify.py --image data/aussie.png --labels 'cat,dog,cute_dog'
+```
 
-   a. Aussie:
+which should return `cute_dog`
 
-   ```console
-   classify.py --image data/aussie.png --labels 'cat,dog,cute_dog'
-   ```
+<br>
 
-   which should return `cute_dog`
+b. Chihuahua:
 
-   <br>
+```console
+classify.py --image data/chihuahua.png --labels 'cat,dog,cute_dog'
+```
 
-   b. Chihuahua:
+which should return `cute_dog`
 
-   ```console
-   classify.py --image data/chihuahua.png --labels 'cat,dog,cute_dog'
-   ```
+<br/>
+c. Dog:
 
-   which should return `cute_dog`
+```console
+classify.py --image data/dog.png --labels 'cat,dog,cute_dog'
+```
 
-   <br/>
-   c. Dog:
+which should return `dog`
 
-   ```console
-   classify.py --image data/dog.png --labels 'cat,dog,cute_dog'
-   ```
+<br>
+d. Cat hiding:
 
-   which should return `dog`
+```console
+classify.py --image data/hiding.png --labels 'cat,dog,cute_dog'
+```
 
-   <br>
-   d. Cat hiding:
+which should return `cat`
 
-   ```console
-   classify.py --image data/hiding.png --labels 'cat,dog,cute_dog'
-   ```
+<br>
+e. Pug:
 
-   which should return `cat`
+```console
+classify.py --image data/pug.png --labels 'cat,dog,cute_dog'
+```
 
-   <br>
-   e. Pug:
+which should return `cute_dog`
 
-   ```console
-   classify.py --image data/pug.png --labels 'cat,dog,cute_dog'
-   ```
+<br/>
+f. Pug with a raincoat:
 
-   which should return `cute_dog`
+```console
+classify.py --image data/rain-ready.png --labels 'cat,dog,cute_dog'   
+```
 
-   <br/>
-   f. Pug with a raincoat:
+which should return `cute_dog`
 
-   ```console
-   classify.py --image data/rain-ready.png --labels 'cat,dog,cute_dog'   
-   ```
+<br>
+g. Cat with sunglasses
 
-   which should return `cute_dog`
+```console
+classify.py --image data/reflective.png --labels 'cat,dog,cute_dog'
+```
 
-   <br>
-   g. Cat with sunglasses
+which should return `cat`
 
-   ```console
-   classify.py --image data/reflective.png --labels 'cat,dog,cute_dog'
-   ```
+<br/>
+h. Cat yawning:
 
-   which should return `cat`
+```console
+classify.py --image data/yawn.png --labels 'cat,dog,cute_dog
+```
 
-   <br/>
-   h. Cat yawning:
+which should return `cat`
 
-   ```console
-   classify.py --image data/yawn.png --labels 'cat,dog,cute_dog
-   ```
+### Create folders for each label
 
-   which should return `cat`
+Create individual folders for each label with the [`mkdir`](https://man7.org/linux/man-pages/man1/mkdir.1.html) (make directory (folder)) command:
 
-3. Copy each image to a folder based on the classifier label:
+```bash
+mkdir cat
+mkdir dog
+mkdir cute_dog
+```
 
-   ```bash
-   cp data/aussie.png cute_dog
-   ```
+### Copy each image to a folder based on the classifier label
 
-   ```bash
-   cp data/chihuahua.png cute_dog
-   ```
+```bash
+cp data/aussie.png cute_dog
+```
 
-   ```bash
-   cp data/dog.png dog
-   ```
+```bash
+cp data/chihuahua.png cute_dog
+```
 
-   ```bash
-   cp data/hiding.png cat
-   ```
+```bash
+cp data/dog.png dog
+```
 
-   ```bash
-   cp data/pug.png cute_dog
-   ```
+```bash
+cp data/hiding.png cat
+```
 
-   ```bash
-   cp data/rain-ready.png cute_dog
-   ```
+```bash
+cp data/pug.png cute_dog
+```
 
-   ```bash
-   cp data/reflective.png cat
-   ```
+```bash
+cp data/rain-ready.png cute_dog
+```
 
-   ```bash
-   cp data/yawn.png cat
-   ```
+```bash
+cp data/reflective.png cat
+```
 
-   Just out of interest, did your copy paste skills take a carpal tunnel battering there?
+```bash
+cp data/yawn.png cat
+```
+
+Just out of interest, did your copy paste skills take a carpal tunnel battering there?
 
 Now you should have 3 directories labelled by critter:
 
@@ -296,7 +298,7 @@ c. Third for `cute_dog/`:
 mogrify -resize 100x100 -path resized/cute_dog -format png cute_dog/*
 ```
 
-## Step 3: Make a collage for each classifier
+## Step 4: Make a collage for each classifier
 
 Now let's try to create a collage of each of the directories containing label-specific images. We will be using a tool called [`montage`](https://imagemagick.org/script/montage.php) to create the collage. This tool will take as input a list of images and output a collage in PNG format.
 
@@ -340,7 +342,7 @@ montage -background black +polaroid -background '#ffbe76' resized/cat/cute_dog/*
 montage -label 'cute_dog' -geometry +0+0 -background "#f0932b" cute_dog_temp.png collages/cute_dog.png
 ```
 
-## Step 4: Combine the collages
+## Step 5: Combine the collages
 
 You should now have a set of collages, one for each critter type.
 
