@@ -54,7 +54,7 @@ You can either navigate to this directory via the File Explorer sidebar in the V
    ls
    ```
 
-   ```text no-copy
+   ```bash
    # Output:
    README.md  exercise  assets  bin  data  docs  main.nf  nextflow.config  nextflow_schema.json  tower.yml
    ```
@@ -84,7 +84,7 @@ cd exercise/cli
    pwd
    ```
 
-   ```text no-copy
+   ```bash
    # Output:
    /workspace/nf-training-intro/exercise/cli
    ```
@@ -95,7 +95,7 @@ cd exercise/cli
    ls data
    ```
 
-   ```text no-copy
+   ```bash
    # Output:
    aussie.png  chihuahua.png  dog.png  hiding.png  pug.png  rain-ready.png  reflective.png  yawn.png
    ```
