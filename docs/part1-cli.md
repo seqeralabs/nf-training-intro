@@ -144,6 +144,8 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
 
 2. Classify each image individually:
 
+   a. Aussie:
+
    ```console
    classify.py --image data/aussie.png --labels 'cat,dog,cute_dog'
    ```
@@ -155,7 +157,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
 
    <br>
 
-   a. Chihuahua:
+   b. Chihuahua:
 
    ```console
    classify.py --image data/chihuahua.png --labels 'cat,dog,cute_dog'
@@ -167,7 +169,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    ```
 
    <br/>
-   b. Dog:
+   c. Dog:
 
    ```console
    classify.py --image data/dog.png --labels 'cat,dog,cute_dog'
@@ -179,7 +181,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    ```
 
    <br>
-   c. Cat hiding:
+   d. Cat hiding:
 
    ```console
    classify.py --image data/hiding.png --labels 'cat,dog,cute_dog'
@@ -191,7 +193,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    ```
 
    <br>
-   d. Pug:
+   e. Pug:
 
    ```console
    classify.py --image data/pug.png --labels 'cat,dog,cute_dog'
@@ -203,7 +205,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    ```
 
    <br/>
-   e. Pug with a raincoat:
+   f. Pug with a raincoat:
 
    ```console
    classify.py --image data/rain-ready.png --labels 'cat,dog,cute_dog'   
@@ -215,7 +217,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    ```
 
    <br>
-   f. Cat with sunglasses
+   g. Cat with sunglasses
 
    ```console
    classify.py --image data/reflective.png --labels 'cat,dog,cute_dog'
@@ -227,7 +229,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    ```
 
    <br/>
-   g. Cat yawning:
+   h. Cat yawning:
 
    ```console
    classify.py --image data/yawn.png --labels 'cat,dog,cute_dog
