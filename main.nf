@@ -27,9 +27,9 @@ process Classify {
     tuple stdout, path(pic)
 
     script:
-    '''
+    """
     classify.py --image $pic --labels '$prompts'
-    '''
+    """
 }
 
 process Resize {
