@@ -53,7 +53,7 @@ In our previous examples, we saved the results of the classification in a local 
 In the 'outdir' field of the Parameters page, you can specify the path below by replacing the `<YOUR_NAME>` field with your actual name (please refrain from impersonating others :shakefist:):
 
 ```
-s3://scidev-eu-west-1/nf-training/<your_name>/results
+s3://scidev-eu-west-1/nf-training/<YOUR_NAME>/results
 ```
 
 ## Step 5: Launch!
