@@ -22,7 +22,10 @@ For this exercise, we have created a folder called [`exercise/nextflow/data`](..
 
    ```console
    ls
+   ```
 
+   ```
+   # Output
    collages  data  main.nf
    ```
 
