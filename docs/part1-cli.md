@@ -55,8 +55,8 @@ You can either navigate to this directory via the File Explorer sidebar in the V
    ```
 
    Which should return:
-   > `README.md  exercise  assets  bin  data  docs  main.nf  nextflow.config  nextflow_schema.json  tower.yml`
 
+   > `README.md  exercise  assets  bin  data  docs  main.nf  nextflow.config  nextflow_schema.json  tower.yml`
 
 2. You can either navigate directly to the `exercise/cli/` folder by issuing the command below:
 
@@ -84,7 +84,8 @@ cd exercise/cli
    ```
 
    Which should return:
-   >  `/workspace/nf-training-intro/exercise/cli`
+
+   > `/workspace/nf-training-intro/exercise/cli`
 
 4. List the contents of the `data` folder:
 
@@ -93,8 +94,8 @@ cd exercise/cli
    ```
 
    Which should return:
-   > `aussie.png  chihuahua.png  dog.png  hiding.png  pug.png  rain-ready.png  reflective.png  yawn.png`
 
+   > `aussie.png  chihuahua.png  dog.png  hiding.png  pug.png  rain-ready.png  reflective.png  yawn.png`
 
 Now that you are in the correct location relative to where the input images are stored, you will be able to run the classification with the images in `data/`.
 
@@ -346,6 +347,7 @@ You should now have a set of collages, one for each critter type.
    ```
 
    Which should return:
+
    > `cat.png cute_dog.png dog.png`
 
 2. Use `montage` again to combine all of the individual collages into a meta-collage called `collage_all.png`!
