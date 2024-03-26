@@ -4,7 +4,7 @@
 echo 'Classifying images...'
 for picture in data/*; do
     # # Run the classify command and fetch the label
-    label=$(classify.py --image $picture --labels 'a cat, a dog')
+    label=$(classify.py --image $picture --labels 'cat,dog,spider')
 
     # Create an output directory (folder) for this label, if it doesn't exist
     mkdir -p "classified/$label"
