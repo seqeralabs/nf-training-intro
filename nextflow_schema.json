@@ -37,7 +37,7 @@
         "prompts": {
           "type": "string",
           "description": "Comma-separated list of prompts/labels for classification",
-          "help_text": "Use this parameter to specify the labels you want to use for the classification (e.g. 'dog,cute_dog,cat') of the input images. The prompts have to be separated by commas.",
+          "help_text": "Use this parameter to specify the labels you want to use for the classification (e.g. 'dog,cute dog,cat') of the input images. The prompts have to be separated by commas.",
           "fa_icon": "fas fa-hammer"
         }
       }
