@@ -54,7 +54,7 @@ You can either navigate to this directory via the File Explorer sidebar in the V
    ls
    ```
 
-   ```
+   ```text
    # Output:
    README.md  exercise  assets  bin  data  docs  main.nf  nextflow.config  nextflow_schema.json  tower.yml
    ```
@@ -84,7 +84,7 @@ cd exercise/cli
    pwd
    ```
 
-   ```
+   ```text
    # Output:
    /workspace/nf-training-intro/exercise/cli
    ```
@@ -95,7 +95,7 @@ cd exercise/cli
    ls data
    ```
 
-   ```
+   ```text
    # Output:
    aussie.png  chihuahua.png  dog.png  hiding.png  pug.png  rain-ready.png  reflective.png  yawn.png
    ```
@@ -125,7 +125,7 @@ Now let's run the `classify.py` script on a single dog pic called [`rain-ready.p
 classify.py --image data/rain-ready.png --labels 'animal,cat,ugly_dog,cute_dog'
 ```
 
-```
+```text
 # Output:
 cute_dog
 ```
