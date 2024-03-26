@@ -54,10 +54,9 @@ You can either navigate to this directory via the File Explorer sidebar in the V
    ls
    ```
 
-   ```bash
-   # Output:
-   README.md  exercise  assets  bin  data  docs  main.nf  nextflow.config  nextflow_schema.json  tower.yml
-   ```
+   Which should return:
+   `README.md  exercise  assets  bin  data  docs  main.nf  nextflow.config  nextflow_schema.json  tower.yml`
+
 
 2. You can either navigate directly to the `exercise/cli/` folder by issuing the command below:
 
@@ -84,10 +83,8 @@ cd exercise/cli
    pwd
    ```
 
-   ```bash
-   # Output:
-   /workspace/nf-training-intro/exercise/cli
-   ```
+   Which should return:
+   `/workspace/nf-training-intro/exercise/cli`
 
 4. List the contents of the `data` folder:
 
@@ -95,10 +92,9 @@ cd exercise/cli
    ls data
    ```
 
-   ```bash
-   # Output:
-   aussie.png  chihuahua.png  dog.png  hiding.png  pug.png  rain-ready.png  reflective.png  yawn.png
-   ```
+   Which should return:
+   `aussie.png  chihuahua.png  dog.png  hiding.png  pug.png  rain-ready.png  reflective.png  yawn.png`
+
 
 Now that you are in the correct location relative to where the input images are stored, you will be able to run the classification with the images in `data/`.
 
@@ -125,10 +121,7 @@ Now let's run the `classify.py` script on a single dog pic called [`rain-ready.p
 classify.py --image data/rain-ready.png --labels 'animal,cat,ugly_dog,cute_dog'
 ```
 
-```text
-# Output:
-cute_dog
-```
+Which should return: `cute_dog`
 
 This should return a text output onto the command-line telling you which of the input labels was most likely to apply to the picture we specified as input. In this case, the critter was a `cute_dog`! We are not limited to the labels we used above, for example, you can also specify `--labels 'cat,dog,zebra,crocodile'`, or any other set of comma-separated labels.
 
@@ -352,10 +345,9 @@ You should now have a set of collages, one for each critter type.
    ls collages
    ```
 
-   ```bash
-   # Output:
-   cat.png cute_dog.png dog.png
-   ```
+   Which should return:
+   `cat.png cute_dog.png dog.png`
+
 
 2. Use `montage` again to combine all of the individual collages into a meta-collage called `collage_all.png`!
 
