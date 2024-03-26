@@ -100,7 +100,10 @@ Once the pipeline completes, you will see the final `collage_all.png` available 
 
 ```bash
 ls results
+```
 
+```
+# Output
 collage_all.png
 ```
 
