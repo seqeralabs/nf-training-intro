@@ -62,10 +62,9 @@ Now that you have specified which images to use as input to your workflow, indic
 
 ## Step 6: Inspect the Results
 
-
 - Click on the Run
 - Navigate to the 'Reports' tab
-- Click on the final composite image, 
+- Click on the final composite image,
 
 You will be able download the image directly from the Platform - all while still storing it in the Cloud and not having to worry about using up storage locally. You will notice that the 'Path' for the collage file will point to the bucket path that you had specified in Step 4 as your output directory in the `outdir` box.
 
