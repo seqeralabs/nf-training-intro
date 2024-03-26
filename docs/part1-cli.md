@@ -338,7 +338,7 @@ montage -label 'cat' -geometry +0+0 -background "#f0932b" cat_temp.png collages/
 ```
 
 ```bash
-montage -background black +polaroid -background '#ffbe76' resized/cat/cute_dog/* cute_dog_temp.png
+montage -background black +polaroid -background '#ffbe76' resized/cute_dog/* cute_dog_temp.png
 montage -label 'cute_dog' -geometry +0+0 -background "#f0932b" cute_dog_temp.png collages/cute_dog.png
 ```
 
