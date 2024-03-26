@@ -203,7 +203,7 @@ which should return `cat`
 h. Cat yawning:
 
 ```console
-classify.py --image data/yawn.png --labels 'cat,dog,cute_dog
+classify.py --image data/yawn.png --labels 'cat,dog,cute_dog'
 ```
 
 which should return `cat`
