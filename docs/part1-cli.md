@@ -127,10 +127,10 @@ classify.py --image data/rain-ready.png --labels 'animal,cat,ugly_dog,cute_dog'
 
 ```
 # Output:
-dog
+cute_dog
 ```
 
-This should return a text output onto the command-line telling you which of the input labels was most likely to apply to the picture we specified as input. In this case, the critter was a `cute_dog'`! We are not limited to the labels we used above, for example, you can also specify `--labels 'cat,dog,zebra,crocodile'`, or any other set of comma-separated labels.
+This should return a text output onto the command-line telling you which of the input labels was most likely to apply to the picture we specified as input. In this case, the critter was a `cute_dog`! We are not limited to the labels we used above, for example, you can also specify `--labels 'cat,dog,zebra,crocodile'`, or any other set of comma-separated labels.
 
 For simplicity, let's use the same labels, classify each of the 8 images individually and then copy them into a folder based on the classification:
 
@@ -195,6 +195,10 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
 
    ```console
    classify.py --image data/pug.png --labels 'cat,dog,cute_dog'
+   ```
+
+   ```
+   # Output:
    cute_dog
    ```
 
@@ -202,7 +206,11 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    e. Pug with a raincoat:
 
    ```console
-   classify.py --image data/rain-ready.png --labels 'cat,dog,cute_dog'
+   classify.py --image data/rain-ready.png --labels 'cat,dog,cute_dog'   
+   ```
+
+   ```
+   # Output:
    cute_dog
    ```
 
