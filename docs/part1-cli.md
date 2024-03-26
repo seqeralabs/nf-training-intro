@@ -337,6 +337,11 @@ montage -background black +polaroid -background '#ffbe76' resized/cat/* cat_temp
 montage -label 'cat' -geometry +0+0 -background "#f0932b" cat_temp.png collages/cat.png
 ```
 
+```bash
+montage -background black +polaroid -background '#ffbe76' resized/cat/cute_dog/* cute_dog_temp.png
+montage -label 'cute_dog' -geometry +0+0 -background "#f0932b" cute_dog_temp.png collages/cute_dog.png
+```
+
 ## Step 5: Combine the collages
 
 You should now have a set of collages, one for each critter type.
