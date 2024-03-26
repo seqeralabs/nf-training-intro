@@ -24,19 +24,19 @@ For example, you would issue the following commands:
 
 - To enter a folder called `data/`
 
-```bash
+```console
 cd data
 ```
 
 - List files in a folder:
 
-```bash
+```console
 ls
 ```
 
 - Go back up a level to a parent folder:
 
-```bash
+```console
 cd ..
 ```
 
@@ -61,20 +61,20 @@ You can either navigate to this directory via the File Explorer sidebar in the V
 
 2. You can either navigate directly to the `exercise/cli/` folder by issuing the command below:
 
-   ```bash
+   ```console
    cd exercise/cli
    ```
 
    or you can run multiple [`cd`](https://linuxcommand.org/lc3_man_pages/cdh.html) commands to get there too:
 
-   ```bash
+   ```console
    cd exercise
    cd cli
    ```
 
 If you get lost, you can always close the terminal using the trash can icon on the right-hand side and then open up a fresh new terminal. In a fresh terminal, to move to the correct directory for the first part of the exercise, you will need to type the command below and press return:
 
-```bash
+```console
 cd exercise/cli
 ```
 
@@ -121,7 +121,7 @@ Let's break this down:
 
 Now let's run the `classify.py` script on a single dog pic called [`rain-ready.png`](../exercise/cli/data/rain-ready.png) and see which classifier CLIP assigns to it!
 
-```
+```console
 classify.py --image data/rain-ready.png --labels 'animal,cat,ugly_dog,cute_dog'
 ```
 
@@ -212,7 +212,7 @@ which should return `cat`
 
 Create individual folders for each label with the [`mkdir`](https://man7.org/linux/man-pages/man1/mkdir.1.html) (make directory (folder)) command:
 
-```bash
+```console
 mkdir cat
 mkdir dog
 mkdir cute_dog
@@ -220,35 +220,35 @@ mkdir cute_dog
 
 ### Copy each image to a folder based on the classifier label
 
-```bash
+```console
 cp data/aussie.png cute_dog
 ```
 
-```bash
+```console
 cp data/chihuahua.png cute_dog
 ```
 
-```bash
+```console
 cp data/dog.png dog
 ```
 
-```bash
+```console
 cp data/hiding.png cat
 ```
 
-```bash
+```console
 cp data/pug.png cute_dog
 ```
 
-```bash
+```console
 cp data/rain-ready.png cute_dog
 ```
 
-```bash
+```console
 cp data/reflective.png cat
 ```
 
-```bash
+```console
 cp data/yawn.png cat
 ```
 
@@ -262,7 +262,7 @@ Now you should have 3 directories labelled by critter:
 
 You can also list the images that ended up in each directory by using the command below:
 
-```bash
+```console
 ls dog
 ```
 
@@ -272,7 +272,7 @@ To make sure the images in our final collage are of a uniform size, let's run a 
 
 First we'll make a separate directory with the `mkdir` command to store our resized images, based on the label:
 
-```bash
+```console
 mkdir -p resized/dog
 mkdir -p resized/cat
 mkdir -p resized/cute_dog
@@ -282,19 +282,19 @@ Second, we will run a command with the[`mogrify`](https://imagemagick.org/script
 
 a. First for `dog/`:
 
-```bash
+```console
 mogrify -resize 100x100 -path resized/dog -format png dog/*
 ```
 
 b. Second for `cat/`:
 
-```bash
+```console
 mogrify -resize 100x100 -path resized/cat -format png cat/*
 ```
 
 c. Third for `cute_dog/`:
 
-```bash
+```console
 mogrify -resize 100x100 -path resized/cute_dog -format png cute_dog/*
 ```
 
@@ -304,13 +304,13 @@ Now let's try to create a collage of each of the directories containing label-sp
 
 1. Create a `collages` folder:
 
-   ```bash
+   ```console
    mkdir -p collages
    ```
 
 2. Create a temporary image to make a collage with the correct layout for all of the images in the `'dog'` folder:
 
-   ```bash
+   ```console
    montage resized/dog/* dog_temp.png
    ```
 
@@ -320,24 +320,24 @@ Now let's try to create a collage of each of the directories containing label-sp
 
 To make the collage a little bit more interesting, we can add a few command-line arguments:
 
-```bash
+```console
 montage -background black +polaroid -background '#ffbe76' resized/dog/* dog_temp.png
 ```
 
 We can also use the `montage` command to write our classification label into the image:
 
-```bash
+```console
 montage -label 'dog' -geometry +0+0 -background "#f0932b" dog_temp.png collages/dog.png
 ```
 
 Now, let's repeat this same process for all of the other labels:
 
-```bash
+```console
 montage -background black +polaroid -background '#ffbe76' resized/cat/* cat_temp.png
 montage -label 'cat' -geometry +0+0 -background "#f0932b" cat_temp.png collages/cat.png
 ```
 
-```bash
+```console
 montage -background black +polaroid -background '#ffbe76' resized/cute_dog/* cute_dog_temp.png
 montage -label 'cute_dog' -geometry +0+0 -background "#f0932b" cute_dog_temp.png collages/cute_dog.png
 ```
@@ -348,18 +348,18 @@ You should now have a set of collages, one for each critter type.
 
 1. List the images that ended up in the `collages/` directory by using the command below:
 
-   ```
+   ```console
    ls collages
    ```
 
-   ```
+   ```bash
    # Output:
    cat.png cute_dog.png dog.png
    ```
 
 2. Use `montage` again to combine all of the individual collages into a meta-collage called `collage_all.png`!
 
-   ```bash
+   ```console
    montage -geometry +10+10 -quality 05 -background "#ffbe76" -border 5 -bordercolor "#f0932b" collages/* collage_all.png
    ```
 
