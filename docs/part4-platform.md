@@ -58,7 +58,7 @@ s3://scidev-eu-west-1/nf-training/<YOUR_NAME>/results
 
 ## Step 5: Launch!
 
-Now that you have specified which images to use as input to your workflow, indicated which labels to use to perform the classification, and specified where your results will live, click the big 'Launch' button! The classification of the images in this bucket will take some time as there are over >200 images to comb through but you are now successfully running a machine learning workflow in the Cloud!
+Now that you have specified which images to use as input to your workflow, indicated which labels to use to perform the classification, and specified where your results will live, click on the big 'Launch' button! The classification of the images in this bucket will take some time as there are over >200 images to comb through but you are now successfully running a machine learning workflow in the Cloud!
 
 ## Step 6: Inspect the Results
 
