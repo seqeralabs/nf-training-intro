@@ -337,11 +337,6 @@ montage -background black +polaroid -background '#ffbe76' resized/cat/* cat_temp
 montage -label 'cat' -geometry +0+0 -background "#f0932b" cat_temp.png collages/cat.png
 ```
 
-```bash
-montage -background black +polaroid -background '#ffbe76' resized/cat/cute_dog/* cute_dog_temp.png
-montage -label 'cute_dog' -geometry +0+0 -background "#f0932b" cute_dog_temp.png collages/cute_dog.png
-```
-
 ## Step 5: Combine the collages
 
 You should now have a set of collages, one for each critter type.
@@ -365,8 +360,6 @@ You should now have a set of collages, one for each critter type.
 
    The `-geometry +10+10` parameter will give us 10px spacing between the collages, the `-quality 05` parameter will compress our final image, and the `-background`, `-border`, and `-bordercolor` parameters add a little colour to the final image.
 
-   The `-geometry +10+10` parameter will give us 10px spacing between the collages, the `-quality 05` parameter will compress our final image, and the `-background`, `-border`, and `-bordercolor` parameters add a little colour to the final image.
-
    You can view the final `collage_all.png` image directly in the GitPod user interface by clicking the filename in the file explorer on the left-hand side. You can also download the image to your local machine by right-clicking the filename and selecting 'Download'.
 
    Take a look - what do you think?
@@ -380,9 +373,8 @@ Try to answer the following questions for yourself:
 - Even if you did, are you confident you would get the commands right if you had to type them out 100 times again?
 - How annoyed would you be if you had lost your place halfway through and had to start again?
 
-<details>
-<summary>Summary</summary>
+## Summary
+
 After classifying a few images one by one, you might notice a couple of things. First, it can be quite tedious to type out or copy-paste the command repeatedly for multiple images. Secondly, this method does not scale well if we have hundreds or thousands of images to classify. Imagine having to run each image through the command-line individually—it would be incredibly time-consuming and inefficient.
-</details>
 
 In the next section of the workshop, [Part 2: Critter classification with Bash scripting](part2-bash.md), we will instead encapsulate these commands into a Bash script. This will not only simplify the process of classifying multiple images but also sets the stage for understanding the power of automation and scalability — key features that Nextflow enhances in more complex workflows.
