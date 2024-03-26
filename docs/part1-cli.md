@@ -185,7 +185,7 @@ which should return `cute_dog`
 f. Pug with a raincoat:
 
 ```console
-classify.py --image data/rain-ready.png --labels 'cat,dog,cute_dog'   
+classify.py --image data/rain-ready.png --labels 'cat,dog,cute_dog'
 ```
 
 which should return `cute_dog`
