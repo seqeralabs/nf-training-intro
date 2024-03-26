@@ -23,7 +23,8 @@ For this exercise, we have created a folder called [`exercise/bash/data`](../exe
    ```
 
    Which should return:
-   >  `/workspace/nf-training-intro/exercise/bash`
+
+   > `/workspace/nf-training-intro/exercise/bash`
 
 2. List the contents of the `data` folder:
 
@@ -32,7 +33,8 @@ For this exercise, we have created a folder called [`exercise/bash/data`](../exe
    ```
 
    Which should return:
-   >  `aussie.png  chihuahua.png  dog.png  hiding.png  pug.png  rain-ready.png  reflective.png  yawn.png`
+
+   > `aussie.png  chihuahua.png  dog.png  hiding.png  pug.png  rain-ready.png  reflective.png  yawn.png`
 
 Now that you are in the correct location relative to where the input images are stored, you will be able to run the classification with the images in `data/`.
 

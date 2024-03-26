@@ -25,7 +25,8 @@ For this exercise, we have created a folder called [`exercise/nextflow/data`](..
    ```
 
    Which should return:
-   >  `collages  data  main.nf`
+
+   > `collages  data  main.nf`
 
 In this directory, you will see a [`main.nf`](../exercise/nextflow/main.nf) script. This script will define our Nextflow pipeline, let's take a closer look in the next step.
 
@@ -101,6 +102,7 @@ ls results
 ```
 
 Which should return:
+
 > `collage_all.png`
 
 ## Step 4: Resuming the workflow
