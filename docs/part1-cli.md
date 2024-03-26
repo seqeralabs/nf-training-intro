@@ -150,10 +150,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    classify.py --image data/aussie.png --labels 'cat,dog,cute_dog'
    ```
 
-   ```
-   # Output:
-   cute_dog
-   ```
+   which should return `cute_dog`
 
    <br>
 
@@ -163,10 +160,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    classify.py --image data/chihuahua.png --labels 'cat,dog,cute_dog'
    ```
 
-   ```
-   # Output:
-   cute_dog
-   ```
+   which should return `cute_dog`
 
    <br/>
    c. Dog:
@@ -175,10 +169,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    classify.py --image data/dog.png --labels 'cat,dog,cute_dog'
    ```
 
-   ```
-   # Output:
-   dog
-   ```
+   which should return `dog`
 
    <br>
    d. Cat hiding:
@@ -187,10 +178,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    classify.py --image data/hiding.png --labels 'cat,dog,cute_dog'
    ```
 
-   ```
-   # Output:
-   cat
-   ```
+   which should return `cat`
 
    <br>
    e. Pug:
@@ -199,10 +187,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    classify.py --image data/pug.png --labels 'cat,dog,cute_dog'
    ```
 
-   ```
-   # Output:
-   cute_dog
-   ```
+   which should return `cute_dog`
 
    <br/>
    f. Pug with a raincoat:
@@ -211,10 +196,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    classify.py --image data/rain-ready.png --labels 'cat,dog,cute_dog'   
    ```
 
-   ```
-   # Output:
-   cute_dog
-   ```
+   which should return `cute_dog`
 
    <br>
    g. Cat with sunglasses
@@ -223,10 +205,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    classify.py --image data/reflective.png --labels 'cat,dog,cute_dog'
    ```
 
-   ```
-   # Output:
-   cat
-   ```
+   which should return `cat`
 
    <br/>
    h. Cat yawning:
@@ -235,10 +214,7 @@ For simplicity, let's use the same labels, classify each of the 8 images individ
    classify.py --image data/yawn.png --labels 'cat,dog,cute_dog
    ```
 
-   ```
-   # Output:
-   cat
-   ```
+   which should return `cat`
 
 3. Copy each image to a folder based on the classifier label:
 
