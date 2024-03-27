@@ -22,10 +22,9 @@ For this exercise, we have created a folder called [`exercise/bash/data`](../exe
    pwd
    ```
 
-   ```
-   # Output
-   /workspace/nf-training-intro/exercise/bash
-   ```
+   Which should return:
+
+   > `/workspace/nf-training-intro/exercise/bash`
 
 2. List the contents of the `data` folder:
 
@@ -33,10 +32,9 @@ For this exercise, we have created a folder called [`exercise/bash/data`](../exe
    ls data
    ```
 
-   ```
-   # Output
-   aussie.png  chihuahua.png  dog.png  hiding.png  pug.png  rain-ready.png  reflective.png  yawn.png
-   ```
+   Which should return:
+
+   > `aussie.png  chihuahua.png  dog.png  hiding.png  pug.png  rain-ready.png  reflective.png  yawn.png`
 
 Now that you are in the correct location relative to where the input images are stored, you will be able to run the classification with the images in `data/`.
 
@@ -46,7 +44,7 @@ We have written a bash script called [`make_collage.sh`](../exercise/bash/make_c
 
 You should see that running the Bash script below produces the composite collage file `collage_all.png` with a single command!
 
-```bash
+```console
 ./make_collage.sh
 ```
 
