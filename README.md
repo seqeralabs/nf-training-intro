@@ -31,7 +31,7 @@ This will bring you to the Gitpod launch screen where you can click "Continue":
 
 ![Gitpod launch](docs/assets/gitpod-launch.png)
 
-## Solving critter blindness
+## Solving critter confusion
 
 ### The background
 
@@ -41,7 +41,7 @@ In the different sections of this tutorial, we will explore how to run an existi
 
 We have intentionally picked a use case quite different from the usual scientific workloads, to make the transferability of the concepts more relatable as we progress through the workshop.
 
-You have been given a set of pictures of your colleagues' animals, and you want to be able to classify them, so you can make attractive collages of them to present at your company retreat. Unfortunately, you have developed cat/dog/spider blindness and can't classify the critters with the naked eye. Although we are not quite yet in the days of an adult John Connor, fortunately for you this is 2024, so you can still enlist the help of AI.
+You have been given a set of pictures of your colleagues' animals, and you want to be able to classify them, so you can make attractive collages of them to present at your company retreat. Unfortunately, you are an alien recently arrived on Earth and you don't know the difference between cats, dogs and spiders. Fortunately for you, you can enlist the help of AI.
 
 ### The aim
 
