@@ -17,6 +17,24 @@ More specifically, this session will cover the following key capabilities of Nex
 
 If you walk away from this workshop being able to understand and communicate these advantages to others then we will consider the workshop a success!
 
+### ☁ Try it in the Cloud
+
+[![Open in VS Code](https://img.shields.io/badge/Open%20in-VS%20Code-blue?logo=visualstudiocode)](https://vscode.dev/github/seqeralabs/nf-training-intro)
+
+[![Open in GitHub Codespaces](https://img.shields.io/badge/Open%20in-GitHub%20Codespaces-blue?logo=github)](https://codespaces.new/seqeralabs/nf-training-intro)
+
+[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/seqeralabs/nf-training-intro)
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/seqeralabs/nf-training-intro)
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz_small.svg)](https://stackblitz.com/github/seqeralabs/nf-training-intro)
+
+[![Open in Repl.it](https://replit.com/badge/github/seqeralabs/nf-training-intro)](https://replit.com/github/seqeralabs/nf-training-intro)
+
+[![Open in Glitch](https://img.shields.io/badge/Open%20in-Glitch-blue?logo=glitch)](https://glitch.com/edit/#!/import/github/seqeralabs/nf-training-intro)
+
+[![Open in Codeanywhere](https://codeanywhere.com/img/open-in-codeanywhere-btn.svg)](https://app.codeanywhere.com/#https://github.com/seqeralabs/nf-training-intro)
+
 ## Getting started
 
 For this workshop, we are going to be using a tool called [`GitPod`](https://www.gitpod.io/), which provides us with a fully managed environment to deliver the training. You will need a GitHub account, so if you don't have one, go to [GitHub](https://github.com/join) and create one for yourself.
