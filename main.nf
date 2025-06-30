@@ -5,7 +5,7 @@ params.prompts = 'a photo of a cat,a photo of a dog,a photo'
 params.outdir = 'results'
 
 workflow {
-    pics = Channel.fromPath(params.input)
+    pics = Channel.fromPath(params.input).subsampleRandom(200)
 
     Classify(pics, params.prompts)
     | Resize
@@ -77,4 +77,8 @@ process CombineImages {
     """
     montage -geometry +10+10 -quality 05 -background "#ffbe76" -border 5 -bordercolor "#f0932b" in.*.png collage_all.png
     """
+}
+
+def subsampleRandom(channel, n) {
+    return channel.randomSample(n)
 }
