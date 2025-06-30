@@ -1,5 +1,9 @@
 #!/usr/bin/env nextflow
 
+def subsampleRandom(channel, n) {
+    return channel.randomSample(n)
+}
+
 params.input = "${projectDir}/data/*.png"
 params.prompts = 'a photo of a cat,a photo of a dog,a photo'
 params.outdir = 'results'
@@ -77,8 +81,4 @@ process CombineImages {
     """
     montage -geometry +10+10 -quality 05 -background "#ffbe76" -border 5 -bordercolor "#f0932b" in.*.png collage_all.png
     """
-}
-
-def subsampleRandom(channel, n) {
-    return channel.randomSample(n)
 }
