@@ -1,15 +1,11 @@
 #!/usr/bin/env nextflow
 
-def subsampleRandom(channel, n) {
-    return channel.randomSample(n)
-}
-
 params.input = "${projectDir}/data/*.png"
 params.prompts = 'a photo of a cat,a photo of a dog,a photo'
 params.outdir = 'results'
 
 workflow {
-    pics = Channel.fromPath(params.input).subsampleRandom(200)
+    pics = Channel.fromPath(params.input).randomSample(200)
 
     Classify(pics, params.prompts)
     | Resize
