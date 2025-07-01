@@ -5,7 +5,7 @@ params.prompts = 'a photo of a cat,a photo of a dog,a photo'
 params.outdir = 'results'
 
 workflow {
-    pics = Channel.fromPath(params.input)
+    pics = Channel.fromPath(params.input).randomSample(200)
 
     Classify(pics, params.prompts)
     | Resize
