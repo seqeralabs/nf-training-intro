@@ -40,7 +40,7 @@ The [`main.nf`](../exercise/nextflow/main.nf) Nextflow script has several key co
 
 ```groovy
 process Classify {
-    memory '8G'
+    memory '4G'
     container 'robsyme/clip-cpu:1.0.0'
 
     input:

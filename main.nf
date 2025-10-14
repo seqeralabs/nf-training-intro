@@ -16,7 +16,7 @@ workflow {
 }
 
 process Classify {
-    memory '8G'
+    memory '4G'
     container 'robsyme/clip-cpu:1.0.0'
 
     input:
