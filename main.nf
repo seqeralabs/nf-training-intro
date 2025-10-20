@@ -7,16 +7,14 @@ params.outdir = 'results'
 workflow {
     pics = Channel.fromPath(params.input).randomSample(200)
 
-    Classify(pics, params.prompts)
-    | Resize
-    | groupTuple
-    | Collage
-    | collect
-    | CombineImages
+    Classify(pics, params.prompts)    
+    Resize(Classify.out)
+    Collage(Resize.out.groupTuple())
+    CombineImages(Collage.out.collect())
 }
 
 process Classify {
-    memory '8G'
+    memory '4G'
     container 'robsyme/clip-cpu:1.0.0'
 
     input:
