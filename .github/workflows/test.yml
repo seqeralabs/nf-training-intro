@@ -12,7 +12,7 @@ jobs:
       - name: Install NodeJS
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "24"
 
       - name: Install Prettier
         run: npm install -g prettier@3.1.0
